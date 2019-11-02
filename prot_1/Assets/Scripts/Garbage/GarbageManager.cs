@@ -13,6 +13,7 @@ public class GarbageManager : MonoBehaviour
     public bool bNothing;
     public bool bDrop;
     public float fTime;
+    public int CreateNumber;
     float SaveTime;
 
 
@@ -38,11 +39,12 @@ public class GarbageManager : MonoBehaviour
         {
             // ランダムにポジションを決め、生成する
             Vector3 position = new Vector3(Random.Range(-20.0f, 20.0f), 0, Random.Range(-20.0f, 20.0f));
-            billboard = Instantiate(Garbagetype[Random.Range(0, 3)], position, Quaternion.identity, transform);
+            billboard = Instantiate(Garbagetype[Random.Range(0, Garbagetype.Count)], position, Quaternion.identity, transform);
             billboard.gameObject.GetComponent<Billboard>().GetComponent<BoxCollider>().enabled = false;
             Garbagelist.Add(billboard);
             bNothing = false;
             fTime = SaveTime;
+            billboard.gameObject.GetComponent<Billboard>().CreateNumber = Garbagelist.Count-1;
         }
 
         if (Garbagelist.Count <= 0)

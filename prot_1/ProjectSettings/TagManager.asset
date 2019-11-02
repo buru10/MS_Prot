@@ -7,6 +7,7 @@ TagManager:
   - paper
   - plastic
   - metal
+  - glass
   layers:
   - Default
   - TransparentFX

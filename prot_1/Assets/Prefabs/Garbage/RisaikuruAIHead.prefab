@@ -213,11 +213,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697ed1a7e2907d48b7094e5ca654b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 4254760651301161829, guid: b67f85da2f151a248957485c5a87c979, type: 3}
   Garbage: {fileID: 0}
   PlayerMarker: {fileID: 0}
   startMarker: {fileID: 7912073342479206740}
   endMarker: {fileID: 0}
-  garbageManager: {fileID: 6156802935585166622, guid: 8a0f8e034c73e1a40b0cd4608012e9d1,
+  garbageManager: {fileID: 2150980204383431593, guid: 8a0f8e034c73e1a40b0cd4608012e9d1,
     type: 3}
   speed: 0.05
+  Snipe: 0
+  SnipeNumber: 0

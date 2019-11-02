@@ -6,6 +6,7 @@ public class Billboard : MonoBehaviour
 {
     // メンバ変数定義
     public bool bTarget; 
+    public int CreateNumber; 
 
     // Start is called before the first frame update
     void Start()
