@@ -19,6 +19,8 @@ public class PushButton : MonoBehaviour
     [Range(1, 10)]
     public int CreateNum;
     public GameObject RisaikuruAI;
+    public GameObject RisaikuruAIManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,10 +50,11 @@ public class PushButton : MonoBehaviour
             Player.SetResources("paper", 0);
             Player.SetResources("plastic", 0);
             Player.SetResources("glass", 0);
+
             // 指定した分だけ生成する
             for (int i = 0; i < CreateNum; i++)
             {
-                Instantiate(RisaikuruAI, new Vector3(0.0f, 5.0f, 0.0f), Quaternion.identity);
+                Instantiate(RisaikuruAI, new Vector3(0.0f, 5.0f, 0.0f), Quaternion.identity,RisaikuruAIManager.transform);
             }
                 //meter.MeterCount = 0;
         }

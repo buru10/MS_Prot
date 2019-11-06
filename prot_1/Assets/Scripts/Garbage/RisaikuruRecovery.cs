@@ -26,6 +26,13 @@ public class RisaikuruRecovery : MonoBehaviour
         Snipe = false;
         SnipeNumber = 0;
 
+        if(!Player)
+        Player = GameObject.Find("SeparationHead").GetComponent<Player>();
+
+        // 入れ直す
+        garbageManager = GameObject.Find("GarbageManager").GetComponent<GarbageManager>();
+        
+
         // 判定を消す
         sphereCollider = GetComponent<SphereCollider>();
         sphereCollider.enabled = false;
@@ -52,12 +59,20 @@ public class RisaikuruRecovery : MonoBehaviour
         }
         else
         {
-            //if (Snipe)
-            //    if (!endMarker)
-            //    {
-            //        endMarker = PlayerMarker;
-            //        Snipe = false;
-            //    }
+            // 狙っていたゴミが消滅したら
+            if(!Garbage)
+            {
+                endMarker = PlayerMarker;
+                Snipe = false;
+                return;
+            }
+
+            if (Snipe)
+                if (!endMarker)
+                {
+                    endMarker = PlayerMarker;
+                    Snipe = false;
+                }
 
             // ゴミを狙う
             transform.position = Vector3.Lerp(startMarker.position, endMarker.position, speed);
