@@ -23,10 +23,13 @@ public class Player : MonoBehaviour
     [HideInInspector]
     public int glass;
 
+    GameObject gameObj;
     void Start()
     {
         // 変数初期化
         metal = paper = plastic = glass = 0;
+        gameObj = GameObject.Find("RisaikuruAIManager");
+
     }
 
     void Update()
@@ -42,8 +45,9 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
             velocity.x += 1;
         if (Input.GetKey(KeyCode.C))
-            Instantiate(RisaikuruAI, new Vector3(transform.position.x, transform.position.y + 5.0f, transform.position.z), Quaternion.identity);
-
+        {
+            Instantiate(RisaikuruAI, new Vector3(transform.position.x, transform.position.y + 5.0f, transform.position.z), Quaternion.identity, gameObj.transform);
+        }
         // 速度ベクトルの長さを1秒でmoveSpeedだけ進むように調整します
         velocity = velocity.normalized * moveSpeed * Time.deltaTime;
 

@@ -285,6 +285,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d641cb07348c3e74ca23f765f3253323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &760758104
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 760758105}
+  m_Layer: 0
+  m_Name: RisaikuruAIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &760758105
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760758104}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5744457, y: 0.80999994, z: -0.27999997}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1077717231 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3289528271768924004, guid: eeb512a8573995b40939a4248bae9dc3,
@@ -421,6 +451,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GarbageManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2150980204383431593, guid: 8a0f8e034c73e1a40b0cd4608012e9d1,
+        type: 3}
+      propertyPath: fTime
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2150980204383431594, guid: 8a0f8e034c73e1a40b0cd4608012e9d1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -490,6 +525,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: SeparationHead
       objectReference: {fileID: 0}
+    - target: {fileID: 3289528271226671598, guid: eeb512a8573995b40939a4248bae9dc3,
+        type: 3}
+      propertyPath: refCamera
+      value: 
+      objectReference: {fileID: 1947750491}
+    - target: {fileID: 3289528271226671598, guid: eeb512a8573995b40939a4248bae9dc3,
+        type: 3}
+      propertyPath: RisaikuruAI
+      value: 
+      objectReference: {fileID: 1656092246}
     - target: {fileID: 3289528271226671599, guid: eeb512a8573995b40939a4248bae9dc3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -545,16 +590,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3289528271226671598, guid: eeb512a8573995b40939a4248bae9dc3,
-        type: 3}
-      propertyPath: refCamera
-      value: 
-      objectReference: {fileID: 1947750491}
-    - target: {fileID: 3289528271226671598, guid: eeb512a8573995b40939a4248bae9dc3,
-        type: 3}
-      propertyPath: RisaikuruAI
-      value: 
-      objectReference: {fileID: 1656092246}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eeb512a8573995b40939a4248bae9dc3, type: 3}
 --- !u!1001 &7912073341352896084
