@@ -4,10 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - paper
-  - plastic
-  - metal
-  - glass
+  - PlayerCharacter
+  - PlayerCharactor
   layers:
   - Default
   - TransparentFX
@@ -17,7 +15,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - PostProcessing
   - 
   - 
   - 
