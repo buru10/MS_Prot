@@ -14,6 +14,11 @@ public class PushButton : MonoBehaviour
     float TimeCount;
 
     public meter meter;
+    public Player Player;
+
+    [Range(1, 10)]
+    public int CreateNum;
+    public GameObject RisaikuruAI;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +43,17 @@ public class PushButton : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             this.gameObject.SetActive(false);
-            meter.MeterCount = 0;
+            //メーター初期化
+            Player.SetResources("metal", 0);
+            Player.SetResources("paper", 0);
+            Player.SetResources("plastic", 0);
+            Player.SetResources("glass", 0);
+            // 指定した分だけ生成する
+            for (int i = 0; i < CreateNum; i++)
+            {
+                Instantiate(RisaikuruAI, new Vector3(0.0f, 5.0f, 0.0f), Quaternion.identity);
+            }
+                //meter.MeterCount = 0;
         }
 
     }
