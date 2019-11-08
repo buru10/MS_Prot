@@ -27,7 +27,7 @@ public class RisaikuruRecovery : MonoBehaviour
         SnipeNumber = 0;
 
         if(!Player)
-        Player = GameObject.Find("SeparationHead").GetComponent<Player>();
+        Player = GameObject.Find("Test_Player").GetComponent<Player>();
 
         // 入れ直す
         garbageManager = GameObject.Find("GarbageManager").GetComponent<GarbageManager>();
@@ -201,7 +201,7 @@ public class RisaikuruRecovery : MonoBehaviour
                     Garbage.GetComponent<Billboard>().GetComponent<BoxCollider>().enabled = true;
                     Garbage.GetComponent<Billboard>().bTarget = true;
                     endMarker = Garbage.transform;
-                    SnipeNumber = Garbage.GetComponent<Billboard>().CreateNumber; // スナイプナンバー記憶
+                    //SnipeNumber = Garbage.GetComponent<Billboard>().CreateNumber; // スナイプナンバー記憶
                     Snipe = true;
                     break;
                 }
