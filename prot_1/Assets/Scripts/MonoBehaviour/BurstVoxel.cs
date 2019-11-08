@@ -22,7 +22,7 @@ public class BurstVoxel : MonoBehaviour
             Burst();
     }
 
-    void Burst()
+    public void Burst()
     {
         var random = new System.Random();
         int min = -3;
