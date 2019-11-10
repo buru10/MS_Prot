@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 8566963085002403594}
   - component: {fileID: 8036040731908573987}
   - component: {fileID: 8601217263411839595}
-  m_Layer: 0
+  - component: {fileID: 655506459281874730}
+  m_Layer: 9
   m_Name: PlasticCube
   m_TagString: plastic
   m_Icon: {fileID: 0}
@@ -108,3 +109,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &655506459281874730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8505473388762413276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b22cb0ea4f6a8614ab4ac6f0889915df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bTarget: 0
+  bBurst: 0
+  CreateNumber: 0

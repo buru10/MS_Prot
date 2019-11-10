@@ -19,6 +19,8 @@ public class RisaikuruRecovery : MonoBehaviour
 
     private SphereCollider sphereCollider;
 
+    public GameObject snipeObject;
+
     void Start()
     {
         // 仮ポジション設定
@@ -31,14 +33,13 @@ public class RisaikuruRecovery : MonoBehaviour
 
         // 入れ直す
         garbageManager = GameObject.Find("GarbageManager").GetComponent<GarbageManager>();
-        
-
+       
         // 判定を消す
         sphereCollider = GetComponent<SphereCollider>();
         sphereCollider.enabled = false;
 
         // 子供の情報を受け取る
-        PlayerMarker = Player.transform.GetChild(0).transform.GetChild(0).gameObject.transform;
+        PlayerMarker = Player.transform.GetChild(2).gameObject.transform;
 
         // 新たなゴミが増えていないかチェックし増えていたら起動
         CheckGarbage();
@@ -60,19 +61,12 @@ public class RisaikuruRecovery : MonoBehaviour
         else
         {
             // 狙っていたゴミが消滅したら
-            if(!Garbage)
+            if (!Garbage)
             {
                 endMarker = PlayerMarker;
                 Snipe = false;
                 return;
             }
-
-            if (Snipe)
-                if (!endMarker)
-                {
-                    endMarker = PlayerMarker;
-                    Snipe = false;
-                }
 
             // ゴミを狙う
             transform.position = Vector3.Lerp(startMarker.position, endMarker.position, speed);
@@ -86,10 +80,11 @@ public class RisaikuruRecovery : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision collision)
+    //private void OnTriggerStay(Collider collision)
     {
-        //// スナイプナンバーが一致したら継続
-        //if (SnipeNumber != collision.gameObject.GetComponent<Billboard>().CreateNumber)
-        //    return;
+        // スナイプナンバーが一致したら継続
+        if(snipeObject != collision.gameObject || !Snipe)
+            return;
 
         // タグ判定
         switch (collision.gameObject.tag)
@@ -113,7 +108,7 @@ public class RisaikuruRecovery : MonoBehaviour
                 Snipe = false;
 
                 // さらにゴミがあったらそこに向かわせる
-                CheckGarbage();
+               // CheckGarbage();
                 break;
 
             // 紙
@@ -135,7 +130,7 @@ public class RisaikuruRecovery : MonoBehaviour
                 Snipe = false;
 
                 // さらにゴミがあったらそこに向かわせる
-                CheckGarbage();
+               // CheckGarbage();
                 break;
 
             // プラスチック
@@ -157,7 +152,7 @@ public class RisaikuruRecovery : MonoBehaviour
                 Snipe = false;
 
                 // さらにゴミがあったらそこに向かわせる
-                CheckGarbage();
+               // CheckGarbage();
                 break;
             // ガラス
             case "glass":
@@ -178,13 +173,16 @@ public class RisaikuruRecovery : MonoBehaviour
                 Snipe = false;
 
                 // さらにゴミがあったらそこに向かわせる
-                CheckGarbage();
+               // CheckGarbage();
                 break;
 
             default:
                 break;
         }
+
+        snipeObject = null;
     }
+
 
     void CheckGarbage()
     {
@@ -195,16 +193,19 @@ public class RisaikuruRecovery : MonoBehaviour
             {
                 Garbage = garbageManager.Garbagelist[i].gameObject;
 
-                // そのオブジェクトが狙われていなかったら狙う
-                if (!Garbage.GetComponent<Billboard>().bTarget)
+                // そのオブジェクトが壊れているかつ狙われていなかったら狙う
+                if (!Garbage.GetComponent<Garbage>().bTarget && Garbage.GetComponent<Garbage>().bBurst)
                 {
-                    Garbage.GetComponent<Billboard>().GetComponent<BoxCollider>().enabled = true;
-                    Garbage.GetComponent<Billboard>().bTarget = true;
+                    Garbage.GetComponent<Garbage>().GetComponent<BoxCollider>().enabled = true;
+                    Garbage.GetComponent<Garbage>().bTarget = true;
                     endMarker = Garbage.transform;
                     //SnipeNumber = Garbage.GetComponent<Billboard>().CreateNumber; // スナイプナンバー記憶
                     Snipe = true;
+                    snipeObject = Garbage;
                     break;
                 }
+                // 
+                Garbage = null;
             }
         }
         else

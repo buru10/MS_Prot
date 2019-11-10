@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7912073342361951769}
   - component: {fileID: 7912073342361951748}
   - component: {fileID: 7912073342361951771}
-  - component: {fileID: 7912073342361951770}
+  - component: {fileID: 476958143308522583}
   m_Layer: 0
   m_Name: RisaikuruAIBody
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &7912073342361951770
+--- !u!135 &476958143308522583
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,7 +90,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -0.00000008940697, z: 0.00000023841858}
 --- !u!1 &7912073342479206574
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,9 +102,9 @@ GameObject:
   - component: {fileID: 7912073342479206740}
   - component: {fileID: 7912073342479206571}
   - component: {fileID: 7912073342479206570}
-  - component: {fileID: 7912073342479206569}
   - component: {fileID: 7912073342479206568}
   - component: {fileID: 7912073342479206575}
+  - component: {fileID: 2828069796455419578}
   m_Layer: 0
   m_Name: RisaikuruAIHead
   m_TagString: Untagged
@@ -172,19 +172,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &7912073342479206569
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7912073342479206574}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &7912073342479206568
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -223,3 +210,17 @@ MonoBehaviour:
   speed: 0.05
   Snipe: 0
   SnipeNumber: 0
+  snipeObject: {fileID: 0}
+--- !u!135 &2828069796455419578
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7912073342479206574}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.50000006
+  m_Center: {x: 0, y: 0, z: 0}

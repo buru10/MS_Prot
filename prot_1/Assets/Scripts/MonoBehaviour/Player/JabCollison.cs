@@ -21,6 +21,12 @@ public class JabCollison : MonoBehaviour
         if(other.gameObject.tag == "BurstObject")
         {
             BurstVoxel burstVoxel = other.gameObject.GetComponent<BurstVoxel>();
+
+            // オブジェクトの子供のフラグを変更する
+            foreach (Transform child in other.transform)
+            {
+                child.GetComponent<Garbage>().bBurst = true;
+            }
             burstVoxel.Burst();
         }
     }

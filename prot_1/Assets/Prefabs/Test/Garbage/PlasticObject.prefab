@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8373461386645778323}
   - component: {fileID: 7562923212957953641}
   - component: {fileID: 6458458416374241736}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlasticObject
   m_TagString: BurstObject
   m_Icon: {fileID: 0}
@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7343119691421344323}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 5604043868604870378}
   - {fileID: 7700350039795755099}
@@ -103,6 +103,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlasticCube
+      objectReference: {fileID: 0}
+    - target: {fileID: 8505473388762413276, guid: 0716e8273edf565438edaf1f8e26f185,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1132522674581134526, guid: 0716e8273edf565438edaf1f8e26f185,
         type: 3}
@@ -194,6 +199,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlasticCube
       objectReference: {fileID: 0}
+    - target: {fileID: 8505473388762413276, guid: 0716e8273edf565438edaf1f8e26f185,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1132522674581134526, guid: 0716e8273edf565438edaf1f8e26f185,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -283,6 +293,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlasticCube
+      objectReference: {fileID: 0}
+    - target: {fileID: 8505473388762413276, guid: 0716e8273edf565438edaf1f8e26f185,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1132522674581134526, guid: 0716e8273edf565438edaf1f8e26f185,
         type: 3}
@@ -374,6 +389,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlasticCube
       objectReference: {fileID: 0}
+    - target: {fileID: 8505473388762413276, guid: 0716e8273edf565438edaf1f8e26f185,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1132522674581134526, guid: 0716e8273edf565438edaf1f8e26f185,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -463,6 +483,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlasticCube
+      objectReference: {fileID: 0}
+    - target: {fileID: 8505473388762413276, guid: 0716e8273edf565438edaf1f8e26f185,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1132522674581134526, guid: 0716e8273edf565438edaf1f8e26f185,
         type: 3}
@@ -554,6 +579,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlasticCube
       objectReference: {fileID: 0}
+    - target: {fileID: 8505473388762413276, guid: 0716e8273edf565438edaf1f8e26f185,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1132522674581134526, guid: 0716e8273edf565438edaf1f8e26f185,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -643,6 +673,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlasticCube
+      objectReference: {fileID: 0}
+    - target: {fileID: 8505473388762413276, guid: 0716e8273edf565438edaf1f8e26f185,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1132522674581134526, guid: 0716e8273edf565438edaf1f8e26f185,
         type: 3}
@@ -734,6 +769,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlasticCube
       objectReference: {fileID: 0}
+    - target: {fileID: 8505473388762413276, guid: 0716e8273edf565438edaf1f8e26f185,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1132522674581134526, guid: 0716e8273edf565438edaf1f8e26f185,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -823,6 +863,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlasticCube
+      objectReference: {fileID: 0}
+    - target: {fileID: 8505473388762413276, guid: 0716e8273edf565438edaf1f8e26f185,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1132522674581134526, guid: 0716e8273edf565438edaf1f8e26f185,
         type: 3}
@@ -914,6 +959,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlasticCube
       objectReference: {fileID: 0}
+    - target: {fileID: 8505473388762413276, guid: 0716e8273edf565438edaf1f8e26f185,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1132522674581134526, guid: 0716e8273edf565438edaf1f8e26f185,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1003,6 +1053,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlasticCube
+      objectReference: {fileID: 0}
+    - target: {fileID: 8505473388762413276, guid: 0716e8273edf565438edaf1f8e26f185,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1132522674581134526, guid: 0716e8273edf565438edaf1f8e26f185,
         type: 3}
@@ -1094,6 +1149,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlasticCube
       objectReference: {fileID: 0}
+    - target: {fileID: 8505473388762413276, guid: 0716e8273edf565438edaf1f8e26f185,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1132522674581134526, guid: 0716e8273edf565438edaf1f8e26f185,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1183,6 +1243,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlasticCube
+      objectReference: {fileID: 0}
+    - target: {fileID: 8505473388762413276, guid: 0716e8273edf565438edaf1f8e26f185,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1132522674581134526, guid: 0716e8273edf565438edaf1f8e26f185,
         type: 3}
@@ -1274,6 +1339,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlasticCube
       objectReference: {fileID: 0}
+    - target: {fileID: 8505473388762413276, guid: 0716e8273edf565438edaf1f8e26f185,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1132522674581134526, guid: 0716e8273edf565438edaf1f8e26f185,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1364,6 +1434,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlasticCube
       objectReference: {fileID: 0}
+    - target: {fileID: 8505473388762413276, guid: 0716e8273edf565438edaf1f8e26f185,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1132522674581134526, guid: 0716e8273edf565438edaf1f8e26f185,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1453,6 +1528,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlasticCube
+      objectReference: {fileID: 0}
+    - target: {fileID: 8505473388762413276, guid: 0716e8273edf565438edaf1f8e26f185,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1132522674581134526, guid: 0716e8273edf565438edaf1f8e26f185,
         type: 3}
