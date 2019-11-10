@@ -15,22 +15,29 @@ public class PlayerMove : MonoBehaviour
     private CharacterController characterController;
     private Animator animator;
     private Vector3 moveDirection = Vector3.zero;
+    private Rigidbody rb;
 
     // Use this for initialization
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
         //rayを使用した接地判定
-        if (CheckGrounded() == true)
+        //if (CheckGrounded() == true)
         {
 
             //前進処理
+            if(Input.GetKeyDown(KeyCode.W))
+            {
+                animator.SetBool("Run", true);
+            }
+
             if (Input.GetKey(KeyCode.W))
             {
                 moveDirection.z = speed;
@@ -38,6 +45,7 @@ public class PlayerMove : MonoBehaviour
             else
             {
                 moveDirection.z = 0;
+                animator.SetBool("Run", false);
             }
 
             //方向転換
@@ -45,16 +53,24 @@ public class PlayerMove : MonoBehaviour
             if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
             {
                 //向きを変えない
+                rb.angularVelocity = Vector3.zero;
             }
             //Aキーが押されている時
             else if (Input.GetKey(KeyCode.A))
             {
-                transform.Rotate(0, rotateSpeed * -1, 0);
+                //transform.Rotate(0, rotateSpeed * -1, 0);
+                rb.angularVelocity = new Vector3(0, rotateSpeed * -1, 0);
             }
             //Dキーが押されている時
             else if (Input.GetKey(KeyCode.D))
             {
-                transform.Rotate(0, rotateSpeed, 0);
+                //transform.Rotate(0, rotateSpeed, 0);
+                rb.angularVelocity = new Vector3(0, rotateSpeed, 0);
+            }
+            else
+            {
+                //向きを変えない
+                rb.angularVelocity = Vector3.zero;
             }
 
             //jump
@@ -68,10 +84,11 @@ public class PlayerMove : MonoBehaviour
 
             //移動の実行
             Vector3 globalDirection = transform.TransformDirection(moveDirection);
+            //rb.velocity = globalDirection;
             characterController.Move(globalDirection * Time.deltaTime);
 
             //速度が０以上の時、Runを実行する
-            animator.SetBool("Run", moveDirection.z > 0.0f);
+            //animator.SetBool("Run", moveDirection.z > 0.0f);
         }
     }
 
@@ -82,7 +99,7 @@ public class PlayerMove : MonoBehaviour
         var ray = new Ray(transform.position + Vector3.up * 0.1f, Vector3.down);
 
         //rayの探索範囲
-        var tolerance = 0.3f;
+        var tolerance = 0.8f;
 
         //rayのHit判定
         //第一引数：飛ばすRay

@@ -34,37 +34,37 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        // WASD入力から、XZ平面(水平な地面)を移動する方向(velocity)を得ます
-        velocity = Vector3.zero;
-        if (Input.GetKey(KeyCode.W))
-            velocity.z += 1;
-        if (Input.GetKey(KeyCode.A))
-            velocity.x -= 1;
-        if (Input.GetKey(KeyCode.S))
-            velocity.z -= 1;
-        if (Input.GetKey(KeyCode.D))
-            velocity.x += 1;
-        if (Input.GetKey(KeyCode.C))
-        {
-            Instantiate(RisaikuruAI, new Vector3(transform.position.x, transform.position.y + 5.0f, transform.position.z), Quaternion.identity, gameObj.transform);
-        }
-        // 速度ベクトルの長さを1秒でmoveSpeedだけ進むように調整します
-        velocity = velocity.normalized * moveSpeed * Time.deltaTime;
+        //// WASD入力から、XZ平面(水平な地面)を移動する方向(velocity)を得ます
+        //velocity = Vector3.zero;
+        //if (Input.GetKey(KeyCode.W))
+        //    velocity.z += 1;
+        //if (Input.GetKey(KeyCode.A))
+        //    velocity.x -= 1;
+        //if (Input.GetKey(KeyCode.S))
+        //    velocity.z -= 1;
+        //if (Input.GetKey(KeyCode.D))
+        //    velocity.x += 1;
+        //if (Input.GetKey(KeyCode.C))
+        //{
+        //    Instantiate(RisaikuruAI, new Vector3(transform.position.x, transform.position.y + 5.0f, transform.position.z), Quaternion.identity, gameObj.transform);
+        //}
+        //// 速度ベクトルの長さを1秒でmoveSpeedだけ進むように調整します
+        //velocity = velocity.normalized * moveSpeed * Time.deltaTime;
 
-        // いずれかの方向に移動している場合
-        if (velocity.magnitude > 0)
-        {
-            // プレイヤーの回転(transform.rotation)の更新
-            // 無回転状態のプレイヤーのZ+方向(後頭部)を、
-            // カメラの水平回転(refCamera.hRotation)で回した移動の反対方向(-velocity)に回す回転に段々近づけます
-            transform.rotation = Quaternion.Slerp(transform.rotation,
-                                                  Quaternion.LookRotation(refCamera.hRotation * -velocity),
-                                                  applySpeed);
+        //// いずれかの方向に移動している場合
+        //if (velocity.magnitude > 0)
+        //{
+        //    // プレイヤーの回転(transform.rotation)の更新
+        //    // 無回転状態のプレイヤーのZ+方向(後頭部)を、
+        //    // カメラの水平回転(refCamera.hRotation)で回した移動の反対方向(-velocity)に回す回転に段々近づけます
+        //    transform.rotation = Quaternion.Slerp(transform.rotation,
+        //                                          Quaternion.LookRotation(refCamera.hRotation * -velocity),
+        //                                          applySpeed);
 
-            // プレイヤーの位置(transform.position)の更新
-            // カメラの水平回転(refCamera.hRotation)で回した移動方向(velocity)を足し込みます
-            transform.position += refCamera.hRotation * velocity;
-        }
+        //    // プレイヤーの位置(transform.position)の更新
+        //    // カメラの水平回転(refCamera.hRotation)で回した移動方向(velocity)を足し込みます
+        //    transform.position += refCamera.hRotation * velocity;
+        //}
     }
 
     public int GetResources(string mat)

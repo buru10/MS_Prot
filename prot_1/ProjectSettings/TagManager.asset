@@ -4,8 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - PlayerCharacter
+  - plastic
+  - paper
+  - glass
+  - metal
   - PlayerCharactor
+  - BurstObject
   layers:
   - Default
   - TransparentFX
@@ -15,9 +19,9 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
-  - 
-  - 
+  - Player
+  - Garbage
+  - RisaikuruAI
   - 
   - 
   - 
