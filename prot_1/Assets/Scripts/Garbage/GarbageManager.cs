@@ -44,6 +44,9 @@ public class GarbageManager : MonoBehaviour
 
             foreach(Transform child in cube.transform)
             {
+                if (child.tag == "Minimap")
+                    continue;
+
                 Garbagelist.Add(child.gameObject);
             }
 

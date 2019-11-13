@@ -83,7 +83,8 @@ public class PlayerMove : MonoBehaviour
             moveDirection.y -= gravity * Time.deltaTime;
 
             //移動の実行
-            Vector3 globalDirection = transform.TransformDirection(moveDirection);
+            //Vector3 globalDirection = transform.TransformDirection(moveDirection);
+            Vector3 globalDirection = rb.transform.TransformDirection(moveDirection);
             //rb.velocity = globalDirection;
             characterController.Move(globalDirection * Time.deltaTime);
 

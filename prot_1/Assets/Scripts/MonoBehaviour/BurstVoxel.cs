@@ -9,6 +9,8 @@ public class BurstVoxel : MonoBehaviour
     [SerializeField]
     int max = 3;
 
+    public GameObject MinimapIcon;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +29,9 @@ public class BurstVoxel : MonoBehaviour
         var random = new System.Random();
         int min = -3;
         int max = 3;
-       
+
+        Destroy(MinimapIcon);
+
         foreach (Rigidbody r in gameObject.GetComponentsInChildren<Rigidbody>())
         { 
             r.isKinematic = false;
