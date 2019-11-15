@@ -128,7 +128,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   Garbage: {fileID: 0}
-  PlayerMarker: {fileID: 0}
+  PlayerMarker: {fileID: 4362730640773816641, guid: f351eef625c257b4781ec727d84a6e01,
+    type: 3}
   startMarker: {fileID: 2813569596030045920}
   endMarker: {fileID: 0}
   garbageManager: {fileID: 0}
