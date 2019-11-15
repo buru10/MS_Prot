@@ -1771,6 +1771,7 @@ GameObject:
   - component: {fileID: 6943303606068716300}
   - component: {fileID: 5343551159827662271}
   - component: {fileID: 2672975234428250655}
+  - component: {fileID: 1630924671937797251}
   m_Layer: 8
   m_Name: Test_Player
   m_TagString: PlayerCharactor
@@ -1791,8 +1792,8 @@ Transform:
   m_Children:
   - {fileID: 4087888709666339274}
   - {fileID: 8765769734360340171}
-  - {fileID: 5366020044131086131}
   - {fileID: 9162026812810824495}
+  - {fileID: 5366020044131086131}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1906,6 +1907,26 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &1630924671937797251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2672975234428250653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d641cb07348c3e74ca23f765f3253323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: {x: 0, y: 0, z: 0}
+  moveSpeed: 5
+  applySpeed: 0.2
+  refCamera: {fileID: 0}
+  metal: 0
+  paper: 0
+  plastic: 0
+  glass: 0
 --- !u!1 &2717752130798572311
 GameObject:
   m_ObjectHideFlags: 0
@@ -4711,7 +4732,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2672975234428352331}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6117783332604517642
 GameObject:
@@ -5634,7 +5655,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2672975234428352331}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2104754895517868815
 MeshFilter:
