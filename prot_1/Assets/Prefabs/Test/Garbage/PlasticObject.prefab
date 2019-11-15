@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 8373461386645778323}
   - component: {fileID: 7562923212957953641}
   - component: {fileID: 6458458416374241736}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: PlasticObject
   m_TagString: BurstObject
   m_Icon: {fileID: 0}

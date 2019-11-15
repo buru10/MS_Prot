@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 8158654062920711274}
   - component: {fileID: 7924427652863966608}
   - component: {fileID: 6677945265880123953}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: MetalObject
   m_TagString: BurstObject
   m_Icon: {fileID: 0}

@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 8290091084084775874}
   - component: {fileID: 8055872901575019064}
   - component: {fileID: 6816724261146164633}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: PaperObject
   m_TagString: BurstObject
   m_Icon: {fileID: 0}
