@@ -15,9 +15,6 @@ public class RisaikuruRecovery : MonoBehaviour
     // スピード
     public float speed;
     public bool Snipe;
-    public int SnipeNumber;
-
-    private SphereCollider sphereCollider;
 
     public GameObject snipeObject;
 
@@ -26,18 +23,13 @@ public class RisaikuruRecovery : MonoBehaviour
         // 仮ポジション設定
         endMarker = PlayerMarker;
         Snipe = false;
-        SnipeNumber = 0;
 
-        if(!Player)
+        if (!Player)
         Player = GameObject.Find("Test_Player").GetComponent<Player>();
 
         // 入れ直す
         garbageManager = GameObject.Find("GarbageManager").GetComponent<GarbageManager>();
        
-        // 判定を消す
-        sphereCollider = GetComponent<SphereCollider>();
-        sphereCollider.enabled = false;
-
         // 子供の情報を受け取る
         PlayerMarker = Player.transform.GetChild(2).gameObject.transform;
 
@@ -47,6 +39,7 @@ public class RisaikuruRecovery : MonoBehaviour
 
     void Update()
     {
+
         // ねらっていないとき
         if (!Snipe)
         {
@@ -70,20 +63,14 @@ public class RisaikuruRecovery : MonoBehaviour
 
             // ゴミを狙う
             transform.position = Vector3.Lerp(startMarker.position, endMarker.position, speed);
-            if (speed >= 1.0f)
-            {
-                speed = 0.0f;
-                sphereCollider.enabled = true;
-
-            }
         }
+
     }
 
     private void OnCollisionEnter(Collision collision)
-    //private void OnTriggerStay(Collider collision)
     {
-        // スナイプナンバーが一致したら継続
-        if(snipeObject != collision.gameObject || !Snipe)
+        // スナイプオブジェクトが一致したら継続
+        if(snipeObject != collision.gameObject)// || !Snipe)
             return;
 
         // タグ判定
@@ -93,87 +80,58 @@ public class RisaikuruRecovery : MonoBehaviour
             case "metal":
 
                 // プレイヤーに与える
-                if (collision.gameObject.GetComponent<BoxCollider>().enabled)
-                    Player.SetResourcesPlus(collision.gameObject.tag);
-                else
-                    return;
+                Player.SetResourcesPlus(collision.gameObject.tag);
 
                 // ゴミリストの中身を消す
                 garbageManager.Garbagelist.Remove(collision.gameObject);
                 Destroy(collision.gameObject);
 
-                // コライダーを消しスナイプも外す
-                collision.gameObject.GetComponent<BoxCollider>().enabled = false;
-                sphereCollider.enabled = false;
+                // スナイプを外す
                 Snipe = false;
 
-                // さらにゴミがあったらそこに向かわせる
-               // CheckGarbage();
                 break;
 
             // 紙
             case "paper":
 
                 // プレイヤーに与える
-                if (collision.gameObject.GetComponent<BoxCollider>().enabled)
-                    Player.SetResourcesPlus(collision.gameObject.tag);
-                else
-                    return;
+                Player.SetResourcesPlus(collision.gameObject.tag);
 
                 // ゴミリストの中身を消す
                 garbageManager.Garbagelist.Remove(collision.gameObject);
                 Destroy(collision.gameObject);
 
                 // コライダーを消しスナイプも外す
-                collision.gameObject.GetComponent<BoxCollider>().enabled = false;
-                sphereCollider.enabled = false;
                 Snipe = false;
-
-                // さらにゴミがあったらそこに向かわせる
-               // CheckGarbage();
                 break;
 
             // プラスチック
             case "plastic":
 
                 // プレイヤーに与える
-                if (collision.gameObject.GetComponent<BoxCollider>().enabled)
-                    Player.SetResourcesPlus(collision.gameObject.tag);
-                else
-                    return;
+                Player.SetResourcesPlus(collision.gameObject.tag);
 
                 // ゴミリストの中身を消す
                 garbageManager.Garbagelist.Remove(collision.gameObject);
                 Destroy(collision.gameObject);
 
                 // コライダーを消しスナイプも外す
-                collision.gameObject.GetComponent<BoxCollider>().enabled = false;
-                sphereCollider.enabled = false;
                 Snipe = false;
 
-                // さらにゴミがあったらそこに向かわせる
-               // CheckGarbage();
                 break;
             // ガラス
             case "glass":
 
                 // プレイヤーに与える
-                if (collision.gameObject.GetComponent<BoxCollider>().enabled)
-                    Player.SetResourcesPlus(collision.gameObject.tag);
-                else
-                    return;
+                Player.SetResourcesPlus(collision.gameObject.tag);
 
                 // ゴミリストの中身を消す
                 garbageManager.Garbagelist.Remove(collision.gameObject);
                 Destroy(collision.gameObject);
 
                 // コライダーを消しスナイプも外す
-                collision.gameObject.GetComponent<BoxCollider>().enabled = false;
-                sphereCollider.enabled = false;
                 Snipe = false;
 
-                // さらにゴミがあったらそこに向かわせる
-               // CheckGarbage();
                 break;
 
             default:
@@ -199,7 +157,6 @@ public class RisaikuruRecovery : MonoBehaviour
                     Garbage.GetComponent<Garbage>().GetComponent<BoxCollider>().enabled = true;
                     Garbage.GetComponent<Garbage>().bTarget = true;
                     endMarker = Garbage.transform;
-                    //SnipeNumber = Garbage.GetComponent<Billboard>().CreateNumber; // スナイプナンバー記憶
                     Snipe = true;
                     snipeObject = Garbage;
                     break;
