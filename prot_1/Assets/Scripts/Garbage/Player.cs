@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     public int plastic;
     //[HideInInspector]
     public int glass;
-
+    
     GameObject gameObj;
     void Start()
     {

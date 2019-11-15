@@ -95,7 +95,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
 --- !u!65 &417222648620569338
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -123,4 +123,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bTarget: 0
   bBurst: 0
-  CreateNumber: 0

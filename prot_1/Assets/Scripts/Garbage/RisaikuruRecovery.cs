@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.AI;
 using UnityEngine;
 
 public class RisaikuruRecovery : MonoBehaviour
@@ -21,6 +22,8 @@ public class RisaikuruRecovery : MonoBehaviour
     // 衝突処理用
     public List<GameObject> colList = new List<GameObject>();
 
+    private NavMeshAgent m_navAgent = null;
+
     void Start()
     {
         // 仮ポジション設定
@@ -36,6 +39,8 @@ public class RisaikuruRecovery : MonoBehaviour
         // 子供の情報を受け取る
         PlayerMarker = Player.transform.GetChild(2).gameObject.transform;
 
+        m_navAgent = GetComponent<NavMeshAgent>();
+
         // 新たなゴミが増えていないかチェックし増えていたら起動
         CheckGarbage();
     }
@@ -47,7 +52,8 @@ public class RisaikuruRecovery : MonoBehaviour
         if (!Snipe)
         {
             // オブジェクトの移動
-            transform.position = Vector3.Lerp(startMarker.position, PlayerMarker.position, speed);
+           // m_navAgent.destination = PlayerMarker.position;
+             transform.position = Vector3.Lerp(startMarker.position, PlayerMarker.position, speed);
 
             // 新たなゴミが増えていないかチェックし増えていたら起動
             CheckGarbage();
@@ -67,6 +73,7 @@ public class RisaikuruRecovery : MonoBehaviour
             }
 
             // ゴミを狙う
+            //m_navAgent.destination = endMarker.position;
             transform.position = Vector3.Lerp(startMarker.position, endMarker.position, speed);
         }
 
@@ -78,7 +85,6 @@ public class RisaikuruRecovery : MonoBehaviour
             collision.gameObject.CompareTag("paper") ||
             collision.gameObject.CompareTag("plastic") ||
             collision.gameObject.CompareTag("glass") && colList.Contains(collision.gameObject))
-            colList.Add(collision.gameObject);
         colList.Remove(collision.gameObject);
     }
 
@@ -210,7 +216,7 @@ public class RisaikuruRecovery : MonoBehaviour
                     Player.SetResourcesPlus(collision.tag);
 
                     // 衝突リストから消去
-                    colList.Remove(collision.gameObject);
+                    colList.Remove(collision);
 
                     // ゴミリストの中身を消す
                     garbageManager.Garbagelist.Remove(collision);
@@ -228,7 +234,7 @@ public class RisaikuruRecovery : MonoBehaviour
                     Player.SetResourcesPlus(collision.tag);
 
                     // 衝突リストから消去
-                    colList.Remove(collision.gameObject);
+                    colList.Remove(collision);
 
                     // ゴミリストの中身を消す
                     garbageManager.Garbagelist.Remove(collision);
@@ -245,7 +251,7 @@ public class RisaikuruRecovery : MonoBehaviour
                     Player.SetResourcesPlus(collision.tag);
 
                     // 衝突リストから消去
-                    colList.Remove(collision.gameObject);
+                    colList.Remove(collision);
 
                     // ゴミリストの中身を消す
                     garbageManager.Garbagelist.Remove(collision);
@@ -262,7 +268,7 @@ public class RisaikuruRecovery : MonoBehaviour
                     Player.SetResourcesPlus(collision.tag);
 
                     // 衝突リストから消去
-                    colList.Remove(collision.gameObject);
+                    colList.Remove(collision);
 
                     // ゴミリストの中身を消す
                     garbageManager.Garbagelist.Remove(collision);
