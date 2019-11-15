@@ -25,6 +25,9 @@ public class JabCollison : MonoBehaviour
             // オブジェクトの子供のフラグを変更する
             foreach (Transform child in other.transform)
             {
+                if (child.tag == "Minimap")
+                    continue;
+
                 child.GetComponent<Garbage>().bBurst = true;
             }
             burstVoxel.Burst();
