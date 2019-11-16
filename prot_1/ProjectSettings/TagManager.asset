@@ -10,6 +10,7 @@ TagManager:
   - metal
   - PlayerCharactor
   - BurstObject
+  - Minimap
   layers:
   - Default
   - TransparentFX
@@ -22,8 +23,8 @@ TagManager:
   - Player
   - Garbage
   - RisaikuruAI
-  - 
-  - 
+  - Minimap
+  - BurstObject
   - 
   - 
   - 

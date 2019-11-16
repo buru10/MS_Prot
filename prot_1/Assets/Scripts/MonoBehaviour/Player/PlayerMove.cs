@@ -12,7 +12,7 @@ public class PlayerMove : MonoBehaviour
     public float rotateSpeed;
 
     //外部から値が変わらないようにPrivateで定義
-    private CharacterController characterController;
+    //private CharacterController characterController;
     private Animator animator;
     private Vector3 moveDirection = Vector3.zero;
     private Rigidbody rb;
@@ -20,7 +20,7 @@ public class PlayerMove : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        characterController = GetComponent<CharacterController>();
+        //characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
     }
@@ -59,13 +59,19 @@ public class PlayerMove : MonoBehaviour
             else if (Input.GetKey(KeyCode.A))
             {
                 //transform.Rotate(0, rotateSpeed * -1, 0);
-                rb.angularVelocity = new Vector3(0, rotateSpeed * -1, 0);
+                //rb.angularVelocity = new Vector3(0, rotateSpeed * -1 * Time.deltaTime, 0);
+                Vector3 VecRotation = rb.rotation.eulerAngles + new Vector3(0, rotateSpeed * -1 * Time.deltaTime, 0);
+                rb.transform.rotation = Quaternion.Euler(VecRotation);
+                //rb.MoveRotation(Quaternion.Euler(VecRotation));
             }
             //Dキーが押されている時
             else if (Input.GetKey(KeyCode.D))
             {
                 //transform.Rotate(0, rotateSpeed, 0);
-                rb.angularVelocity = new Vector3(0, rotateSpeed, 0);
+                //rb.angularVelocity = new Vector3(0, rotateSpeed * Time.deltaTime, 0);
+                Vector3 VecRotation = rb.rotation.eulerAngles + new Vector3(0, rotateSpeed * Time.deltaTime, 0);
+                rb.transform.rotation = Quaternion.Euler(VecRotation);
+                //rb.MoveRotation(Quaternion.Euler(VecRotation));
             }
             else
             {
@@ -83,27 +89,29 @@ public class PlayerMove : MonoBehaviour
             moveDirection.y -= gravity * Time.deltaTime;
 
             //移動の実行
-            Vector3 globalDirection = transform.TransformDirection(moveDirection);
+            //Vector3 globalDirection = transform.TransformDirection(moveDirection);
+            Vector3 globalDirection = rb.transform.TransformDirection(moveDirection);
             //rb.velocity = globalDirection;
-            characterController.Move(globalDirection * Time.deltaTime);
+            //characterController.Move(globalDirection * Time.deltaTime);
+            rb.MovePosition(rb.position + globalDirection * Time.deltaTime);
 
             //速度が０以上の時、Runを実行する
             //animator.SetBool("Run", moveDirection.z > 0.0f);
         }
     }
 
-    //rayを使用した接地判定メソッド
-    public bool CheckGrounded()
-    {
-        //初期位置と向き
-        var ray = new Ray(transform.position + Vector3.up * 0.1f, Vector3.down);
+    ////rayを使用した接地判定メソッド
+    //public bool CheckGrounded()
+    //{
+    //    //初期位置と向き
+    //    var ray = new Ray(transform.position + Vector3.up * 0.1f, Vector3.down);
 
-        //rayの探索範囲
-        var tolerance = 0.8f;
+    //    //rayの探索範囲
+    //    var tolerance = 0.8f;
 
-        //rayのHit判定
-        //第一引数：飛ばすRay
-        //第二引数：Rayの最大距離
-        return Physics.Raycast(ray, tolerance);
-    }
+    //    //rayのHit判定
+    //    //第一引数：飛ばすRay
+    //    //第二引数：Rayの最大距離
+    //    return Physics.Raycast(ray, tolerance);
+    //}
 }

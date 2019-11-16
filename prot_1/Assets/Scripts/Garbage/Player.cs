@@ -13,16 +13,15 @@ public class Player : MonoBehaviour
     [SerializeField]
     public PlayerFollowCamera refCamera;  // カメラの水平回転を参照する用
 
-    public GameObject RisaikuruAI;
-    [HideInInspector]
+    //[HideInInspector]
     public int metal;
-    [HideInInspector]
+    //[HideInInspector]
     public int paper;
-    [HideInInspector]
+    //[HideInInspector]
     public int plastic;
-    [HideInInspector]
+    //[HideInInspector]
     public int glass;
-
+    
     GameObject gameObj;
     void Start()
     {

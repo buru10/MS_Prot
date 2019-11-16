@@ -7,7 +7,6 @@ public class Garbage : MonoBehaviour
     // メンバ変数定義
     public bool bTarget;
     public bool bBurst;
-    public int CreateNumber;
 
     private float deleteTime;
     private GarbageManager garbageManager;
