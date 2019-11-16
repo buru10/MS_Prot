@@ -835,7 +835,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &440535091
 GameObject:
@@ -927,7 +927,7 @@ Transform:
   m_LocalScale: {x: 43.122, y: 1, z: 43.122}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &760758104
 GameObject:
@@ -957,7 +957,38 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &970843309
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 7912073341352896084}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 970843310}
+  m_Layer: 0
+  m_Name: RisaikuruAIHead (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &970843310
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 7912073341352896084}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970843309}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1656092247}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1298082188
 GameObject:
@@ -1010,7 +1041,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1540036641
 GameObject:
@@ -1148,12 +1179,37 @@ Transform:
   m_Father: {fileID: 4362730641967769126}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1656092246 stripped
+--- !u!1 &1656092246
 GameObject:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 7912073342479206574, guid: 9b084e360baade743b4f55f2f44db814,
     type: 3}
   m_PrefabInstance: {fileID: 7912073341352896084}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1656092247}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1656092247
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 7912073341352896084}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656092246}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 970843310}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1855918570 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1754103681061941462, guid: 5e57219e30d96a04f87d31197c72a2ee,
@@ -1170,6 +1226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1947750490}
   - component: {fileID: 1947750489}
+  - component: {fileID: 1947750492}
   - component: {fileID: 1947750488}
   - component: {fileID: 1947750491}
   m_Layer: 0
@@ -1242,7 +1299,7 @@ Transform:
   m_Children:
   - {fileID: 1855918570}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 32.089, y: 0, z: 0}
 --- !u!114 &1947750491
 MonoBehaviour:
@@ -1261,6 +1318,18 @@ MonoBehaviour:
   distance: 15
   vRotation: {x: 0, y: 0, z: 0, w: 0}
   hRotation: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1947750492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947750487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4666c1f062dfdb409b71fa4557a13b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1989325533
 GameObject:
   m_ObjectHideFlags: 0
@@ -2083,7 +2152,7 @@ Transform:
   - {fileID: 4362730641967769128}
   - {fileID: 1625256511}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4362730641967769128
 Transform:
@@ -5915,7 +5984,6 @@ MonoBehaviour:
   moveSpeed: 5
   applySpeed: 0.2
   refCamera: {fileID: 1947750491}
-  RisaikuruAI: {fileID: 1656092246}
   metal: 0
   paper: 0
   plastic: 0
