@@ -21,11 +21,15 @@ public class PushButton : MonoBehaviour
     public GameObject RisaikuruAI;
     public GameObject RisaikuruAIManager;
 
+    float TriggerPressCount;               // トリガーを押している時間
+    public float TriggerPressTime = 1.0f;  // この時間トリガーを長押しするとロボ生成
+
     // Start is called before the first frame update
     void Start()
     {
         InitTime = 0.5f;
         TimeCount = InitTime;
+        TriggerPressCount = 0.0f;
     }
 
     // Update is called once per frame
@@ -44,20 +48,33 @@ public class PushButton : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Return) || (Input.GetAxis("L_Trigger") > 0 && Input.GetAxis("R_Trigger") > 0) )
         {
-            this.gameObject.SetActive(false);
-            //メーター初期化
-            Player.SetResources("metal", 0);
-            Player.SetResources("paper", 0);
-            Player.SetResources("plastic", 0);
-            Player.SetResources("glass", 0);
+            TriggerPressCount += Time.deltaTime;
+#if true
+            if (TriggerPressCount > TriggerPressTime)
+#endif
+                CreateRobot();
+        }
+        else
+        {
 
-            // 指定した分だけ生成する
-            for (int i = 0; i < CreateNum; i++)
-            {
-                Instantiate(RisaikuruAI, new Vector3(0.0f, 5.0f, 0.0f), Quaternion.identity,RisaikuruAIManager.transform);
-            }
-                //meter.MeterCount = 0;
         }
 
+    }
+
+    void CreateRobot()
+    {
+        this.gameObject.SetActive(false);
+        //メーター初期化
+        Player.SetResources("metal", 0);
+        Player.SetResources("paper", 0);
+        Player.SetResources("plastic", 0);
+        Player.SetResources("glass", 0);
+
+        // 指定した分だけ生成する
+        for (int i = 0; i < CreateNum; i++)
+        {
+            Instantiate(RisaikuruAI, new Vector3(0.0f, 5.0f, 0.0f), Quaternion.identity, RisaikuruAIManager.transform);
+        }
+        //meter.MeterCount = 0;
     }
 }

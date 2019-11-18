@@ -131,14 +131,15 @@ public class input : MonoBehaviour
 
         }
         //Trigger
-        float tri = Input.GetAxis("L_R_Trigger");
-        if (tri > 0)
+        float Ltri = Input.GetAxis("L_Trigger");
+        float Rtri = Input.GetAxis("R_Trigger");
+        if (Ltri > 0)
         {
-            Debug.Log("L trigger:" + tri);
+            Debug.Log("L trigger:" + Ltri);
         }
-        else if (tri < 0)
+        if (Rtri > 0)
         {
-            Debug.Log("R trigger:" + tri);
+            Debug.Log("R trigger:" + Rtri);
         }
         else
         {

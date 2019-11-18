@@ -52,8 +52,8 @@ public class RisaikuruRecovery : MonoBehaviour
         if (!Snipe)
         {
             // オブジェクトの移動
-           // m_navAgent.destination = PlayerMarker.position;
-             transform.position = Vector3.Lerp(startMarker.position, PlayerMarker.position, speed);
+            m_navAgent.destination = PlayerMarker.position;
+            //transform.position = Vector3.Lerp(startMarker.position, PlayerMarker.position, speed);
 
             // 新たなゴミが増えていないかチェックし増えていたら起動
             CheckGarbage();
@@ -73,8 +73,8 @@ public class RisaikuruRecovery : MonoBehaviour
             }
 
             // ゴミを狙う
-            //m_navAgent.destination = endMarker.position;
-            transform.position = Vector3.Lerp(startMarker.position, endMarker.position, speed);
+            m_navAgent.destination = endMarker.position;
+            //transform.position = Vector3.Lerp(startMarker.position, endMarker.position, speed);
         }
 
     }
@@ -95,77 +95,6 @@ public class RisaikuruRecovery : MonoBehaviour
             collision.gameObject.CompareTag("plastic") ||
             collision.gameObject.CompareTag("glass") && !colList.Contains(collision.gameObject))
             colList.Add(collision.gameObject);
-
-        //// スナイプオブジェクトが一致したら継続
-        //if (snipeObject != collision.gameObject)// || !Snipe)
-        //    return;
-
-        //// タグ判定
-        //switch (collision.gameObject.tag)
-        //{
-        //    // 金属
-        //    case "metal":
-
-        //        // プレイヤーに与える
-        //        Player.SetResourcesPlus(collision.gameObject.tag);
-
-        //        // ゴミリストの中身を消す
-        //        garbageManager.Garbagelist.Remove(collision.gameObject);
-        //        Destroy(collision.gameObject);
-
-        //        // スナイプを外す
-        //        Snipe = false;
-
-        //        break;
-
-        //    // 紙
-        //    case "paper":
-
-        //        // プレイヤーに与える
-        //        Player.SetResourcesPlus(collision.gameObject.tag);
-
-        //        // ゴミリストの中身を消す
-        //        garbageManager.Garbagelist.Remove(collision.gameObject);
-        //        Destroy(collision.gameObject);
-
-        //        // コライダーを消しスナイプも外す
-        //        Snipe = false;
-        //        break;
-
-        //    // プラスチック
-        //    case "plastic":
-
-        //        // プレイヤーに与える
-        //        Player.SetResourcesPlus(collision.gameObject.tag);
-
-        //        // ゴミリストの中身を消す
-        //        garbageManager.Garbagelist.Remove(collision.gameObject);
-        //        Destroy(collision.gameObject);
-
-        //        // コライダーを消しスナイプも外す
-        //        Snipe = false;
-
-        //        break;
-        //    // ガラス
-        //    case "glass":
-
-        //        // プレイヤーに与える
-        //        Player.SetResourcesPlus(collision.gameObject.tag);
-
-        //        // ゴミリストの中身を消す
-        //        garbageManager.Garbagelist.Remove(collision.gameObject);
-        //        Destroy(collision.gameObject);
-
-        //        // コライダーを消しスナイプも外す
-        //        Snipe = false;
-
-        //        break;
-
-        //    default:
-        //        break;
-        //}
-
-        //snipeObject = null;
     }
 
 

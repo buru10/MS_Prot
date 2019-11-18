@@ -53,7 +53,7 @@ public class PlayerMove : MonoBehaviour
             if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
             {
                 //向きを変えない
-                rb.angularVelocity = Vector3.zero;
+                //rb.angularVelocity = Vector3.zero;
             }
             //Aキーが押されている時
             else if (Input.GetKey(KeyCode.A))
@@ -105,7 +105,7 @@ public class PlayerMove : MonoBehaviour
         {
             animator.SetBool("Run", false);  //  Runモーションしない
         }
-
+        
         else //  テンキーや3Dスティックの入力（GetAxis）がゼロではない時の動作
         {
             var cameraForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;  //  カメラが追従するための動作

@@ -7,6 +7,13 @@ public class inputDemo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float hori = Input.GetAxis("Horizontal");
+        float vert = Input.GetAxis("Vertical");
+        if ((hori != 0) || (vert != 0))
+        {
+            Debug.Log("stick:" + hori + "," + vert);
+        }
+
         //L Stick
         float lsh = Input.GetAxis("L_Stick_H");
         float lsv = Input.GetAxis("L_Stick_V");
