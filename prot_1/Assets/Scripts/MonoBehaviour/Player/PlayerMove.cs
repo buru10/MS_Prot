@@ -9,7 +9,7 @@ public class PlayerMove : MonoBehaviour
     public float gravity;
     public float speed;
     public float jumpSpeed;
-    public float rotateSpeed;
+    public float rotateSpeed = 1200.0f;
 
     //外部から値が変わらないようにPrivateで定義
     //private CharacterController characterController;
@@ -98,6 +98,46 @@ public class PlayerMove : MonoBehaviour
             //速度が０以上の時、Runを実行する
             //animator.SetBool("Run", moveDirection.z > 0.0f);
         }
+
+
+        // === 移動処理 ===
+        if (Input.GetAxis("Vertical") == 0 && Input.GetAxis("Horizontal") == 0)  //  テンキーや3Dスティックの入力（GetAxis）がゼロの時の動作
+        {
+            animator.SetBool("Run", false);  //  Runモーションしない
+        }
+
+        else //  テンキーや3Dスティックの入力（GetAxis）がゼロではない時の動作
+        {
+            var cameraForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;  //  カメラが追従するための動作
+            Vector3 direction = cameraForward * Input.GetAxis("Vertical") + Camera.main.transform.right * Input.GetAxis("Horizontal");  //  テンキーや3Dスティックの入力（GetAxis）があるとdirectionに値を返す
+            animator.SetBool("Run", true);  //  Runモーションする
+
+            ChangeDirection(direction);  //  向きを変える動作の処理を実行する（後述）
+            Move(direction);  //  移動する動作の処理を実行する（後述）
+        }
+
+
+        // === アクション処理 ===
+        //animator.SetBool("Action", Input.GetKey("x") || Input.GetButtonDown("Action1"));  //  キーorボタンを押したらアクションを実行
+        //animator.SetBool("Action2", Input.GetKey("z") || Input.GetButtonDown("Action2"));  //  キーorボタンを押したらアクション2を実行
+        //animator.SetBool("Action3", Input.GetKey("c") || Input.GetButtonDown("Action3"));  //  キーorボタンを押したらアクション3を実行
+        //animator.SetBool("Jump", Input.GetKey("space") || Input.GetButtonDown("Jump"));  //  キーorボタンを押したらジャンプを実行（仮）
+
+    }
+
+    // ■向きを変える動作の処理
+    void ChangeDirection(Vector3 direction)
+    {
+        Quaternion q = Quaternion.LookRotation(direction);          // 向きたい方角をQuaternion型に直す
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, q, rotateSpeed * Time.deltaTime);   // 向きを q に向けてじわ～っと変化させる.
+    }
+
+
+    // ■移動する動作の処理
+    void Move(Vector3 direction)
+    {
+        rb.MovePosition(rb.position + direction * Time.deltaTime * speed);
+        //characterController.Move(direction * Time.deltaTime * speed);   // プレイヤーの移動距離は時間×移動スピードの値
     }
 
     ////rayを使用した接地判定メソッド
