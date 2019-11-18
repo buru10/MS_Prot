@@ -42,7 +42,7 @@ public class PushButton : MonoBehaviour
             ControllerObj.GetComponent<Image>().sprite = ControllerImagetrue;
         }
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return) || (Input.GetAxis("L_Trigger") > 0 && Input.GetAxis("R_Trigger") > 0) )
         {
             this.gameObject.SetActive(false);
             //メーター初期化

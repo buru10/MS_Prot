@@ -202,6 +202,10 @@ public class RisaikuruRecovery : MonoBehaviour
     {
         foreach (GameObject collision in colList)
         {
+            if(collision == null)
+                // 衝突リストから消去
+                colList.Remove(collision);
+
             // スナイプオブジェクトが一致したら継続
             if (snipeObject != collision)// || !Snipe)
                 continue;

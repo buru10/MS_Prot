@@ -2,17 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VoxelColor : MonoBehaviour
+public static class InputManeger
 {
     // Start is called before the first frame update
-    void Start()
+    static void Start()
     {
-        
+        UpdateInput();
     }
 
     // Update is called once per frame
-    void Update()
+    static void Update()
     {
-        
+        UpdateInput();
+    }
+
+    static void UpdateInput()
+    {
+
     }
 }

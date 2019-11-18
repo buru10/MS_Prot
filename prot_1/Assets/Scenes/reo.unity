@@ -348,62 +348,14 @@ PrefabInstance:
     - target: {fileID: 1754103681587442840, guid: 5e57219e30d96a04f87d31197c72a2ee,
         type: 3}
       propertyPath: CreateNum
-      value: 2
-      objectReference: {fileID: 0}
-<<<<<<< HEAD:prot_1/Assets/Scenes/MargeScene.unity
-    - target: {fileID: 1754103681501641109, guid: 5e57219e30d96a04f87d31197c72a2ee,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.9836591
-      objectReference: {fileID: 0}
-    - target: {fileID: 1754103681501641109, guid: 5e57219e30d96a04f87d31197c72a2ee,
-        type: 3}
-      propertyPath: m_Color.g
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1754103681501641109, guid: 5e57219e30d96a04f87d31197c72a2ee,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.4292453
-      objectReference: {fileID: 0}
-    - target: {fileID: 1754103681947176282, guid: 5e57219e30d96a04f87d31197c72a2ee,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.73443353
-      objectReference: {fileID: 0}
-    - target: {fileID: 1754103681947176282, guid: 5e57219e30d96a04f87d31197c72a2ee,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.9716981
-      objectReference: {fileID: 0}
-    - target: {fileID: 1754103681947176282, guid: 5e57219e30d96a04f87d31197c72a2ee,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.55460125
-      objectReference: {fileID: 0}
-    - target: {fileID: 1754103682400689850, guid: 5e57219e30d96a04f87d31197c72a2ee,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.5566038
-      objectReference: {fileID: 0}
-    - target: {fileID: 1754103682400689850, guid: 5e57219e30d96a04f87d31197c72a2ee,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.5566038
-      objectReference: {fileID: 0}
-    - target: {fileID: 1754103682400689850, guid: 5e57219e30d96a04f87d31197c72a2ee,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.5566038
-      objectReference: {fileID: 0}
-=======
     - target: {fileID: 1754103681587442840, guid: 5e57219e30d96a04f87d31197c72a2ee,
         type: 3}
       propertyPath: RisaikuruAI
       value: 
       objectReference: {fileID: 6240522902823253464, guid: 99b717d0ae64dc24cb78fcfcf26d915e,
         type: 3}
->>>>>>> abb8baf1e9e1565580d4e10af575cd5c80a0ea6e:prot_1/Assets/Scenes/Minimap.unity
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e57219e30d96a04f87d31197c72a2ee, type: 3}
 --- !u!1 &354587237
