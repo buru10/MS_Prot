@@ -10,7 +10,10 @@ public class meter : MonoBehaviour
     public float plasticmax;
     public float glassmax;
 
-    public GameObject[] MemoryObj;
+    float metermax;
+    // public GameObject[] MemoryObj;
+
+    public GameObject[] needle;
 
     public GameObject ControllerUI;
 
@@ -20,6 +23,11 @@ public class meter : MonoBehaviour
     public Player Player;
 
     int i;
+    Vector3[] localAngle = new Vector3[4];
+    //Vector3 localAngle_0;
+    //Vector3 localAngle_1;
+    //Vector3 localAngle_2;
+    //Vector3 localAngle_3;
 
     enum Resources
     {
@@ -36,7 +44,7 @@ public class meter : MonoBehaviour
         MeterCount = new float[4];
         //Debug.Log(MeterCount[0]); 
 
-        MemoryObj[(int)Resources.metal].GetComponent<Image>().fillAmount = 0.5f;
+        //  MemoryObj[(int)Resources.metal].GetComponent<Image>().fillAmount = 0.5f;
         //メーター初期化
         //for (int i = 0; i < MemoryObj.Length; i++)
         //{
@@ -45,25 +53,15 @@ public class meter : MonoBehaviour
         //   MemoryObj[i].GetComponent<Image>().fillAmount = 0;
         // }
         ControllerUI.SetActive(false);
+        metermax = 270.0f;
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        /* if (Input.GetKeyDown(KeyCode.UpArrow))
-         {
-             for (int i = 0; i < MemoryObj.Length; i++)
-             {
-                 //MeterCount += (Player.GetResources("metal"))/10;
-             }
-         }
-         else if (Input.GetKeyDown(KeyCode.DownArrow))
-         {
-             for (int i = 0; i < MemoryObj.Length; i++)
-             {
-                // MeterCount -= 0.02f;
-             }
-         }
+        /*
         for (int i = 0; i < MemoryObj.Length; i++)
         {
             MemoryObj[i].GetComponent<Image>().fillAmount = MeterCount[i];
@@ -82,16 +80,45 @@ public class meter : MonoBehaviour
         MeterCount[(int)Resources.plastic] = Player.GetResources("plastic") / plasticmax;
         MeterCount[(int)Resources.glass] = Player.GetResources("glass") / glassmax;
 
-        MemoryObj[(int)Resources.metal].GetComponent<Image>().fillAmount = MeterCount[(int)Resources.metal];
-        MemoryObj[(int)Resources.paper].GetComponent<Image>().fillAmount = MeterCount[(int)Resources.paper];
-        MemoryObj[(int)Resources.plastic].GetComponent<Image>().fillAmount = MeterCount[(int)Resources.plastic];
-        MemoryObj[(int)Resources.glass].GetComponent<Image>().fillAmount = MeterCount[(int)Resources.glass];
+        /* MemoryObj[(int)Resources.metal].GetComponent<Image>().fillAmount = MeterCount[(int)Resources.metal];
+          MemoryObj[(int)Resources.paper].GetComponent<Image>().fillAmount = MeterCount[(int)Resources.paper];
+          MemoryObj[(int)Resources.plastic].GetComponent<Image>().fillAmount = MeterCount[(int)Resources.plastic];
+          MemoryObj[(int)Resources.glass].GetComponent<Image>().fillAmount = MeterCount[(int)Resources.glass];
 
-
-        if (MemoryObj[i].GetComponent<Image>().fillAmount >= 1.0f && ControllerUI.activeSelf == false)
+*/
+        if (localAngle[i].z >= metermax && ControllerUI.activeSelf == false)
         {
             i++;
         }
+
+        for (int j = 0; j < localAngle.Length; j++)
+        {
+            if (localAngle[j].z >= metermax)
+            {
+                localAngle[j].z = metermax;
+
+
+            }
+        }
+
+
+
+        localAngle[0] = needle[0].transform.localEulerAngles;
+        localAngle[0].z = -(metermax / metalmax * (MeterCount[(int)Resources.metal])); // local座標を基準に、z軸を軸にした回転を10度に変更
+        needle[0].transform.localEulerAngles = localAngle[0]; // 回転角度を設定
+
+        localAngle[1] = needle[1].transform.localEulerAngles;
+        localAngle[1].z = -(metermax / papermax * (MeterCount[(int)Resources.paper])); // local座標を基準に、z軸を軸にした回転を10度に変更
+        needle[1].transform.localEulerAngles = localAngle[1]; // 回転角度を設定
+
+        localAngle[2] = needle[0].transform.localEulerAngles;
+        localAngle[2].z = -(metermax / plasticmax * (MeterCount[(int)Resources.plastic])); // local座標を基準に、z軸を軸にした回転を10度に変更
+        needle[2].transform.localEulerAngles = localAngle[2]; // 回転角度を設定
+
+        localAngle[3] = needle[0].transform.localEulerAngles;
+        localAngle[3].z = -(metermax / glassmax * (MeterCount[(int)Resources.glass])); // local座標を基準に、z軸を軸にした回転を10度に変更
+        needle[3].transform.localEulerAngles = localAngle[3]; // 回転角度を設定
+
 
         if (i >= (int)Resources.Resourcesmax)
         {
