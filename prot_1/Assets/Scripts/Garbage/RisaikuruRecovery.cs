@@ -47,7 +47,7 @@ public class RisaikuruRecovery : MonoBehaviour
 
     void Update()
     {
-
+        RecoveryCheck();
         // ねらっていないとき
         if (!Snipe)
         {
@@ -62,8 +62,6 @@ public class RisaikuruRecovery : MonoBehaviour
         }
         else
         {
-            RecoveryCheck();
-
             // 狙っていたゴミが消滅したら
             if (!Garbage)
             {
@@ -136,7 +134,7 @@ public class RisaikuruRecovery : MonoBehaviour
                 colList.Remove(collision);
 
             // スナイプオブジェクトが一致したら継続
-            if (snipeObject != collision)// || !Snipe)
+            if (snipeObject != collision || !Snipe)
                 continue;
 
             // タグ判定

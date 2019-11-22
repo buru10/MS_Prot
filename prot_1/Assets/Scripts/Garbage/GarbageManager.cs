@@ -10,10 +10,10 @@ public class GarbageManager : MonoBehaviour
     public List<GameObject> Garbagetype = new List<GameObject>();
     private GameObject cube;
 
+    public int nCount;
     public bool bNothing;
     public bool bDrop;
     public float fTime;
-    public int CreateNumber;
     float SaveTime;
 
 
@@ -35,7 +35,7 @@ public class GarbageManager : MonoBehaviour
         fTime -= Time.deltaTime;
 
         // 0以下になったら
-        if (fTime <= 0.0f && bDrop && Garbagelist.Count <= 100)
+        if (fTime <= 0.0f && bDrop && Garbagelist.Count <= nCount)
         {
             // ランダムにポジションを決め、生成する
             Vector3 position = new Vector3(Random.Range(-20.0f, 20.0f), 0, Random.Range(-20.0f, 20.0f));
