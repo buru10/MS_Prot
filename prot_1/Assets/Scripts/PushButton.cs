@@ -49,7 +49,7 @@ public class PushButton : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return) || (Input.GetAxis("L_Trigger") > 0 && Input.GetAxis("R_Trigger") > 0) )
         {
             TriggerPressCount += Time.deltaTime;
-#if true
+#if false
             if (TriggerPressCount > TriggerPressTime)
 #endif
                 CreateRobot();

@@ -31,7 +31,7 @@ public class RisaikuruRecovery : MonoBehaviour
         Snipe = false;
 
         if (!Player)
-        Player = GameObject.Find("Test_Player").GetComponent<Player>();
+        Player = GameObject.Find("Player").GetComponent<Player>();
 
         // 入れ直す
         garbageManager = GameObject.Find("GarbageManager").GetComponent<GarbageManager>();
