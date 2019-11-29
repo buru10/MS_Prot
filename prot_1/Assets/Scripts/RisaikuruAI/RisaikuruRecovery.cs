@@ -12,6 +12,7 @@ public class RisaikuruRecovery : MonoBehaviour
     public Transform startMarker;
     public Transform endMarker;
     public GarbageManager garbageManager;
+    private RecoveryCharge recoveryCharge;
 
     // スピード
     public float speed;
@@ -41,6 +42,8 @@ public class RisaikuruRecovery : MonoBehaviour
 
         m_navAgent = GetComponent<NavMeshAgent>();
 
+        recoveryCharge = GetComponent<RecoveryCharge>();
+
         // 新たなゴミが増えていないかチェックし増えていたら起動
         CheckGarbage();
     }
@@ -52,7 +55,8 @@ public class RisaikuruRecovery : MonoBehaviour
         if (!Snipe)
         {
             // オブジェクトの移動
-            m_navAgent.destination = PlayerMarker.position;
+            m_navAgent.SetDestination(PlayerMarker.position);
+           // m_navAgent.destination = PlayerMarker.position;
             //transform.position = Vector3.Lerp(startMarker.position, PlayerMarker.position, speed);
 
             // 新たなゴミが増えていないかチェックし増えていたら起動
@@ -153,6 +157,9 @@ public class RisaikuruRecovery : MonoBehaviour
                     garbageManager.Garbagelist.Remove(collision);
                     Destroy(collision);
 
+                    // エフェクト生成
+                    recoveryCharge.Create(collision.tag);
+                    
                     // スナイプを外す
                     Snipe = false;
 
@@ -170,6 +177,9 @@ public class RisaikuruRecovery : MonoBehaviour
                     // ゴミリストの中身を消す
                     garbageManager.Garbagelist.Remove(collision);
                     Destroy(collision);
+                    
+                    // エフェクト生成
+                    recoveryCharge.Create(collision.tag);
 
                     // コライダーを消しスナイプも外す
                     Snipe = false;
@@ -188,6 +198,9 @@ public class RisaikuruRecovery : MonoBehaviour
                     garbageManager.Garbagelist.Remove(collision);
                     Destroy(collision);
 
+                    // エフェクト生成
+                    recoveryCharge.Create(collision.tag);
+
                     // コライダーを消しスナイプも外す
                     Snipe = false;
 
@@ -204,6 +217,9 @@ public class RisaikuruRecovery : MonoBehaviour
                     // ゴミリストの中身を消す
                     garbageManager.Garbagelist.Remove(collision);
                     Destroy(collision);
+
+                    // エフェクト生成
+                    recoveryCharge.Create(collision.tag);
 
                     // コライダーを消しスナイプも外す
                     Snipe = false;
