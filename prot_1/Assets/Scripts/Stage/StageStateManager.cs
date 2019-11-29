@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StageStateManager : MonoBehaviour
 {
@@ -8,8 +9,12 @@ public class StageStateManager : MonoBehaviour
     Canvas GaugeCanvas;
     [SerializeField]
     Canvas MiniMap;
+    [SerializeField]
+    Text CountDownText;
+    [SerializeField]
+    Text TimerText;
 
-    enum StageState
+    public enum StageState
     {
         Ready,
         Main,
@@ -21,13 +26,13 @@ public class StageStateManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        stageState = StageState.Ready;
+        ChangeState(StageState.Ready);
     }
 
     // Update is called once per frame
     void Update()
     {
-        switch(stageState)
+        switch (stageState)
         {
             case StageState.Ready:
                 UpdateReady();
@@ -56,5 +61,29 @@ public class StageStateManager : MonoBehaviour
     void UpdateFinish()
     {
 
+    }
+
+    public void ChangeState(StageState set)
+    {
+        stageState = set;
+
+        switch (stageState)
+        {
+            case StageState.Ready:
+                CountDownText.gameObject.SetActive(true);
+                PlayerInputManager.SetEnabled(false);
+                break;
+            case StageState.Main:
+                CountDownText.gameObject.SetActive(false);
+                PlayerInputManager.SetEnabled(true);
+                TimerText.gameObject.SetActive(true);
+                break;
+            case StageState.Finish:
+                TimerText.gameObject.SetActive(false);
+                PlayerInputManager.SetEnabled(false);
+                break;
+            default:
+                break;
+        }
     }
 }
