@@ -86,7 +86,8 @@ public class RisaikuruRecovery : MonoBehaviour
         if (collision.gameObject.CompareTag("metal") ||
             collision.gameObject.CompareTag("paper") ||
             collision.gameObject.CompareTag("plastic") ||
-            collision.gameObject.CompareTag("glass") && colList.Contains(collision.gameObject))
+            collision.gameObject.CompareTag("glass") ||
+            collision.gameObject.CompareTag("wood") && colList.Contains(collision.gameObject))
         colList.Remove(collision.gameObject);
     }
 
@@ -95,7 +96,8 @@ public class RisaikuruRecovery : MonoBehaviour
         if (collision.gameObject.CompareTag("metal") ||
             collision.gameObject.CompareTag("paper") ||
             collision.gameObject.CompareTag("plastic") ||
-            collision.gameObject.CompareTag("glass") && !colList.Contains(collision.gameObject))
+            collision.gameObject.CompareTag("glass") ||
+            collision.gameObject.CompareTag("wood") && !colList.Contains(collision.gameObject))
             colList.Add(collision.gameObject);
     }
 
@@ -207,6 +209,26 @@ public class RisaikuruRecovery : MonoBehaviour
                     break;
                 // ガラス
                 case "glass":
+
+                    // プレイヤーに与える
+                    Player.SetResourcesPlus(collision.tag);
+
+                    // 衝突リストから消去
+                    colList.Remove(collision);
+
+                    // ゴミリストの中身を消す
+                    garbageManager.Garbagelist.Remove(collision);
+                    Destroy(collision);
+
+                    // エフェクト生成
+                    recoveryCharge.Create(collision.tag);
+
+                    // コライダーを消しスナイプも外す
+                    Snipe = false;
+
+                    break;
+                // 木
+                case "wood":
 
                     // プレイヤーに与える
                     Player.SetResourcesPlus(collision.tag);

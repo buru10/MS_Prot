@@ -20,8 +20,8 @@ public class RecoveryCharge : MonoBehaviour
             case "metal":
                 Instantiate(ParticleObj[1], transform.position, Quaternion.identity);
                 break;
-            // 紙
-            case "paper":
+            // 木
+            case "wood":
                 Instantiate(ParticleObj[2], transform.position, Quaternion.identity);
                 break;
             // プラスチック

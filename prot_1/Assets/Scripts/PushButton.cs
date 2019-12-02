@@ -66,6 +66,7 @@ public class PushButton : MonoBehaviour
         this.gameObject.SetActive(false);
         //メーター初期化
         Player.SetResources("metal", 0);
+        Player.SetResources("wood", 0);
         Player.SetResources("paper", 0);
         Player.SetResources("plastic", 0);
         Player.SetResources("glass", 0);

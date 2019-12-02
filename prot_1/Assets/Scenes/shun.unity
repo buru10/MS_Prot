@@ -849,7 +849,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 200}
+  m_SizeDelta: {x: 256, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1280396850
 MonoBehaviour:
@@ -917,7 +917,7 @@ MonoBehaviour:
   Garbagetype:
   - {fileID: 8984431480249192798, guid: bdb0ae578f3d9784caddd980265d6065, type: 3}
   - {fileID: 6982230977952051642, guid: 2d5aef965822a3c40aa1c2c2e12499bb, type: 3}
-  - {fileID: 7120423400339752466, guid: 464e6aa71a033fe48a3ab998ecd3294e, type: 3}
+  - {fileID: 7120423400339752466, guid: 34c4a010e4d4579419253810618a73e2, type: 3}
   - {fileID: 7343119691421344323, guid: 36e7b0cc1f7c035478cdaadaaf32623f, type: 3}
   nCount: 60
   bNothing: 0
@@ -1240,7 +1240,7 @@ MonoBehaviour:
   ParticleObj:
   - {fileID: 162536, guid: 48f8d0305728d9140bc8890d19f9aca8, type: 3}
   - {fileID: 162536, guid: 93c532c06fcc9894298b0a007c4ad8af, type: 3}
-  - {fileID: 162536, guid: 278acd4492674aa4faa4f0432651d8b9, type: 3}
+  - {fileID: 162536, guid: f3de4c1408f8b2141976ed5256cab014, type: 3}
   - {fileID: 162536, guid: a8dc66ace71079b429e43380637d6fa2, type: 3}
 --- !u!23 &611152941128071560
 MeshRenderer:
@@ -2858,6 +2858,7 @@ MonoBehaviour:
   paper: 0
   plastic: 0
   glass: 0
+  wood: 0
 --- !u!114 &906833900361950921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3716,6 +3717,7 @@ MonoBehaviour:
   papermax: 10
   plasticmax: 10
   glassmax: 10
+  woodmax: 10
   needle:
   - {fileID: 3819572261933880479}
   - {fileID: 3819572262501167008}
