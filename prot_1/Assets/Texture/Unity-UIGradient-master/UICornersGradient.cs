@@ -5,10 +5,16 @@ using UnityEngine.UI;
 
 [AddComponentMenu("UI/Effects/4 Corners Gradient")]
 public class UICornersGradient : BaseMeshEffect {
-	public Color m_topLeftColor = Color.white;
+    public Color m_topLeftColor = Color.white;
 	public Color m_topRightColor = Color.white;
 	public Color m_bottomRightColor = Color.white;
 	public Color m_bottomLeftColor = Color.white;
+
+
+    void Update()
+    {
+
+    }
 
     public override void ModifyMesh(VertexHelper vh)
     {
