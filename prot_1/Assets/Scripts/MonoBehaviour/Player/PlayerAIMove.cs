@@ -33,7 +33,6 @@ public class PlayerAIMove : MonoBehaviour
         //rayを使用した接地判定
         //if (CheckGrounded() == true)
         {
-
             //前進処理
             if (Input.GetKeyDown(KeyCode.W))
             {
