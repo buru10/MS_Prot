@@ -11,6 +11,7 @@ TagManager:
   - PlayerCharactor
   - BurstObject
   - Minimap
+  - wood
   layers:
   - Default
   - TransparentFX

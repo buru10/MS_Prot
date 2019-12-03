@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 8342377028406723530}
   - component: {fileID: 8342377028406723533}
   - component: {fileID: 8342377028406723534}
+  - component: {fileID: 95292749357006128}
   m_Layer: 10
   m_Name: RisaikuruAIHead
   m_TagString: Untagged
@@ -188,6 +189,25 @@ NavMeshAgent:
   m_BaseOffset: 0.65
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!95 &95292749357006128
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8342377028406723532}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9f806dc87b78d1d4d9e5e425b5b77bb5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8342377029717402908
 GameObject:
   m_ObjectHideFlags: 0

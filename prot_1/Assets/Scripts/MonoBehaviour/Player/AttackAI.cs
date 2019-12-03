@@ -17,6 +17,9 @@ public class AttackAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!PlayerInputManager.GetEnabled())
+            return;
+
         if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Attack"))
         {
             Attack();

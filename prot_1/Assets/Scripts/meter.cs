@@ -9,6 +9,7 @@ public class meter : MonoBehaviour
     public float papermax;
     public float plasticmax;
     public float glassmax;
+    public float woodmax;
 
     float metermax;
     // public GameObject[] MemoryObj;
@@ -18,12 +19,12 @@ public class meter : MonoBehaviour
     public GameObject ControllerUI;
 
     [HideInInspector]
-    public float[] MeterCount = new float[4];
+    public float[] MeterCount = new float[5];
 
     public Player Player;
 
     int i;
-    Vector3[] localAngle = new Vector3[4];
+    Vector3[] localAngle = new Vector3[5];
    
 
     enum Resources
@@ -32,13 +33,14 @@ public class meter : MonoBehaviour
         paper,
         plastic,
         glass,
+        wood,
         Resourcesmax
 
     };
     // Start is called before the first frame update
     void Start()
     {
-        MeterCount = new float[4];
+        MeterCount = new float[5];
         //Debug.Log(MeterCount[0]); 
 
         //  MemoryObj[(int)Resources.metal].GetComponent<Image>().fillAmount = 0.5f;
@@ -76,6 +78,7 @@ public class meter : MonoBehaviour
         MeterCount[(int)Resources.paper] = Player.GetResources("paper");
         MeterCount[(int)Resources.plastic] = Player.GetResources("plastic");
         MeterCount[(int)Resources.glass] = Player.GetResources("glass");
+        MeterCount[(int)Resources.wood] = Player.GetResources("wood");
 
         /* MemoryObj[(int)Resources.metal].GetComponent<Image>().fillAmount = MeterCount[(int)Resources.metal];
           MemoryObj[(int)Resources.paper].GetComponent<Image>().fillAmount = MeterCount[(int)Resources.paper];
@@ -103,7 +106,19 @@ public class meter : MonoBehaviour
         }
         needle[0].transform.localEulerAngles = localAngle[0]; // 回転角度を設定
 
-        if (MeterCount[(int)Resources.paper] >= papermax)
+        //if (MeterCount[(int)Resources.paper] >= papermax)
+        //{
+        //    localAngle[1].z = -270;
+
+        //}
+        //else
+        //{
+        //    localAngle[1] = needle[1].transform.localEulerAngles;
+        //    localAngle[1].z = -(metermax / papermax * (MeterCount[(int)Resources.paper])); // local座標を基準に、z軸を軸にした回転を10度に変更
+
+        //}
+        //needle[1].transform.localEulerAngles = localAngle[1]; // 回転角度を設定
+        if (MeterCount[(int)Resources.wood] >= woodmax)
         {
             localAngle[1].z = -270;
 
@@ -111,7 +126,7 @@ public class meter : MonoBehaviour
         else
         {
             localAngle[1] = needle[1].transform.localEulerAngles;
-            localAngle[1].z = -(metermax / papermax * (MeterCount[(int)Resources.paper])); // local座標を基準に、z軸を軸にした回転を10度に変更
+            localAngle[1].z = -(metermax / woodmax * (MeterCount[(int)Resources.wood])); // local座標を基準に、z軸を軸にした回転を10度に変更
 
         }
         needle[1].transform.localEulerAngles = localAngle[1]; // 回転角度を設定
@@ -144,7 +159,7 @@ public class meter : MonoBehaviour
 
 
 
-        if (MeterCount[(int)Resources.metal] >= metalmax && MeterCount[(int)Resources.paper] >= papermax && MeterCount[(int)Resources.plastic] >= plasticmax && MeterCount[(int)Resources.glass] >= glassmax && ControllerUI.activeSelf == false)
+        if (MeterCount[(int)Resources.metal] >= metalmax && MeterCount[(int)Resources.wood] >= woodmax && MeterCount[(int)Resources.plastic] >= plasticmax && MeterCount[(int)Resources.glass] >= glassmax && ControllerUI.activeSelf == false)
         {
             ControllerUI.SetActive(true);
             i = 0;

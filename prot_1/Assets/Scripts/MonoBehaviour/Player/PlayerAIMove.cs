@@ -27,10 +27,12 @@ public class PlayerAIMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!PlayerInputManager.GetEnabled())
+            return;
+
         //rayを使用した接地判定
         //if (CheckGrounded() == true)
         {
-
             //前進処理
             if (Input.GetKeyDown(KeyCode.W))
             {

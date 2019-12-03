@@ -21,12 +21,14 @@ public class Player : MonoBehaviour
     public int plastic;
     //[HideInInspector]
     public int glass;
-    
+    //[HideInInspector]
+    public int wood;
+
     GameObject gameObj;
     void Start()
     {
         // 変数初期化
-        metal = paper = plastic = glass = 0;
+        metal = paper = plastic = glass = wood=0;
         gameObj = GameObject.Find("RisaikuruAIManager");
 
     }
@@ -83,6 +85,9 @@ public class Player : MonoBehaviour
             // ガラス
             case "glass":
                 return glass;
+            // 木
+            case "wood":
+                return wood;
             default:
                 break;
         }
@@ -111,6 +116,10 @@ public class Player : MonoBehaviour
             case "glass":
                 glass = value;
                 break;
+            // 木
+            case "wood":
+                wood = value;
+                break;
             default:
                 break;
         }
@@ -137,6 +146,10 @@ public class Player : MonoBehaviour
             // ガラス
             case "glass":
                 glass++;
+                break;
+            // 木
+            case "wood":
+                wood++;
                 break;
             default:
                 break;
