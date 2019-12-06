@@ -95,7 +95,7 @@ public class PlayerAIMove : MonoBehaviour
 
 
         // === 移動処理 ===
-        if (Input.GetAxis("Vertical") == 0 && Input.GetAxis("Horizontal") == 0)  //  テンキーや3Dスティックの入力（GetAxis）がゼロの時の動作
+        if (Input.GetAxis("L_Stick_V") == 0 && Input.GetAxis("L_Stick_H") == 0)  //  テンキーや3Dスティックの入力（GetAxis）がゼロの時の動作
         {
             animator.SetBool("Run", false);  //  Runモーションしない
         }
@@ -103,13 +103,12 @@ public class PlayerAIMove : MonoBehaviour
         else //  テンキーや3Dスティックの入力（GetAxis）がゼロではない時の動作
         {
             var cameraForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;  //  カメラが追従するための動作
-            Vector3 direction = cameraForward * Input.GetAxis("Vertical") + Camera.main.transform.right * Input.GetAxis("Horizontal");  //  テンキーや3Dスティックの入力（GetAxis）があるとdirectionに値を返す
+            Vector3 direction = cameraForward * Input.GetAxis("L_Stick_V") + Camera.main.transform.right * Input.GetAxis("L_Stick_H");  //  テンキーや3Dスティックの入力（GetAxis）があるとdirectionに値を返す
             animator.SetBool("Run", true);  //  Runモーションする
 
             ChangeDirection(direction);  //  向きを変える動作の処理を実行する（後述）
             Move(direction);  //  移動する動作の処理を実行する（後述）
         }
-
     }
 
     // ■向きを変える動作の処理
