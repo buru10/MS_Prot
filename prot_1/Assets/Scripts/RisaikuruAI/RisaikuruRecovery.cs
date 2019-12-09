@@ -9,10 +9,13 @@ public class RisaikuruRecovery : MonoBehaviour
     public Player Player;
     public GameObject Garbage;
     public Transform PlayerMarker;
+    public Vector3 PlayerMark;
     public Transform startMarker;
     public Transform endMarker;
     public GarbageManager garbageManager;
     private RecoveryCharge recoveryCharge;
+    private RisaikuruAIManager risaikuruAIManager;
+    public int CreateNumber;
 
     // スピード
     public float speed;
@@ -36,9 +39,20 @@ public class RisaikuruRecovery : MonoBehaviour
 
         // 入れ直す
         garbageManager = GameObject.Find("GarbageManager").GetComponent<GarbageManager>();
-       
+
+        // 制作番号
+        risaikuruAIManager = GameObject.Find("RisaikuruAIManager").GetComponent<RisaikuruAIManager>();
+        CreateNumber = risaikuruAIManager.GetCreateNumber();
+        risaikuruAIManager.SetCreateNumberPlus();
+
         // 子供の情報を受け取る
-        PlayerMarker = Player.transform.GetChild(2).gameObject.transform;
+        foreach (Transform child in Player.transform)
+        {
+            if("Back" == child.name)
+            PlayerMarker = child.transform;
+        }
+        PlayerMark = PlayerMarker.position;
+
 
         m_navAgent = GetComponent<NavMeshAgent>();
 
@@ -55,9 +69,9 @@ public class RisaikuruRecovery : MonoBehaviour
         if (!Snipe)
         {
             // オブジェクトの移動
+            //PlayerMark = PlayerMarker.position;
+            //PlayerMark += risaikuruAIManager.GetPlayerMarker(CreateNumber);
             m_navAgent.SetDestination(PlayerMarker.position);
-           // m_navAgent.destination = PlayerMarker.position;
-            //transform.position = Vector3.Lerp(startMarker.position, PlayerMarker.position, speed);
 
             // 新たなゴミが増えていないかチェックし増えていたら起動
             CheckGarbage();
@@ -76,7 +90,6 @@ public class RisaikuruRecovery : MonoBehaviour
 
             // ゴミを狙う
             m_navAgent.destination = endMarker.position;
-            //transform.position = Vector3.Lerp(startMarker.position, endMarker.position, speed);
         }
 
     }

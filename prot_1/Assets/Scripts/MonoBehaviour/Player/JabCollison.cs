@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO; //System.IO.FileInfo, System.IO.StreamReader, System.IO.StreamWriter
 
 public class JabCollison : MonoBehaviour
 {
+    public GameObject ParticleObj;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +24,7 @@ public class JabCollison : MonoBehaviour
         if(other.gameObject.tag == "BurstObject")
         {
             BurstVoxel burstVoxel = other.gameObject.GetComponent<BurstVoxel>();
+            Instantiate(ParticleObj, transform.position, Quaternion.identity);
 
             // オブジェクトの子供のフラグを変更する
             foreach (Transform child in other.transform)
