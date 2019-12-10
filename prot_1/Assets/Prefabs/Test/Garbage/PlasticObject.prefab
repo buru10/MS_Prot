@@ -1191,6 +1191,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 19802062, guid: 77249d0387f7cf14882cf8972ddd9492, type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77249d0387f7cf14882cf8972ddd9492, type: 3}
 --- !u!4 &6899692527188124162 stripped

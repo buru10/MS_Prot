@@ -46,6 +46,8 @@ public class GarbageManager : MonoBehaviour
             {
                 if (child.tag == "Minimap")
                     continue;
+                if (child.tag == "Untagged")
+                    continue;
 
                 Garbagelist.Add(child.gameObject);
             }

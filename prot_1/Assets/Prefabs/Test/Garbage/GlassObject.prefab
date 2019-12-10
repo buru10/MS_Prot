@@ -468,6 +468,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GlassAura
       objectReference: {fileID: 0}
+    - target: {fileID: 168336, guid: 5b6a298d44acbb743a4e3d81b28b632b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 444702, guid: 5b6a298d44acbb743a4e3d81b28b632b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -513,6 +517,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19802062, guid: 5b6a298d44acbb743a4e3d81b28b632b, type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19802062, guid: 5b6a298d44acbb743a4e3d81b28b632b, type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19802062, guid: 5b6a298d44acbb743a4e3d81b28b632b, type: 3}
+      propertyPath: stopAction
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19802062, guid: 5b6a298d44acbb743a4e3d81b28b632b, type: 3}
+      propertyPath: useRigidbodyForVelocity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19832934, guid: 5b6a298d44acbb743a4e3d81b28b632b, type: 3}
       propertyPath: CollisionModule.enabled
       value: 0
       objectReference: {fileID: 0}

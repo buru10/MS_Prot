@@ -69,8 +69,6 @@ public class RisaikuruRecovery : MonoBehaviour
         if (!Snipe)
         {
             // オブジェクトの移動
-            //PlayerMark = PlayerMarker.position;
-            //PlayerMark += risaikuruAIManager.GetPlayerMarker(CreateNumber);
             m_navAgent.SetDestination(PlayerMarker.position);
 
             // 新たなゴミが増えていないかチェックし増えていたら起動

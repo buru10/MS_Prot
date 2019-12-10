@@ -31,10 +31,13 @@ public class JabCollison : MonoBehaviour
             {
                 if (child.tag == "Minimap")
                     continue;
+                if (child.tag == "Untagged")
+                    continue;
 
                 child.GetComponent<Garbage>().bBurst = true;
             }
             burstVoxel.Burst();
         }
+
     }
 }
