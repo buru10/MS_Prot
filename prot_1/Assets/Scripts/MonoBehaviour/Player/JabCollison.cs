@@ -21,9 +21,8 @@ public class JabCollison : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "BurstObject")
+        if (other.gameObject.tag == "BurstObject")
         {
-            BurstVoxel burstVoxel = other.gameObject.GetComponent<BurstVoxel>();
             Instantiate(ParticleObj, transform.position, Quaternion.identity);
 
             // オブジェクトの子供のフラグを変更する
@@ -36,8 +35,19 @@ public class JabCollison : MonoBehaviour
 
                 child.GetComponent<Garbage>().bBurst = true;
             }
-            burstVoxel.Burst();
-        }
 
+            BurstVoxel burstVoxel = other.gameObject.GetComponent<BurstVoxel>();
+            if (burstVoxel != null)
+            {
+                // 旧バージョン処理
+                burstVoxel.Burst();
+            }
+            else
+            {
+                // 新バージョン処理
+                BurstResource burstResource = other.gameObject.GetComponent<BurstResource>();
+                burstResource.Burst();
+            }
+        }
     }
 }
