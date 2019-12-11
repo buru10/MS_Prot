@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class RisaikuruRecovery : MonoBehaviour
 {
-    //スタートと終わりの目印
+    // メンバ変数定義
     public Player Player;
     public GameObject Garbage;
-    public Transform PlayerMarker;
+    public Transform ReturnMarker;
     public Vector3 PlayerMark;
     public Transform startMarker;
     public Transform endMarker;
@@ -18,7 +18,7 @@ public class RisaikuruRecovery : MonoBehaviour
     public int CreateNumber;
 
     // スピード
-    public float speed;
+    public float Leapspeed;
     public bool Snipe;
 
     public GameObject snipeObject;
@@ -28,10 +28,15 @@ public class RisaikuruRecovery : MonoBehaviour
 
     private NavMeshAgent m_navAgent = null;
 
+    // 音関連
+    public AudioSource audioSource;
+
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         // 仮ポジション設定
-        endMarker = PlayerMarker;
+        endMarker = ReturnMarker;
         Snipe = false;
 
         if (!Player)
@@ -45,14 +50,20 @@ public class RisaikuruRecovery : MonoBehaviour
         CreateNumber = risaikuruAIManager.GetCreateNumber();
         risaikuruAIManager.SetCreateNumberPlus();
 
-        // 子供の情報を受け取る
-        foreach (Transform child in Player.transform)
+       // if (CreateNumber)
         {
-            if("Back" == child.name)
-            PlayerMarker = child.transform;
+            // 子供の情報を受け取る
+            foreach (Transform child in Player.transform)
+            {
+                if ("Back" == child.name)
+                    ReturnMarker = child.transform;
+            }
+            PlayerMark = ReturnMarker.position;
         }
-        PlayerMark = PlayerMarker.position;
-
+        //else
+        {
+       //     ReturnMarker = transform.parent.GetChild(CreateNumber-2).gameObject.transform.GetChild(5).gameObject.transform;
+        }
 
         m_navAgent = GetComponent<NavMeshAgent>();
 
@@ -69,7 +80,14 @@ public class RisaikuruRecovery : MonoBehaviour
         if (!Snipe)
         {
             // オブジェクトの移動
-            m_navAgent.SetDestination(PlayerMarker.position);
+            m_navAgent.SetDestination(ReturnMarker.transform.position);
+            
+            // ターゲット方向のベクトルを取得,方向を、回転情報に変換
+            Vector3 relativePos = ReturnMarker.transform.position - transform.position;
+            Quaternion rotation = Quaternion.LookRotation(relativePos);
+            
+            // 現在の回転情報と、ターゲット方向の回転情報を補完する
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Leapspeed);
 
             // 新たなゴミが増えていないかチェックし増えていたら起動
             CheckGarbage();
@@ -81,19 +99,27 @@ public class RisaikuruRecovery : MonoBehaviour
             // 狙っていたゴミが消滅したら
             if (!Garbage)
             {
-                endMarker = PlayerMarker;
+                endMarker = ReturnMarker;
                 Snipe = false;
                 return;
             }
 
             // ゴミを狙う
             m_navAgent.destination = endMarker.position;
+
+            // ターゲット方向のベクトルを取得,方向を、回転情報に変換
+            Vector3 relativePos = endMarker.position - this.transform.position;
+            Quaternion rotation = Quaternion.LookRotation(relativePos);
+
+            // 現在の回転情報と、ターゲット方向の回転情報を補完する
+            transform.rotation = Quaternion.Slerp(this.transform.rotation, rotation, Leapspeed);
         }
 
     }
 
     void OnTriggerExit(Collider collision)
     {
+
         if (collision.gameObject.CompareTag("metal") ||
             collision.gameObject.CompareTag("paper") ||
             collision.gameObject.CompareTag("plastic") ||
@@ -104,6 +130,7 @@ public class RisaikuruRecovery : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
+
         if (collision.gameObject.CompareTag("metal") ||
             collision.gameObject.CompareTag("paper") ||
             collision.gameObject.CompareTag("plastic") ||
@@ -153,6 +180,9 @@ public class RisaikuruRecovery : MonoBehaviour
             // スナイプオブジェクトが一致したら継続
             if (snipeObject != collision || !Snipe)
                 continue;
+
+            // 回収音
+            audioSource.Play();
 
             // タグ判定
             switch (collision.tag)

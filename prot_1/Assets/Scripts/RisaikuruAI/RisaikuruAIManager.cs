@@ -11,13 +11,15 @@ public class RisaikuruAIManager : MonoBehaviour
 
     private int CreateNumber;
     private int nCnt;
+    private int nNum;
+    private int nNumSave;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         nCnt = 0;
         CreateNumber = 1;
-        
+
         if (!Player)
             Player = GameObject.Find("Player").GetComponent<Player>();
        
@@ -61,61 +63,53 @@ public class RisaikuruAIManager : MonoBehaviour
         CreateNumber++;
     }
 
-    int parentNum;
-    int currentLine = 1;
-    int prevCurrentLine = 1;
-    bool a;
-    int lineNum;
 
     public Vector3 GetPlayerMarker(int CreateNum)
     {
         Vector3 transform = PlayerMarker;
-
+        nNum = CreateNum;
 
         // 最初の一個はplayerの座標を参照してね
-        // ここでcurrentLineが１になる。１列目なので
+        //// ここでcurrentLineが１になる。１列目なので
+        //// 1列目なら1個saysay2列目なら2個saysay
+        //if (lineNum < currentLine)
+        //    currentLine++;
 
+        //// 列が更新されていたとき
+        //if (currentLine != prevCurrentLine)
+        //{
+        //    // 親の配列番号を特定
+        //    parentNum = CreateNum - prevCurrentLine;
 
+        //    // 親の位置から列の先頭の位置を決める。これはたぶん左後ろらへん^^
+        //    transform = OffSet[parentNum] + new Vector3(-1.0f, 0.0f, -1.0f);
 
-        // 1列目なら1個saysay2列目なら2個saysay
-        if (lineNum < currentLine)
-            currentLine++;
+        //    // 列の先頭なのでCnt初期化
+        //    lineNum = 0;
+        //}
+        //// 列が更新されていないとき
+        //else
+        //{
+        //    // 子供を作る的な
+        //    transform = OffSet[CreateNum - 1];
+        //}
 
-        // 列が更新されていたとき
-        if (currentLine != prevCurrentLine)
-        {
-            // 親の配列番号を特定
-            parentNum = CreateNum - prevCurrentLine;
+        //// みかんCnt更新
+        //lineNum++;
 
-            // 親の位置から列の先頭の位置を決める。これはたぶん左後ろらへん^^
-            transform = OffSet[parentNum] + new Vector3(-1.0f, 0.0f, -1.0f);
+        //// prevCurrentLine更新
+        //prevCurrentLine = currentLine;
 
-            // 列の先頭なのでCnt初期化
-            lineNum = 0;
-        }
-        // 列が更新されていないとき
-        else
-        {
-            // 子供を作る的な
-            transform = OffSet[CreateNum - 1];
-        }
+        ////----------------------------------------------
+        //// end
+        ////----------------------------------------------
 
-        // みかんCnt更新
-        lineNum++;
-        
-        // prevCurrentLine更新
-        prevCurrentLine = currentLine;
-                       
-        //----------------------------------------------
-        // end
-        //----------------------------------------------
-
-        for (int i=0;i<CreateNum;i++)
+        for (int i = 0; i < CreateNum; i++)
         {
             //PlayerMarker.x += CreateNumber;
             //PlayerMarker.z -= 1.0f;
 
-            transform = OffSet[CreateNum-1];
+            transform = OffSet[CreateNum - 1];
         }
 
         return transform;
