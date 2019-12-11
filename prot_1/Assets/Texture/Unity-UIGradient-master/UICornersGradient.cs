@@ -18,6 +18,7 @@ public class UICornersGradient : BaseMeshEffect {
 
     public override void ModifyMesh(VertexHelper vh)
     {
+        //Debug.Log(vh);
 		if(enabled)
 		{
             Rect rect = graphic.rectTransform.rect;
