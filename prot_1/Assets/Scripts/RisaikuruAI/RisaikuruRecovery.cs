@@ -81,9 +81,9 @@ public class RisaikuruRecovery : MonoBehaviour
         {
             // オブジェクトの移動
             m_navAgent.SetDestination(ReturnMarker.transform.position);
-            
+
             // ターゲット方向のベクトルを取得,方向を、回転情報に変換
-            Vector3 relativePos = ReturnMarker.transform.position - transform.position;
+            Vector3 relativePos = Player.transform.position - transform.position;
             Quaternion rotation = Quaternion.LookRotation(relativePos);
             
             // 現在の回転情報と、ターゲット方向の回転情報を補完する
