@@ -27,8 +27,8 @@ public class BurstVoxel : MonoBehaviour
     public void Burst()
     {
         var random = new System.Random();
-        int min = -3;
-        int max = 3;
+        min = -3;
+        max = 3;
 
         Destroy(MinimapIcon);
 

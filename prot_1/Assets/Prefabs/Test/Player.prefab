@@ -1248,6 +1248,7 @@ MonoBehaviour:
   paper: 0
   plastic: 0
   glass: 0
+  wood: 0
 --- !u!114 &7536951729991505391
 MonoBehaviour:
   m_ObjectHideFlags: 0
