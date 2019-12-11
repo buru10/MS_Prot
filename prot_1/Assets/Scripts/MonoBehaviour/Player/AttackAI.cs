@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class AttackAI : MonoBehaviour
 {
+    private AudioSource audio;
     private Animator animator;
     public GameObject jabCollider;
 
     // Start is called before the first frame update
     void Start()
     {
+        audio = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         jabCollider.SetActive(false);
     }
@@ -22,6 +24,9 @@ public class AttackAI : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Attack"))
         {
+            if(!animator.GetBool("Attack"))
+            audio.Play();
+
             Attack();
         }
     }

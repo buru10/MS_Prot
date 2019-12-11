@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PushButton : MonoBehaviour
 {
+    public AudioSource audioSource;
     public GameObject ControllerObj;
 
     public Sprite ControllerImagetrue;
@@ -27,9 +28,14 @@ public class PushButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         InitTime = 0.5f;
         TimeCount = InitTime;
         TriggerPressCount = 0.0f;
+
+        if (!Player)
+            Player = GameObject.Find("Player").GetComponent<Player>();
+
     }
 
     // Update is called once per frame
@@ -52,7 +58,8 @@ public class PushButton : MonoBehaviour
 #if false
             if (TriggerPressCount > TriggerPressTime)
 #endif
-                CreateRobot();
+
+            CreateRobot();
         }
         else
         {
