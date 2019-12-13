@@ -12,7 +12,8 @@ public class RisaikuruRecovery : MonoBehaviour
     public Vector3 PlayerMark;
     public Transform startMarker;
     public Transform endMarker;
-    public GarbageManager garbageManager;
+    //public GarbageManager garbageManager;
+    public GarbageManager2 garbageManager2;
     private RecoveryCharge recoveryCharge;
     private RisaikuruAIManager risaikuruAIManager;
     public int CreateNumber;
@@ -45,7 +46,8 @@ public class RisaikuruRecovery : MonoBehaviour
             Player = GameObject.Find("Player").GetComponent<Player>();
 
         // 入れ直す
-        garbageManager = GameObject.Find("GarbageManager").GetComponent<GarbageManager>();
+        //garbageManager = GameObject.Find("GarbageManager").GetComponent<GarbageManager>();
+        garbageManager2 = GameObject.Find("GarbageManager2").GetComponent<GarbageManager2>();
 
         // 制作番号
         risaikuruAIManager = GameObject.Find("RisaikuruAIManager").GetComponent<RisaikuruAIManager>();
@@ -144,11 +146,11 @@ public class RisaikuruRecovery : MonoBehaviour
     void CheckGarbage()
     {
         // 新たなゴミが増えていないかチェックし増えていたら起動
-        if (garbageManager.Garbagelist.Count > 0)
+        if (garbageManager2.Garbagelist.Count > 0)
         {
-            for (int i = 0; i < garbageManager.Garbagelist.Count; i++)
+            for (int i = 0; i < garbageManager2.Garbagelist.Count; i++)
             {
-                Garbage = garbageManager.Garbagelist[i].gameObject;
+                Garbage = garbageManager2.Garbagelist[i].gameObject;
 
                 // そのオブジェクトが壊れているかつ狙われていなかったら狙う
                 if (!Garbage.GetComponent<Garbage>().bTarget && Garbage.GetComponent<Garbage>().bBurst)
@@ -188,6 +190,10 @@ public class RisaikuruRecovery : MonoBehaviour
             // アニメーション切り替え
             Recovery();
 
+
+            ModelDeleteChecker mdc = collision.transform.parent.GetComponent<ModelDeleteChecker>();
+            bool bSub;
+
             // タグ判定
             switch (collision.tag)
             {
@@ -201,8 +207,14 @@ public class RisaikuruRecovery : MonoBehaviour
                     colList.Remove(collision);
 
                     // ゴミリストの中身を消す
-                    garbageManager.Garbagelist.Remove(collision);
+                    garbageManager2.Garbagelist.Remove(collision);
+
                     Destroy(collision);
+
+                    if(mdc.DeleteCheck())
+                    {
+                        garbageManager2.SubCount();
+                    }
 
                     // エフェクト生成
                     recoveryCharge.Create(collision.tag);
@@ -222,9 +234,15 @@ public class RisaikuruRecovery : MonoBehaviour
                     colList.Remove(collision);
 
                     // ゴミリストの中身を消す
-                    garbageManager.Garbagelist.Remove(collision);
-                    Destroy(collision);
+                    garbageManager2.Garbagelist.Remove(collision);
                     
+                    Destroy(collision);
+
+                    if (mdc.DeleteCheck())
+                    {
+                        garbageManager2.SubCount();
+                    }
+
                     // エフェクト生成
                     recoveryCharge.Create(collision.tag);
 
@@ -242,8 +260,14 @@ public class RisaikuruRecovery : MonoBehaviour
                     colList.Remove(collision);
 
                     // ゴミリストの中身を消す
-                    garbageManager.Garbagelist.Remove(collision);
+                    garbageManager2.Garbagelist.Remove(collision);
+                    
                     Destroy(collision);
+
+                    if (mdc.DeleteCheck())
+                    {
+                        garbageManager2.SubCount();
+                    }
 
                     // エフェクト生成
                     recoveryCharge.Create(collision.tag);
@@ -262,8 +286,14 @@ public class RisaikuruRecovery : MonoBehaviour
                     colList.Remove(collision);
 
                     // ゴミリストの中身を消す
-                    garbageManager.Garbagelist.Remove(collision);
+                    garbageManager2.Garbagelist.Remove(collision);
+                    
                     Destroy(collision);
+
+                    if (mdc.DeleteCheck())
+                    {
+                        garbageManager2.SubCount();
+                    }
 
                     // エフェクト生成
                     recoveryCharge.Create(collision.tag);
@@ -282,8 +312,14 @@ public class RisaikuruRecovery : MonoBehaviour
                     colList.Remove(collision);
 
                     // ゴミリストの中身を消す
-                    garbageManager.Garbagelist.Remove(collision);
+                    garbageManager2.Garbagelist.Remove(collision);
+
                     Destroy(collision);
+
+                    if (mdc.DeleteCheck())
+                    {
+                        garbageManager2.SubCount();
+                    }
 
                     // エフェクト生成
                     recoveryCharge.Create(collision.tag);
