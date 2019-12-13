@@ -24,7 +24,8 @@ public class PushButton : MonoBehaviour
 
     float TriggerPressCount;               // トリガーを押している時間
     public float TriggerPressTime = 1.0f;  // この時間トリガーを長押しするとロボ生成
-
+    public GameObject[] metereffect;
+    public GameObject[] back;
     // Start is called before the first frame update
     void Start()
     {
@@ -70,7 +71,12 @@ public class PushButton : MonoBehaviour
 
     void CreateRobot()
     {
-        this.gameObject.SetActive(false);
+        for (int i = 0; i < 4; i++)
+        {
+            back[i].GetComponent<Image>().color = new Color(0, 0, 0, 1);
+            metereffect[i].SetActive(false);
+        }
+            this.gameObject.SetActive(false);
         //メーター初期化
         Player.SetResources("metal", 0);
         Player.SetResources("wood", 0);
