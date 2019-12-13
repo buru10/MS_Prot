@@ -13,7 +13,7 @@ public class RisaikuruAIManager : MonoBehaviour
     private int nNum;
     private int nNumSave;
 
-    private static int CountRisa;
+    public static int CountRisa;
 
     // Start is called before the first frame update
     void Awake()

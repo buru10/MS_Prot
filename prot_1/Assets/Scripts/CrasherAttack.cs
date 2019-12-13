@@ -7,6 +7,7 @@ public class CrasherAttack : MonoBehaviour
     private AudioSource audio;
     private Animator animator;
     public GameObject PunchCollider;
+    public GameObject DrillCollider;
 
     // Start is called before the first frame update
     void Start()
@@ -14,6 +15,7 @@ public class CrasherAttack : MonoBehaviour
         audio = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         PunchCollider.SetActive(false);
+        DrillCollider.SetActive(false);
     }
 
     // Update is called once per frame
@@ -91,5 +93,15 @@ public class CrasherAttack : MonoBehaviour
     void PunchColliderOff()
     {
         PunchCollider.SetActive(false);
+    }
+
+    void DrillColliderOn()
+    {
+        DrillCollider.SetActive(true);
+    }
+
+    void DrillColliderOff()
+    {
+        DrillCollider.SetActive(false);
     }
 }
