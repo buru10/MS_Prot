@@ -6,7 +6,7 @@ public class ColorChange : MonoBehaviour
 {
     public UICornersGradient UICornersGradient;
 
-    public float TimeCount = 3;
+    public float TimeCount = 6;
     int ColorNum;
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,7 @@ public class ColorChange : MonoBehaviour
         TimeCount -= Time.deltaTime;
 
 
-       
+
         /*if (TimeCount <= 9&& TimeCount >= 7)
        {
            UICornersGradient.m_topLeftColor = Color.blue;
@@ -92,22 +92,46 @@ public class ColorChange : MonoBehaviour
            UICornersGradient.m_bottomLeftColor = Color.cyan;
        }
 */
-       if (TimeCount <= 0)
-       {
-            //UICornersGradient.ModifyMesh(null);
-           UICornersGradient.m_topLeftColor = Color.white;
-           UICornersGradient.m_topRightColor = Color.grey;
-           UICornersGradient.m_bottomRightColor = Color.blue;
-           UICornersGradient.m_bottomLeftColor = Color.cyan;
-           TimeCount = 3;
-       }
-       else
+        if (TimeCount <= 4&& TimeCount > 3)
         {
-
-            UICornersGradient.m_topLeftColor = Color.blue;
-            UICornersGradient.m_topRightColor = Color.cyan;
+            UICornersGradient.m_topLeftColor = new Color32(248, 168, 133, 0);
+            UICornersGradient.m_topRightColor = Color.grey;
             UICornersGradient.m_bottomRightColor = Color.white;
-            UICornersGradient.m_bottomLeftColor = Color.green;
+            UICornersGradient.m_bottomLeftColor = Color.cyan;
+            UICornersGradient.gameObject.SetActive(false);
+            UICornersGradient.gameObject.SetActive(true);
+        }
+        else if (TimeCount <= 3 && TimeCount > 2)
+        {
+            UICornersGradient.m_topLeftColor = Color.cyan;
+            UICornersGradient.m_topRightColor = Color.blue;
+            UICornersGradient.m_bottomRightColor = Color.grey;
+            UICornersGradient.m_bottomLeftColor = Color.white;
+            UICornersGradient.gameObject.SetActive(false);
+            UICornersGradient.gameObject.SetActive(true);
+        }
+        else if (TimeCount <= 2 && TimeCount > 1)
+        {
+            UICornersGradient.m_topLeftColor = Color.white;
+           UICornersGradient.m_topRightColor = Color.cyan;
+           UICornersGradient.m_bottomRightColor = Color.blue;
+           UICornersGradient.m_bottomLeftColor = Color.grey;
+            UICornersGradient.gameObject.SetActive(false);
+            UICornersGradient.gameObject.SetActive(true);
+        }
+        else if (TimeCount <= 1 && TimeCount > 0)
+        {
+            UICornersGradient.m_topLeftColor = Color.grey;
+            UICornersGradient.m_topRightColor = Color.white;
+            UICornersGradient.m_bottomRightColor = Color.cyan;
+            UICornersGradient.m_bottomLeftColor = Color.blue;
+            UICornersGradient.gameObject.SetActive(false);
+            UICornersGradient.gameObject.SetActive(true);
+        }
+
+        if (TimeCount <= 0)
+        {
+            TimeCount = 4;
         }
     }
 }

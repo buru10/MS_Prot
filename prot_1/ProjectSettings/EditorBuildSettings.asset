@@ -9,6 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Title.unity
     guid: ea1c12b7e3de4ac408226951d1a3ae68
   - enabled: 0
+<<<<<<< HEAD
     path: Assets/Scenes/reo.unity
     guid: ef07376fead47604fb721e80d07c6c73
+=======
+    path: 
+    guid: 00000000000000000000000000000000
+>>>>>>> 0882f487e4b44603e12eb3c8c03d30e0650775f9
   m_configObjects: {}
