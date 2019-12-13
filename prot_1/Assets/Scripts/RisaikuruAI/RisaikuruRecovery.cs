@@ -29,18 +29,20 @@ public class RisaikuruRecovery : MonoBehaviour
     private NavMeshAgent m_navAgent = null;
 
     // 音関連
-    public AudioSource audioSource;
+    private AudioSource audioSource;
+    private Animator animator;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
 
         // 仮ポジション設定
         endMarker = ReturnMarker;
         Snipe = false;
 
         if (!Player)
-        Player = GameObject.Find("Player").GetComponent<Player>();
+            Player = GameObject.Find("Player").GetComponent<Player>();
 
         // 入れ直す
         garbageManager = GameObject.Find("GarbageManager").GetComponent<GarbageManager>();
@@ -50,20 +52,13 @@ public class RisaikuruRecovery : MonoBehaviour
         CreateNumber = risaikuruAIManager.GetCreateNumber();
         risaikuruAIManager.SetCreateNumberPlus();
 
-       // if (CreateNumber)
+        // 子供の情報を受け取る
+        foreach (Transform child in Player.transform)
         {
-            // 子供の情報を受け取る
-            foreach (Transform child in Player.transform)
-            {
-                if ("Back" == child.name)
-                    ReturnMarker = child.transform;
-            }
-            PlayerMark = ReturnMarker.position;
+            if ("Back" == child.name)
+                ReturnMarker = child.transform;
         }
-        //else
-        {
-       //     ReturnMarker = transform.parent.GetChild(CreateNumber-2).gameObject.transform.GetChild(5).gameObject.transform;
-        }
+        PlayerMark = ReturnMarker.position;
 
         m_navAgent = GetComponent<NavMeshAgent>();
 
@@ -79,6 +74,9 @@ public class RisaikuruRecovery : MonoBehaviour
         // ねらっていないとき
         if (!Snipe)
         {
+            // アニメーション切り替え
+            Idol();
+
             // オブジェクトの移動
             m_navAgent.SetDestination(ReturnMarker.transform.position);
 
@@ -103,6 +101,9 @@ public class RisaikuruRecovery : MonoBehaviour
                 Snipe = false;
                 return;
             }
+
+            // アニメーション切り替え
+            Move();
 
             // ゴミを狙う
             m_navAgent.destination = endMarker.position;
@@ -183,6 +184,9 @@ public class RisaikuruRecovery : MonoBehaviour
 
             // 回収音
             audioSource.Play();
+
+            // アニメーション切り替え
+            Recovery();
 
             // タグ判定
             switch (collision.tag)
@@ -296,5 +300,24 @@ public class RisaikuruRecovery : MonoBehaviour
             snipeObject = null;
             return;
         }
+    }
+
+    void Idol()
+    {
+        animator.SetBool("Idol", true);
+        animator.SetBool("Move", false);
+    }
+
+    void Move()
+    {
+        animator.SetBool("Idol", false);
+        animator.SetBool("Catch", false);
+        animator.SetBool("Move", true);
+    }
+
+    void Recovery()
+    {
+        animator.SetBool("Move", false);
+        animator.SetBool("Catch", true);
     }
 }
