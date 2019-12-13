@@ -53,6 +53,7 @@ public class RisaikuruRecovery : MonoBehaviour
         risaikuruAIManager = GameObject.Find("RisaikuruAIManager").GetComponent<RisaikuruAIManager>();
         CreateNumber = risaikuruAIManager.GetCreateNumber();
         risaikuruAIManager.SetCreateNumberPlus();
+        risaikuruAIManager.AddRisa();
 
         // 子供の情報を受け取る
         foreach (Transform child in Player.transform)
