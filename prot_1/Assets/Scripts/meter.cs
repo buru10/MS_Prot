@@ -45,7 +45,7 @@ public class meter : MonoBehaviour
         ControllerUI.SetActive(false);
         metermax = 270.0f;
         //metereffect[0].SetActive(false);
-        for (int i = 0; i < 4;i++)
+        for (int i = 0; i < 4; i++)
         {
             metereffect[i].SetActive(false);
         }
@@ -117,13 +117,14 @@ public class meter : MonoBehaviour
         if (MeterCount[(int)Resources.metal] >= metalmax && MeterCount[(int)Resources.wood] >= woodmax && MeterCount[(int)Resources.plastic] >= plasticmax && MeterCount[(int)Resources.glass] >= glassmax && ControllerUI.activeSelf == false)
         {
             ControllerUI.SetActive(true);
-            for (int i = 0; i < 4; i++)
-            {
-                back[i].transform.Rotate(new Vector3(0, 0, 1));
-                
-            }
-            //i = 0;
         }
+        for (int i = 0; i < 4; i++)
+        {
+            back[i].transform.Rotate(new Vector3(0, 0, 1));
+
+        }
+        //i = 0;
+
 
     }
 }
