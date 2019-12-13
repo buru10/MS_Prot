@@ -22,6 +22,8 @@ public class Fade : MonoBehaviour
 
     State state = Fade.State.FadeIn;
 
+    bool bEndFadeOut = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,7 +62,8 @@ public class Fade : MonoBehaviour
                 if (alpha >= 1.0f)
                 {
                     alpha = 1.0f;
-                    state = State.FadeIn;
+                    bEndFadeOut = true;
+                    state = State.None;
                 }
                 break;
             case State.None:
@@ -68,5 +71,16 @@ public class Fade : MonoBehaviour
         }
 
         image.color = new Color(red, green, blue, alpha);
+    }
+
+    public bool getEndFlag()
+    {
+        return bEndFadeOut;
+    }
+
+    public void StartFade()
+    {
+        state = State.FadeOut;
+        alpha = 0.0f;
     }
 }
