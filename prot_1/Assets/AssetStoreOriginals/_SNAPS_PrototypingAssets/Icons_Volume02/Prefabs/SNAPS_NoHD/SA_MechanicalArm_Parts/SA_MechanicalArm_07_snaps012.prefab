@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 812557964177472099}
   - component: {fileID: 812557964177472098}
   - component: {fileID: 812557964177472109}
-  - component: {fileID: 584526466675516392}
   m_Layer: 0
-  m_Name: SA_MechanicalArm_07
+  m_Name: SA_MechanicalArm_07_snaps012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1826,17 +1825,3 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!64 &584526466675516392
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 812557964177472108}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}

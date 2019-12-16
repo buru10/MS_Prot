@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 4866694166213652}
   - component: {fileID: 33427307911283298}
   - component: {fileID: 23797207364174174}
+  - component: {fileID: 4877207495329488844}
   m_Layer: 0
   m_Name: Machine_4
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -77,3 +78,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &4877207495329488844
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957870760614942}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3524494, y: 0.40068927, z: 0.767659}
+  m_Center: {x: -0.07017064, y: 0.1946357, z: 0.0035535097}

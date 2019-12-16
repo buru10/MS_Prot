@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 7565360262254683353}
   - component: {fileID: 7565360262254683352}
   - component: {fileID: 7565360262254683351}
-  - component: {fileID: 7565360262254683350}
   m_Layer: 0
-  m_Name: SA_MechanicalArm_02
+  m_Name: SA_MechanicalArm_02_snaps012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,7 +59,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 15e0561a2e83b6e41b339bf29d31d93f, type: 2}
-  - {fileID: 2100000, guid: 2fe9ef2f0ce3eeb46a0e3cc72296ab35, type: 2}
+  - {fileID: 0}
   - {fileID: 2100000, guid: 3d2110dabe6f73043ba4404830e26f36, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -1142,17 +1141,3 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!64 &7565360262254683350
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7565360262254683349}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}

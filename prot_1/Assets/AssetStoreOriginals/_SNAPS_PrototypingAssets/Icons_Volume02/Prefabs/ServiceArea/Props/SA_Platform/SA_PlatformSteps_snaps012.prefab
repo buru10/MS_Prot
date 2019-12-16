@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 5720317442661712391}
   - component: {fileID: 7343456251436955769}
   - component: {fileID: 8074631596756184091}
-  - component: {fileID: 2129621058404038551}
   m_Layer: 0
-  m_Name: SA_PlatformSteps
+  m_Name: SA_PlatformSteps_snaps012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -924,17 +923,3 @@ MonoBehaviour:
   - a: 92
     b: 94
   m_SelectedVertices: 
---- !u!64 &2129621058404038551
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4015069126607863381}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}

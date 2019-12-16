@@ -97,9 +97,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4828993989590112}
+  - component: {fileID: 8511924615892840502}
   m_Layer: 0
   m_Name: Building_N_Prefab
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,3 +120,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8511924615892840502
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681277682126416}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.505008, y: 0.8756008, z: 11.350508}
+  m_Center: {x: 2.5366418, y: 0.34209538, z: -2.2946043}

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1326915672892428533}
   - component: {fileID: 1326915672892428532}
   - component: {fileID: 1326915672892428535}
-  - component: {fileID: 1326915672892428534}
   m_Layer: 0
   m_Name: SA_Path_Short_snaps012
   m_TagString: Untagged
@@ -820,31 +819,9 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_IsSelectable: 1
-  m_SelectedFaces: 00000000
-  m_SelectedEdges:
-  - a: 3
-    b: 0
-  - a: 0
-    b: 1
-  - a: 2
-    b: 3
-  - a: 1
-    b: 2
-  m_SelectedVertices: 03000000000000000100000002000000
---- !u!64 &1326915672892428534
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1326915672892428529}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!1 &3006030602808510306
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,7 +834,6 @@ GameObject:
   - component: {fileID: 3006030602809449314}
   - component: {fileID: 3006030602810448290}
   - component: {fileID: 1431154299866226314}
-  - component: {fileID: 5533676475373946926}
   m_Layer: 0
   m_Name: SA_Divot_Floor_01_snaps012
   m_TagString: Untagged
@@ -1212,17 +1188,3 @@ MonoBehaviour:
   - a: 23
     b: 20
   m_SelectedVertices: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000150000001600000017000000
---- !u!64 &5533676475373946926
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3006030602808510306}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}

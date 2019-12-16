@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 5950122129146330484}
   - component: {fileID: 6080031571171924173}
   - component: {fileID: 7827704649501317530}
-  - component: {fileID: 3487788876053721585}
   - component: {fileID: 1207842861635353317}
   m_Layer: 0
-  m_Name: SA_MetalSupport_X
+  m_Name: SA_MetalSupport_X_snaps012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,20 +78,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &3487788876053721585
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3866509105439480017}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!114 &1207842861635353317
 MonoBehaviour:
   m_ObjectHideFlags: 0

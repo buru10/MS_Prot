@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2100577853368094216}
   - component: {fileID: 2100577853368094219}
   - component: {fileID: 2100577853368094218}
-  - component: {fileID: 2100577853368094221}
   m_Layer: 0
   m_Name: SA_Path_Long_snaps012
   m_TagString: Untagged
@@ -1298,20 +1297,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!64 &2100577853368094221
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2100577853368094220}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!1 &4538822124381919224
 GameObject:
   m_ObjectHideFlags: 0
@@ -1324,7 +1309,6 @@ GameObject:
   - component: {fileID: 4538822124378524664}
   - component: {fileID: 4538822124379654456}
   - component: {fileID: 2012671328936415740}
-  - component: {fileID: 458339548586923565}
   m_Layer: 0
   m_Name: SA_Divot_Floor_02_snaps012
   m_TagString: Untagged
@@ -1975,17 +1959,3 @@ MonoBehaviour:
   - a: 55
     b: 52
   m_SelectedVertices: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f0000003000000031000000320000003300000034000000350000003600000037000000
---- !u!64 &458339548586923565
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4538822124381919224}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}

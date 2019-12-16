@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 2648361495201731677}
   - component: {fileID: 2648361495201731666}
   - component: {fileID: 2648361495201731667}
-  - component: {fileID: 5491361218221074109}
   m_Layer: 0
-  m_Name: SA_MetalSupport_Path_3x4
+  m_Name: SA_MetalSupport_Path_3x4_snaps012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -324,17 +323,3 @@ MonoBehaviour:
   - a: 3
     b: 2
   m_SelectedVertices: 00000000010000000200000003000000
---- !u!64 &5491361218221074109
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2648361495201731664}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}

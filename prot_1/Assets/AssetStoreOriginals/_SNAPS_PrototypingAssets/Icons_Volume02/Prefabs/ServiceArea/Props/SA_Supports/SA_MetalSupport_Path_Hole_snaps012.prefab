@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 5298302950697816479}
   - component: {fileID: 8756171065576402114}
   - component: {fileID: 6312805163138160156}
-  - component: {fileID: 5510338177545745727}
   m_Layer: 0
-  m_Name: SA_MetalSupport_Path_Hole
+  m_Name: SA_MetalSupport_Path_Hole_snaps012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -861,17 +860,3 @@ MonoBehaviour:
   - a: 38
     b: 39
   m_SelectedVertices: 24000000250000002600000027000000
---- !u!64 &5510338177545745727
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6711959671799954290}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}

@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 4605744286657649592}
   - component: {fileID: 4605744286657649595}
   - component: {fileID: 4605744286657649594}
-  - component: {fileID: 4605744286657649589}
   m_Layer: 0
-  m_Name: SA_MetalSupport_Railing_2m
+  m_Name: SA_MetalSupport_Railing_2m_snaps012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1887,17 +1886,3 @@ MonoBehaviour:
   - a: 159
     b: 158
   m_SelectedVertices: 040000000500000006000000070000009c0000009d0000009e0000009f000000
---- !u!64 &4605744286657649589
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4605744286657649588}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}

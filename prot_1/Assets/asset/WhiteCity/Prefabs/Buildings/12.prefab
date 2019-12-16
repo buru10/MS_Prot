@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 478048}
   - component: {fileID: 3328834}
   - component: {fileID: 2376746}
+  - component: {fileID: 3720186462214311952}
+  - component: {fileID: 5957526202447047545}
   m_Layer: 0
   m_Name: 12
   m_TagString: Untagged
@@ -78,3 +80,29 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &3720186462214311952
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196020}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 48.47494, y: 6.7538137, z: 23.94132}
+  m_Center: {x: 3.5761942e-13, y: -11.05145, z: -15.576323}
+--- !u!65 &5957526202447047545
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196020}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16.626686, y: 6.7538137, z: 30.389633}
+  m_Center: {x: 16.123953, y: -11.05145, z: 13.171852}

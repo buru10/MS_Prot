@@ -2060,17 +2060,9 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_IsSelectable: 1
-  m_SelectedFaces: 17000000
-  m_SelectedEdges:
-  - a: 94
-    b: 95
-  - a: 95
-    b: 93
-  - a: 93
-    b: 92
-  - a: 92
-    b: 94
-  m_SelectedVertices: 5e0000005f0000005d0000005c000000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!1 &4319301519799172301
 GameObject:
   m_ObjectHideFlags: 0
@@ -3894,105 +3886,9 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_IsSelectable: 1
-  m_SelectedFaces: 0a00000011000000130000000b00000012000000100000000f0000000e0000000d0000000c000000
-  m_SelectedEdges:
-  - a: 50
-    b: 51
-  - a: 52
-    b: 50
-  - a: 51
-    b: 53
-  - a: 53
-    b: 52
-  - a: 78
-    b: 79
-  - a: 80
-    b: 78
-  - a: 79
-    b: 81
-  - a: 81
-    b: 80
-  - a: 87
-    b: 89
-  - a: 89
-    b: 90
-  - a: 90
-    b: 92
-  - a: 92
-    b: 94
-  - a: 94
-    b: 96
-  - a: 96
-    b: 98
-  - a: 98
-    b: 82
-  - a: 82
-    b: 87
-  - a: 54
-    b: 55
-  - a: 56
-    b: 54
-  - a: 55
-    b: 57
-  - a: 57
-    b: 56
-  - a: 86
-    b: 84
-  - a: 84
-    b: 83
-  - a: 83
-    b: 99
-  - a: 99
-    b: 97
-  - a: 97
-    b: 95
-  - a: 95
-    b: 93
-  - a: 93
-    b: 91
-  - a: 91
-    b: 86
-  - a: 74
-    b: 75
-  - a: 76
-    b: 74
-  - a: 75
-    b: 77
-  - a: 77
-    b: 76
-  - a: 70
-    b: 71
-  - a: 72
-    b: 70
-  - a: 71
-    b: 73
-  - a: 73
-    b: 72
-  - a: 66
-    b: 67
-  - a: 68
-    b: 66
-  - a: 67
-    b: 69
-  - a: 69
-    b: 68
-  - a: 62
-    b: 63
-  - a: 64
-    b: 62
-  - a: 63
-    b: 65
-  - a: 65
-    b: 64
-  - a: 58
-    b: 59
-  - a: 60
-    b: 58
-  - a: 59
-    b: 61
-  - a: 61
-    b: 60
-  m_SelectedVertices: 320000003300000034000000350000004e0000004f00000050000000510000005900000058000000570000005a0000005c0000005e000000600000006200000052000000360000003700000038000000390000005400000055000000560000005300000063000000610000005f0000005d0000005b0000004a0000004b0000004c0000004d00000046000000470000004800000049000000420000004300000044000000450000003e0000003f00000040000000410000003a0000003b0000003c0000003d000000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!1 &4854585042990720436
 GameObject:
   m_ObjectHideFlags: 0
@@ -21676,7 +21572,6 @@ GameObject:
   - component: {fileID: 106203123789961351}
   - component: {fileID: 935349527619608313}
   - component: {fileID: 5031550064673775037}
-  - component: {fileID: 8569538673799342455}
   m_Layer: 0
   m_Name: SA_MechanicalArm_02
   m_TagString: Untagged
@@ -22807,20 +22702,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!64 &8569538673799342455
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8935683426203655576}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!1 &8971940652768067278
 GameObject:
   m_ObjectHideFlags: 0
@@ -22833,9 +22714,10 @@ GameObject:
   - component: {fileID: 1191547228122964789}
   - component: {fileID: 6662591600194595290}
   - component: {fileID: 8360619914648088954}
+  - component: {fileID: 7522706303233858363}
   m_Layer: 0
   m_Name: SA_MechanicalArm_Assembled_snaps012
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45358,3 +45240,17 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!136 &7522706303233858363
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8971940652768067278}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.2403984
+  m_Height: 2.576706
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.288353, z: -0.2403984}

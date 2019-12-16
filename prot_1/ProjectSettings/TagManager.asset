@@ -12,6 +12,7 @@ TagManager:
   - BurstObject
   - Minimap
   - wood
+  - wall
   layers:
   - Default
   - TransparentFX
