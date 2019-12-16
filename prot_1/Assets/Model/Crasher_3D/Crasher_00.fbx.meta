@@ -1,0 +1,503 @@
+fileFormatVersion: 2
+guid: 879f5dd77b30de340923342e76354bd4
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Body
+    100002: BodyFrame
+    100004: BodyFrame_end
+    100006: //RootNode
+    100008: Crasher_Armature_Obj
+    100010: Crasher_Aura_Obj
+    100012: Crasher_Body_Obj
+    100014: Crasher_BuckPack_Obj
+    100016: Crasher_Eye_Obj
+    100018: Crasher_Fingers_Obj
+    100020: Crasher_Frame_Obj
+    100022: Crasher_Hammer_Obj
+    100024: Crasher_HandFrame_Obj
+    100026: Crasher_TurnOff_Obj
+    100028: Crasher_TurnOn_Obj
+    100030: Finger0_0.L
+    100032: Finger0_0.R
+    100034: Finger0_1.L
+    100036: Finger0_1.L_end
+    100038: Finger0_1.R
+    100040: Finger0_1.R_end
+    100042: Finger1_0.L
+    100044: Finger1_0.R
+    100046: Finger1_1.L
+    100048: Finger1_1.L_end
+    100050: Finger1_1.R
+    100052: Finger1_1.R_end
+    100054: Finger2_0.L
+    100056: Finger2_0.R
+    100058: Finger2_1.L
+    100060: Finger2_1.L_end
+    100062: Finger2_1.R
+    100064: Finger2_1.R_end
+    100066: Hammer.001
+    100068: Hammer.002
+    100070: Hammer.002_end
+    100072: Hand.L
+    100074: Hand.R
+    100076: Head
+    100078: Look
+    100080: Look_end
+    100082: Root
+    100084: TurnOff
+    100086: TurnOff_end
+    100088: TurnOn
+    100090: TurnOn_end
+    400000: Body
+    400002: BodyFrame
+    400004: BodyFrame_end
+    400006: //RootNode
+    400008: Crasher_Armature_Obj
+    400010: Crasher_Aura_Obj
+    400012: Crasher_Body_Obj
+    400014: Crasher_BuckPack_Obj
+    400016: Crasher_Eye_Obj
+    400018: Crasher_Fingers_Obj
+    400020: Crasher_Frame_Obj
+    400022: Crasher_Hammer_Obj
+    400024: Crasher_HandFrame_Obj
+    400026: Crasher_TurnOff_Obj
+    400028: Crasher_TurnOn_Obj
+    400030: Finger0_0.L
+    400032: Finger0_0.R
+    400034: Finger0_1.L
+    400036: Finger0_1.L_end
+    400038: Finger0_1.R
+    400040: Finger0_1.R_end
+    400042: Finger1_0.L
+    400044: Finger1_0.R
+    400046: Finger1_1.L
+    400048: Finger1_1.L_end
+    400050: Finger1_1.R
+    400052: Finger1_1.R_end
+    400054: Finger2_0.L
+    400056: Finger2_0.R
+    400058: Finger2_1.L
+    400060: Finger2_1.L_end
+    400062: Finger2_1.R
+    400064: Finger2_1.R_end
+    400066: Hammer.001
+    400068: Hammer.002
+    400070: Hammer.002_end
+    400072: Hand.L
+    400074: Hand.R
+    400076: Head
+    400078: Look
+    400080: Look_end
+    400082: Root
+    400084: TurnOff
+    400086: TurnOff_end
+    400088: TurnOn
+    400090: TurnOn_end
+    2100000: Crasher_Aura_Mat
+    2100002: Crasher_Body_Mat
+    2100004: Crasher_Hammer_Mat
+    2100006: Crasher_HandFrame_Mat
+    2100008: Crasher_Frame_Mat
+    2100010: Crasher_Eye_Mat
+    2100012: Crasher_TurnOff_Mat
+    2100014: Crasher_TurnOn_Mat
+    2100016: Crasher_Body_Mat.003
+    4300000: Crasher_Aura_Obj
+    4300002: Crasher_Fingers_Obj
+    4300004: Crasher_Hammer_Obj
+    4300006: Crasher_HandFrame_Obj
+    4300008: Crasher_Frame_Obj
+    4300010: Crasher_Eye_Obj
+    4300012: Crasher_TurnOff_Obj
+    4300014: Crasher_TurnOn_Obj
+    4300016: Crasher_BuckPack_Obj
+    4300018: Crasher_Body_Obj
+    7400000: Crasher_Armature_Obj|Crasher_Drill
+    7400002: Crasher_Armature_Obj|Crasher_Hammer
+    7400004: Crasher_Armature_Obj|Crasher_Idle
+    7400006: Crasher_Armature_Obj|Crasher_Laser
+    7400008: Crasher_Armature_Obj|Crasher_PoseLib
+    7400010: Crasher_Armature_Obj|Crasher_Punch
+    7400012: Crasher_Armature_Obj|Crasher_Run
+    7400014: Crasher_Armature_Obj|Crasher_TurnOff
+    7400016: Crasher_Armature_Obj|Crasher_TurnOn
+    7400018: Crasher_Armature_Obj|Crasher_Punch (1)
+    9500000: //RootNode
+    13700000: Crasher_Aura_Obj
+    13700002: Crasher_Body_Obj
+    13700004: Crasher_BuckPack_Obj
+    13700006: Crasher_Eye_Obj
+    13700008: Crasher_Fingers_Obj
+    13700010: Crasher_Frame_Obj
+    13700012: Crasher_Hammer_Obj
+    13700014: Crasher_HandFrame_Obj
+    13700016: Crasher_TurnOff_Obj
+    13700018: Crasher_TurnOn_Obj
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Crasher_Armature_Obj|Crasher_Punch (1)
+      takeName: Crasher_Armature_Obj|Crasher_Punch
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.295481
+        functionName: PunchColliderOn
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.5492661
+        functionName: PunchColliderOff
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Crasher_Armature_Obj|Crasher_Hammer
+      takeName: Crasher_Armature_Obj|Crasher_Hammer
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Crasher_Armature_Obj|Crasher_Idle
+      takeName: Crasher_Armature_Obj|Crasher_Idle
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Crasher_Armature_Obj|Crasher_Laser
+      takeName: Crasher_Armature_Obj|Crasher_Laser
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Crasher_Armature_Obj|Crasher_PoseLib
+      takeName: Crasher_Armature_Obj|Crasher_PoseLib
+      firstFrame: 0
+      lastFrame: 2
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Crasher_Armature_Obj|Crasher_Punch
+      takeName: Crasher_Armature_Obj|Crasher_Punch
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.28671327
+        functionName: PunchColliderOn
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.5200329
+        functionName: PunchColliderOff
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Crasher_Armature_Obj|Crasher_Run
+      takeName: Crasher_Armature_Obj|Crasher_Run
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Crasher_Armature_Obj|Crasher_TurnOff
+      takeName: Crasher_Armature_Obj|Crasher_TurnOff
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Crasher_Armature_Obj|Crasher_TurnOn
+      takeName: Crasher_Armature_Obj|Crasher_TurnOn
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

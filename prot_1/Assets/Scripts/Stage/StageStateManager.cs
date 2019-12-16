@@ -12,6 +12,8 @@ public class StageStateManager : MonoBehaviour
     [SerializeField]
     Text CountDownText;
     [SerializeField]
+    Image CountDown;
+    [SerializeField]
     Text TimerText;
 
     public enum StageState
@@ -70,13 +72,14 @@ public class StageStateManager : MonoBehaviour
         switch (stageState)
         {
             case StageState.Ready:
-                CountDownText.gameObject.SetActive(true);
+                //CountDownText.gameObject.SetActive(true);
+                CountDown.gameObject.SetActive(true);
                 PlayerInputManager.SetEnabled(false);
                 break;
             case StageState.Main:
-                CountDownText.gameObject.SetActive(false);
+                CountDown.gameObject.SetActive(false);
                 PlayerInputManager.SetEnabled(true);
-                TimerText.gameObject.SetActive(true);
+                //TimerText.gameObject.SetActive(true);
                 break;
             case StageState.Finish:
                 TimerText.gameObject.SetActive(false);
