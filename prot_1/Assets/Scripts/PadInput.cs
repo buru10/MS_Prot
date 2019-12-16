@@ -16,7 +16,7 @@ public class PadInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Attack"))
+        if(Input.GetButtonDown("Attack") || Input.GetKeyDown(KeyCode.B))
         {
             sceneChanger.ChangeToNext();
         }

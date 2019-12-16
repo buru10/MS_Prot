@@ -29,7 +29,7 @@ public class SceneChanger : MonoBehaviour
         }
     }
 
-    public void ChangeToResult()
+    public void ChangseToResult()
     {
         ToChange = resultScene;
         fade.StartFade();

@@ -18,6 +18,9 @@ public class RisaikuruAIManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        // 解放しないようにする
+        DontDestroyOnLoad(this);
+
         // 変数初期化
         nCnt = 0;
         CreateNumber = 1;
@@ -39,7 +42,7 @@ public class RisaikuruAIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(CountRisa);
     }
 
     public int GetCreateNumber()
