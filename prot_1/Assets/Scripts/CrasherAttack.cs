@@ -8,6 +8,7 @@ public class CrasherAttack : MonoBehaviour
     private Animator animator;
     public GameObject PunchCollider;
     public GameObject DrillCollider;
+    public GameObject HammerCollider;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,7 @@ public class CrasherAttack : MonoBehaviour
         animator = GetComponent<Animator>();
         PunchCollider.SetActive(false);
         DrillCollider.SetActive(false);
+        HammerCollider.SetActive(false);
     }
 
     // Update is called once per frame
@@ -103,5 +105,15 @@ public class CrasherAttack : MonoBehaviour
     void DrillColliderOff()
     {
         DrillCollider.SetActive(false);
+    }
+
+    void HammerColliderOn()
+    {
+        HammerCollider.SetActive(true);
+    }
+
+    void HammerColliderOff()
+    {
+        HammerCollider.SetActive(false);
     }
 }

@@ -103,7 +103,7 @@ ModelImporter:
     2100010: Crasher_Eye_Mat
     2100012: Crasher_TurnOff_Mat
     2100014: Crasher_TurnOn_Mat
-    2100016: Crasher_Body_Mat.003
+    2100016: Crasher_BackPack_Mat
     4300000: Crasher_Aura_Obj
     4300002: Crasher_Fingers_Obj
     4300004: Crasher_Hammer_Obj
@@ -114,16 +114,17 @@ ModelImporter:
     4300014: Crasher_TurnOn_Obj
     4300016: Crasher_BuckPack_Obj
     4300018: Crasher_Body_Obj
-    7400000: Crasher_Armature_Obj|Crasher_Drill
+    7400000: Crasher_Armature_Obj|_Default
     7400002: Crasher_Armature_Obj|Crasher_Hammer
     7400004: Crasher_Armature_Obj|Crasher_Idle
     7400006: Crasher_Armature_Obj|Crasher_Laser
     7400008: Crasher_Armature_Obj|Crasher_PoseLib
     7400010: Crasher_Armature_Obj|Crasher_Punch
-    7400012: Crasher_Armature_Obj|Crasher_Run
-    7400014: Crasher_Armature_Obj|Crasher_TurnOff
-    7400016: Crasher_Armature_Obj|Crasher_TurnOn
-    7400018: Crasher_Armature_Obj|Crasher_Punch (1)
+    7400012: Crasher_Armature_Obj|Crasher_Punch.001
+    7400014: Crasher_Armature_Obj|Crasher_Punch.002
+    7400016: Crasher_Armature_Obj|Crasher_Run
+    7400018: Crasher_Armature_Obj|Crasher_TurnOff
+    7400020: Crasher_Armature_Obj|Crasher_TurnOn
     9500000: //RootNode
     13700000: Crasher_Aura_Obj
     13700002: Crasher_Body_Obj
@@ -135,12 +136,57 @@ ModelImporter:
     13700014: Crasher_HandFrame_Obj
     13700016: Crasher_TurnOff_Obj
     13700018: Crasher_TurnOn_Obj
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crasher_Aura_Mat
+    second: {fileID: 2100000, guid: 5aa83daea6892e748b19bce77a5b7ef3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crasher_BackPack_Mat
+    second: {fileID: 2100000, guid: 3e9ed20e323df5b4d836b92f269783a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crasher_Body_Mat
+    second: {fileID: 2100000, guid: 596229830a00a5946b9927bb2dbf491c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crasher_Eye_Mat
+    second: {fileID: 2100000, guid: 54ebe38016ba2254ea627c70ca6e9f15, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crasher_Frame_Mat
+    second: {fileID: 2100000, guid: 72df615c96ce337479299d1f3427cfd0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crasher_Hammer_Mat
+    second: {fileID: 2100000, guid: f99981122bbbc154196a07532c007c44, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crasher_HandFrame_Mat
+    second: {fileID: 2100000, guid: 83a09457b57d95543aae4077fdc79c37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crasher_TurnOff_Mat
+    second: {fileID: 2100000, guid: 5ab8ad9a7f302da4586b6ff57c5aa67c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crasher_TurnOn_Mat
+    second: {fileID: 2100000, guid: a25a961c31c2ad9408efcea189c733ad, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -164,17 +210,17 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Crasher_Armature_Obj|Crasher_Punch (1)
-      takeName: Crasher_Armature_Obj|Crasher_Punch
+      name: Crasher_Armature_Obj|_Default
+      takeName: Crasher_Armature_Obj|_Default
       firstFrame: 0
-      lastFrame: 60
+      lastFrame: 1
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -186,21 +232,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 0.295481
-        functionName: PunchColliderOn
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.5492661
-        functionName: PunchColliderOff
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -228,7 +260,21 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.5010968
+        functionName: HammerColliderOn
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.6657262
+        functionName: HammerColliderOff
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -244,7 +290,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -341,20 +387,76 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.28671327
+      - time: 0.32261693
         functionName: PunchColliderOn
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.5200329
+      - time: 0.5359404
         functionName: PunchColliderOff
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Crasher_Armature_Obj|Crasher_Punch.001
+      takeName: Crasher_Armature_Obj|Crasher_Punch.001
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Crasher_Armature_Obj|Crasher_Punch.002
+      takeName: Crasher_Armature_Obj|Crasher_Punch.002
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -370,7 +472,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

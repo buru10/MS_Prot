@@ -9,13 +9,13 @@ public class Garbage : MonoBehaviour
     public bool bBurst;
 
     private float deleteTime;
-    private GarbageManager garbageManager;
+    private GarbageManager2 garbageManager;
 
     // Start is called before the first frame update
     void Start()
     {
         if (!garbageManager)
-            garbageManager = GameObject.Find("GarbageManager").GetComponent<GarbageManager>();
+            garbageManager = GameObject.Find("GarbageManager2").GetComponent<GarbageManager2>();
         bTarget = false;
         bBurst = false;
         //GetComponent<BoxCollider>().enabled = false;

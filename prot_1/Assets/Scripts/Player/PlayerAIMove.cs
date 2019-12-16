@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerAIMove : MonoBehaviour
 {
-
     //重力等の変更ができるようにパブリック変数とする
     public float gravity;
     public float speed;
@@ -98,6 +97,8 @@ public class PlayerAIMove : MonoBehaviour
         if (Input.GetAxis("L_Stick_V") == 0 && Input.GetAxis("L_Stick_H") == 0)  //  テンキーや3Dスティックの入力（GetAxis）がゼロの時の動作
         {
             animator.SetBool("Run", false);  //  Runモーションしない
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
         }
 
         else //  テンキーや3Dスティックの入力（GetAxis）がゼロではない時の動作
