@@ -7,6 +7,7 @@ public class CrasherAttack : MonoBehaviour
     private AudioSource audio;
     private Animator animator;
     public GameObject PunchCollider;
+    public GameObject PunchLeftCollider;
     public GameObject DrillCollider;
     public GameObject HammerCollider;
 
@@ -16,6 +17,7 @@ public class CrasherAttack : MonoBehaviour
         audio = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         PunchCollider.SetActive(false);
+        PunchLeftCollider.SetActive(false);
         DrillCollider.SetActive(false);
         HammerCollider.SetActive(false);
     }
@@ -61,30 +63,51 @@ public class CrasherAttack : MonoBehaviour
 
     void Punch()
     {
-        animator.SetBool("Run", false);
-        animator.SetBool("Idle", false);
-        animator.SetBool("Punch", true);
+        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+
+        if (stateInfo.shortNameHash == Animator.StringToHash("Run") || stateInfo.shortNameHash == Animator.StringToHash("Idle") || stateInfo.shortNameHash == Animator.StringToHash("Punch") || stateInfo.shortNameHash == Animator.StringToHash("Punch1"))
+        {
+            animator.SetBool("Run", false);
+            animator.SetBool("Punch", true);
+        }
+        if(stateInfo.shortNameHash == Animator.StringToHash("Punch1"))
+        {
+            animator.SetBool("Run", false);
+            animator.SetBool("Punch", true);
+        }
     }
 
     void Laser()
     {
-        animator.SetBool("Run", false);
-        animator.SetBool("Idle", false);
-        animator.SetBool("Laser", true);
+        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+
+        if (stateInfo.shortNameHash == Animator.StringToHash("Run") || stateInfo.shortNameHash == Animator.StringToHash("Idle"))
+        {
+            animator.SetBool("Run", false);
+            animator.SetBool("Laser", true);
+        }
     }
 
     void Hammer()
     {
-        animator.SetBool("Run", false);
-        animator.SetBool("Idle", false);
-        animator.SetBool("Hammer", true);
+        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+
+        if (stateInfo.shortNameHash == Animator.StringToHash("Run") || stateInfo.shortNameHash == Animator.StringToHash("Idle"))
+        {
+            animator.SetBool("Run", false);
+            animator.SetBool("Hammer", true);
+        }
     }
 
     void Drill()
     {
-        animator.SetBool("Run", false);
-        animator.SetBool("Idle", false);
-        animator.SetBool("Drill", true);
+        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+
+        if (stateInfo.shortNameHash == Animator.StringToHash("Run") || stateInfo.shortNameHash == Animator.StringToHash("Idle"))
+        {
+            animator.SetBool("Run", false);
+            animator.SetBool("Drill", true);
+        }
     }
 
     void PunchColliderOn()
@@ -95,6 +118,16 @@ public class CrasherAttack : MonoBehaviour
     void PunchColliderOff()
     {
         PunchCollider.SetActive(false);
+    }
+
+    void PunchLeftColliderOn()
+    {
+        PunchLeftCollider.SetActive(true);
+    }
+
+    void PunchLeftColliderOff()
+    {
+        PunchLeftCollider.SetActive(false);
     }
 
     void DrillColliderOn()

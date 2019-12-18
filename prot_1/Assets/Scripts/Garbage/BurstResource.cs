@@ -47,13 +47,14 @@ public class BurstResource : MonoBehaviour
 
             Rigidbody r = obj.GetComponent<Rigidbody>();
             r.isKinematic = false;
+            r.useGravity = true;
             var vect = new Vector3(random.Next(min, max), random.Next(0, max), random.Next(min, max));
             r.AddForce(vect, ForceMode.Impulse);
             //r.AddTorque(vect, ForceMode.Impulse);
             BoxCollider boxCollider = obj.GetComponent<BoxCollider>();
             boxCollider.enabled = true;
             boxCollider.isTrigger = false;
-            obj.GetComponent<MeshRenderer>().enabled = true;
+            obj.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
         };
     }
 }
