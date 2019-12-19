@@ -20,7 +20,7 @@ public class PushButton : MonoBehaviour
     [Range(1, 10)]
     public int CreateNum;
     public GameObject RisaikuruAI;
-    public GameObject RisaikuruAIManager;
+    public GameObject RisaikuruAIObject;
 
     float TriggerPressCount;               // トリガーを押している時間
     public float TriggerPressTime = 1.0f;  // この時間トリガーを長押しするとロボ生成
@@ -53,7 +53,7 @@ public class PushButton : MonoBehaviour
             ControllerObj.GetComponent<Image>().sprite = ControllerImagetrue;
         }
 
-        if (Input.GetKeyDown(KeyCode.Return) || (Input.GetAxis("L_Trigger") > 0 && Input.GetAxis("R_Trigger") > 0) )
+        //if (Input.GetKeyDown(KeyCode.Return) || (Input.GetAxis("L_Trigger") > 0 && Input.GetAxis("R_Trigger") > 0) )
         {
             TriggerPressCount += Time.deltaTime;
 #if false
@@ -62,7 +62,7 @@ public class PushButton : MonoBehaviour
 
             CreateRobot();
         }
-        else
+        //else
         {
 
         }
@@ -87,7 +87,7 @@ public class PushButton : MonoBehaviour
         // 指定した分だけ生成する
         for (int i = 0; i < CreateNum; i++)
         {
-            Instantiate(RisaikuruAI, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity, RisaikuruAIManager.transform);
+            Instantiate(RisaikuruAI, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity, RisaikuruAIObject.transform);
         }
         //meter.MeterCount = 0;
     }
