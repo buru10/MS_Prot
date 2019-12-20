@@ -10,6 +10,7 @@ public class CrasherAttack : MonoBehaviour
     public GameObject PunchLeftCollider;
     public GameObject DrillCollider;
     public GameObject HammerCollider;
+    public GameObject HammerParticle;
     public GameObject LaserObj;
 
     // Start is called before the first frame update
@@ -145,6 +146,7 @@ public class CrasherAttack : MonoBehaviour
     void HammerColliderOn()
     {
         HammerCollider.SetActive(true);
+        Instantiate(HammerParticle,HammerCollider.transform.position, Quaternion.identity);
     }
 
     void HammerColliderOff()
