@@ -87,7 +87,7 @@ public class PushButton : MonoBehaviour
         // 指定した分だけ生成する
         for (int i = 0; i < CreateNum; i++)
         {
-            Instantiate(RisaikuruAI, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity, RisaikuruAIObject.transform);
+            Instantiate(RisaikuruAI, Player.GetComponent<RisaSpawner>().risaspawnerSelect.transform.position, Quaternion.identity, RisaikuruAIObject.transform);
         }
         //meter.MeterCount = 0;
     }
