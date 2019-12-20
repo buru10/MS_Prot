@@ -5,10 +5,6 @@ using UnityEngine;
 public class BurstResource : MonoBehaviour
 {
     [SerializeField]
-    GameObject MinimapIcon;
-    [SerializeField]
-    GameObject Model;
-    [SerializeField]
     int min = -3;
     [SerializeField]
     int max = 3;
@@ -31,8 +27,8 @@ public class BurstResource : MonoBehaviour
     {
         var random = new System.Random();
 
-        Destroy(MinimapIcon);
-        Destroy(Model);
+        //Destroy(MinimapIcon);
+        //Destroy(Model);
 
         this.GetComponent<BoxCollider>().enabled = false;
 
@@ -43,7 +39,10 @@ public class BurstResource : MonoBehaviour
                 && obj.tag != "plastic"
                 && obj.tag != "glass"
                 && obj.tag != "metal")
+            {
+                Destroy(obj.gameObject);
                 continue;
+            };
 
             Rigidbody r = obj.GetComponent<Rigidbody>();
             r.isKinematic = false;

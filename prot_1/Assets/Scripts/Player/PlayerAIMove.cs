@@ -36,7 +36,6 @@ public class PlayerAIMove : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.W))
             {
                 animator.SetBool("Run", true);
-                animator.SetBool("Idle", false);
             }
 
             if (Input.GetKey(KeyCode.W))
@@ -47,7 +46,6 @@ public class PlayerAIMove : MonoBehaviour
             {
                 moveDirection.z = 0;
                 animator.SetBool("Run", false);
-                animator.SetBool("Idle", true);
             }
 
             //方向転換
