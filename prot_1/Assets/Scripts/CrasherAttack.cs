@@ -10,6 +10,7 @@ public class CrasherAttack : MonoBehaviour
     public GameObject PunchLeftCollider;
     public GameObject DrillCollider;
     public GameObject HammerCollider;
+    public GameObject LaserObj;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class CrasherAttack : MonoBehaviour
         PunchLeftCollider.SetActive(false);
         DrillCollider.SetActive(false);
         HammerCollider.SetActive(false);
+        LaserObj.SetActive(false);
     }
 
     // Update is called once per frame
@@ -148,5 +150,15 @@ public class CrasherAttack : MonoBehaviour
     void HammerColliderOff()
     {
         HammerCollider.SetActive(false);
+    }
+
+    void LaserOn()
+    {
+        LaserObj.SetActive(true);
+    }
+
+    void LaserOff()
+    {
+        LaserObj.SetActive(false);
     }
 }
