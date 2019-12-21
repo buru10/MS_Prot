@@ -12,8 +12,8 @@ public class Arrow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scalemin = new Vector3(0.137939f, 0.137939f, 0.137939f);
-        scalemax = new Vector3(0.2346939f, 0.2346939f, 0.2346939f);
+        scalemin = new Vector3(4.0f, 4.0f, 4.0f);
+        scalemax = new Vector3(7.0f, 7.0f, 7.0f);
         rotationSpeed = 5.0f;
     }
 
