@@ -30,7 +30,7 @@ public class CountTimer : MonoBehaviour
         GetComponent<Text>().text = remainTime.ToString("##0");
 
         if (remainTime < 0.0f)
-            ssm.ChangeState(StageStateManager.StageState.Finish);
+            ssm.ChangeState(StageStateManager.StageState.ShutDown);
 
     }
 

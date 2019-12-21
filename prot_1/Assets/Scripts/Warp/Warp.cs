@@ -5,6 +5,7 @@ using UnityEngine;
 public class Warp : MonoBehaviour
 {
     [SerializeField]SceneChanger sceneChanger;
+    [SerializeField]StageStateManager ssm;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,8 @@ public class Warp : MonoBehaviour
     {
         if (other.gameObject.tag == "PlayerCharactor")
         {
-            sceneChanger.ChangeToNext();
+            //sceneChanger.ChangeToNext();
+            ssm.ChangeState(StageStateManager.StageState.ShutDown);
         }
     }
 }

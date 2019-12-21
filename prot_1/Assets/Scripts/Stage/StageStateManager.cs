@@ -15,20 +15,27 @@ public class StageStateManager : MonoBehaviour
     Image CountDown;
     [SerializeField]
     Text TimerText;
+    [SerializeField]
+    AIAnimation AIanim;
+    [SerializeField]
+    Fade fade;
 
     public enum StageState
     {
+        Boot,
         Ready,
         Main,
+        ShutDown,
         Finish
     };
 
+    [SerializeField]
     StageState stageState;
 
     // Start is called before the first frame update
     void Start()
     {
-        ChangeState(StageState.Ready);
+        ChangeState(StageState.Boot);
     }
 
     // Update is called once per frame
@@ -71,19 +78,26 @@ public class StageStateManager : MonoBehaviour
 
         switch (stageState)
         {
+            case StageState.Boot:
+                AIanim.AIInStart();
+                PlayerInputManager.SetEnabled(false);
+                break;
             case StageState.Ready:
                 //CountDownText.gameObject.SetActive(true);
                 CountDown.gameObject.SetActive(true);
-                PlayerInputManager.SetEnabled(false);
                 break;
             case StageState.Main:
                 CountDown.gameObject.SetActive(false);
                 PlayerInputManager.SetEnabled(true);
                 //TimerText.gameObject.SetActive(true);
                 break;
-            case StageState.Finish:
-                TimerText.gameObject.SetActive(false);
+            case StageState.ShutDown:
                 PlayerInputManager.SetEnabled(false);
+                TimerText.gameObject.SetActive(false);
+                AIanim.AIOutStart();
+                break;
+            case StageState.Finish:
+                fade.StartFade();
                 break;
             default:
                 break;

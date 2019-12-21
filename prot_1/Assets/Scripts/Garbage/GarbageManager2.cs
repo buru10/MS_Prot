@@ -12,8 +12,11 @@ public class GarbageManager2 : MonoBehaviour
     private GameObject cube;
 
     [SerializeField]int nCount;
-    public int WarpSpawnNorma;
+    int TotalNum; 
+    public float WarpSpawnNorma;
     public Warp warp;
+
+    float Percentage;
     //public bool bNothing;
     //public bool bDrop;
     //public float fTime;
@@ -39,7 +42,8 @@ public class GarbageManager2 : MonoBehaviour
         }
 
         //nCount = ObjectPool.transform.childCount;
-        WarpSpawnNorma = (int)(Garbagelist.Count * 0.4f);
+        TotalNum = Garbagelist.Count;
+        WarpSpawnNorma = 0.6f;
 
         //WarpSpawnNorma = (int)((float)nCount * 0.6);
         warp.gameObject.SetActive(false);
@@ -117,7 +121,8 @@ public class GarbageManager2 : MonoBehaviour
 
     public void CheckNorma()
     {
-        if(Garbagelist.Count <= WarpSpawnNorma)
+        Percentage = (float)(TotalNum - Garbagelist.Count) / (float)TotalNum;
+        if (Percentage >= WarpSpawnNorma)
         {
             warp.gameObject.SetActive(true);
         }
