@@ -2454,7 +2454,7 @@ GameObject:
   - component: {fileID: 9075734818035023433}
   - component: {fileID: 9075734818035023438}
   m_Layer: 8
-  m_Name: Player 1
+  m_Name: Player
   m_TagString: PlayerCharactor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2533,7 +2533,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9075734818035023445}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.09, y: 2.94, z: 2.38}

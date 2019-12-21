@@ -95,6 +95,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4499070825876286}
   - component: {fileID: 9203018591834124989}
+  - component: {fileID: 5525252254193092821}
+  - component: {fileID: 6777901629280963472}
   m_Layer: 0
   m_Name: Building_M_prefab
   m_TagString: wall
@@ -128,5 +130,31 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.9661736, y: 0.76867485, z: 6.787736}
-  m_Center: {x: 0.1877563, y: 0.2698803, z: 0.6173587}
+  m_Size: {x: 6.9661736, y: 7.8323727, z: 4.6350384}
+  m_Center: {x: 0.1877563, y: 3.8017292, z: 1.6937075}
+--- !u!65 &5525252254193092821
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421433746022104}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.9484022, y: 7.7039614, z: 2.9683628}
+  m_Center: {x: -1.3427895, y: 3.6217608, z: -0.9841814}
+--- !u!65 &6777901629280963472
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421433746022104}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.7527, y: 7.88979, z: 3.1973548}
+  m_Center: {x: 1.4861273, y: 3.75618, z: -1.0986774}
