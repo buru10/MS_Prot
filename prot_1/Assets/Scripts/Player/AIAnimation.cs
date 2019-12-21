@@ -29,8 +29,6 @@ public class AIAnimation : MonoBehaviour
     public void AIInEnd()
     {
         ssm.ChangeState(StageStateManager.StageState.Ready);
-        // animator.SetBool("In", false);
-        //animator.SetBool("Out", true);
     }
 
     public void AIOutStart()
@@ -41,8 +39,6 @@ public class AIAnimation : MonoBehaviour
     public void AIOutEnd()
     {
         ssm.ChangeState(StageStateManager.StageState.Finish);
-        //animator.SetBool("In", true);
-        //animator.SetBool("Out", false);
     }
 
 

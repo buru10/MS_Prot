@@ -23,7 +23,7 @@ public class Warp : MonoBehaviour
     {
         if (other.gameObject.tag == "PlayerCharactor")
         {
-            //sceneChanger.ChangeToNext();
+            sceneChanger.ChangeToNext();
             ssm.ChangeState(StageStateManager.StageState.ShutDown);
         }
     }
