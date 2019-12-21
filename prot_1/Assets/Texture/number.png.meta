@@ -13,6 +13,16 @@ TextureImporter:
     21300016: number_8
     21300018: number_9
     21300020: number_10
+    21300022: Number_0
+    21300024: Number_1
+    21300026: Number_2
+    21300028: Number_3
+    21300030: Number_4
+    21300032: Number_5
+    21300034: Number_6
+    21300036: Number_7
+    21300038: Number_8
+    21300040: Number_9
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -106,201 +116,201 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: number_0
+      name: Number_0
       rect:
         serializedVersion: 2
-        x: 41
-        y: 141
-        width: 47
-        height: 69
+        x: 8
+        y: 88
+        width: 66
+        height: 54
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 124bf166320ad1a4a9045da6d6e307e3
+      spriteID: aa7d98e1c783b1a419fe2e1853effdf3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: number_1
+      name: Number_1
       rect:
         serializedVersion: 2
-        x: 105
-        y: 142
-        width: 37
-        height: 67
+        x: 90
+        y: 87
+        width: 34
+        height: 54
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a3eaed96047fed499f17cf32dd089e4
+      spriteID: 19cea91a73905974e8437d993fefc892
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: number_2
+      name: Number_2
       rect:
         serializedVersion: 2
-        x: 157
-        y: 142
-        width: 46
-        height: 68
+        x: 146
+        y: 88
+        width: 66
+        height: 53
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a889fda01f93cb4cbc15ce01b48b4f1
+      spriteID: ac25eff620d5de944a60ba786f94e8c7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: number_3
+      name: Number_3
       rect:
         serializedVersion: 2
         x: 215
-        y: 141
-        width: 45
-        height: 69
+        y: 88
+        width: 66
+        height: 53
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94c48e7797973954a8fbc74b2c682f9e
+      spriteID: 40c90aa9c379a6847acddcc8198314f2
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: number_4
+      name: Number_4
       rect:
         serializedVersion: 2
-        x: 269
-        y: 142
-        width: 51
-        height: 67
+        x: 285
+        y: 87
+        width: 65
+        height: 54
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61f172f8e1814c043979de8ff9557e42
+      spriteID: 2bd2ba9747b88e74789b927ded9cfab4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: number_5
+      name: Number_5
       rect:
         serializedVersion: 2
-        x: 43
-        y: 28
-        width: 44
-        height: 68
+        x: 8
+        y: 22
+        width: 65
+        height: 53
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0734da1af4dfbcb438ded189564b574e
+      spriteID: 0e3de843c828bd54a95f0a24d68b02d8
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: number_6
+      name: Number_6
       rect:
         serializedVersion: 2
-        x: 99
-        y: 28
-        width: 47
-        height: 69
+        x: 77
+        y: 22
+        width: 65
+        height: 53
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d18fdac8cbc46a64b94a247b0f4d3ca4
+      spriteID: f8864eea56788184bb3b2ad81d32ea59
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: number_7
+      name: Number_7
       rect:
         serializedVersion: 2
-        x: 157
-        y: 29
-        width: 46
-        height: 67
+        x: 150
+        y: 21
+        width: 62
+        height: 54
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3349e3bb1e0e05b4abca9c8da9635ec6
+      spriteID: 8ee23629de8628a4d94e2bad037d48f9
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: number_8
+      name: Number_8
       rect:
         serializedVersion: 2
-        x: 213
-        y: 27
-        width: 48
-        height: 70
+        x: 215
+        y: 22
+        width: 66
+        height: 54
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a066d043d8395534d92f61129f413c6a
+      spriteID: 4d80825f10448354f89bc9e42556a04c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: number_9
+      name: Number_9
       rect:
         serializedVersion: 2
-        x: 271
-        y: 28
-        width: 47
-        height: 69
+        x: 284
+        y: 22
+        width: 66
+        height: 53
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd021bd7e532c954e986294f8bb8e2d9
+      spriteID: aaee25bcdfd9b0a4c947ef1af891ced3
       vertices: []
       indices: 
       edges: []
