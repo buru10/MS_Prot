@@ -8,6 +8,8 @@ public class RisaSpawner : MonoBehaviour
     public GameObject risaspawnerObj;
     public List<GameObject> risaspawner = new List<GameObject>();
     public GameObject risaspawnerSelect;
+    public Camera WipeCamera;
+    public GameObject Wipe;
 
     public List<float> dis = new List<float>();
 
@@ -59,5 +61,26 @@ public class RisaSpawner : MonoBehaviour
 
         // 線分の近いものをセレクトする
         risaspawnerSelect = risaspawner[nNum];
+
+        if (!Wipe.activeSelf)
+        {
+            WipeCamera.transform.position = risaspawnerSelect.transform.GetChild(4).position;
+            WipeCamera.transform.rotation = risaspawnerSelect.transform.GetChild(4).rotation;
+        }
+    }
+
+    public void Spawn()
+    {
+        Wipe.SetActive(true);
+        StartCoroutine("Coroutine");
+    }
+
+    IEnumerator Coroutine()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        risaspawnerSelect.GetComponent<Animator>().SetBool("Open", true);
+
+        yield return null;
     }
 }
