@@ -11,6 +11,10 @@ public class CountTimer : MonoBehaviour
     [SerializeField]
     StageStateManager ssm;
 
+    public float Stage1Time;
+    public float Stage2Time;
+    public float Stage3Time;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +24,9 @@ public class CountTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        remainTime -= Time.deltaTime;
+        float deltaTime = Time.deltaTime;
+
+        remainTime -= deltaTime;
         GetComponent<Text>().text = remainTime.ToString("##0");
 
         if (remainTime < 0.0f)
