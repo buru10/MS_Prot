@@ -25,19 +25,23 @@ public class GarbageManager2 : MonoBehaviour
     {
         foreach(Transform garbage in ObjectPool.transform)
         {
-            foreach (Transform Resource in garbage.transform)
-            {
-                if (Resource.tag == "wood"
-                    || Resource.tag == "glass"
-                    || Resource.tag == "plastic"
-                    || Resource.tag == "metal")
-                    Garbagelist.Add(Resource.gameObject);
-            }
+            SearchResource(garbage);
+            //foreach (Transform Resource in garbage.transform)
+            //{
+            //    if (Resource.tag == "BurstObject")
+            //        SearchResource(Resource);
+            //    if (Resource.tag == "wood"
+            //        || Resource.tag == "glass"
+            //        || Resource.tag == "plastic"
+            //        || Resource.tag == "metal")
+            //        Garbagelist.Add(Resource.gameObject);
+            //}
         }
 
-        nCount = ObjectPool.transform.childCount;
+        //nCount = ObjectPool.transform.childCount;
+        WarpSpawnNorma = (int)(Garbagelist.Count * 0.4f);
 
-        WarpSpawnNorma = (int)((float)nCount * 0.6);
+        //WarpSpawnNorma = (int)((float)nCount * 0.6);
         warp.gameObject.SetActive(false);
 
         //if (Garbagelist?.Count > 0) bNothing = true;　// リストの中身が無いとき
@@ -46,6 +50,21 @@ public class GarbageManager2 : MonoBehaviour
         //SaveTime = fTime; // タイム保存
 
         //bDrop = true;
+    }
+
+    void SearchResource(Transform Resource)
+    {
+        foreach (Transform child in Resource.transform)
+        {
+            if (child.tag == "BurstObject")
+                SearchResource(child);
+
+            if (child.tag == "wood"
+                        || child.tag == "glass"
+                        || child.tag == "plastic"
+                        || child.tag == "metal")
+                Garbagelist.Add(child.gameObject);
+        }
     }
 
     // Update is called once per frame
@@ -91,6 +110,14 @@ public class GarbageManager2 : MonoBehaviour
         nCount--;
 
         if(nCount <= WarpSpawnNorma)
+        {
+            warp.gameObject.SetActive(true);
+        }
+    }
+
+    public void CheckNorma()
+    {
+        if(Garbagelist.Count <= WarpSpawnNorma)
         {
             warp.gameObject.SetActive(true);
         }
