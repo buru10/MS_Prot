@@ -10,7 +10,7 @@ public class SceneChanger : MonoBehaviour
     private string resultScene = "Result";
     private string ToChange;
     bool bfade = false;
-    [SerializeField] Fade fade;
+    [SerializeField] FadeRisa fade;
     bool bChange = false;
 
     // Start is called before the first frame update
