@@ -9,8 +9,8 @@ public class ToggleDistortion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F)) {
-            mat.SetFloat("_Enabledistortion", 1f - mat.GetFloat("_Enabledistortion"));
-        }
+        //if (Input.GetKeyDown(KeyCode.F)) {
+        //    mat.SetFloat("_Enabledistortion", 1f - mat.GetFloat("_Enabledistortion"));
+        //}
     }
 }

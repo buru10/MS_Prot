@@ -26,7 +26,6 @@ public class RisaikuruAIManager : MonoBehaviour
         CreateNumber = 1;
         CountRisa = 0;
 
-
         if (!Player)
             Player = GameObject.Find("Player").GetComponent<Player>();
        

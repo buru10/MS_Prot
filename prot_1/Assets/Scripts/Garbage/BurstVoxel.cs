@@ -20,8 +20,8 @@ public class BurstVoxel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B))
-            Burst();
+        //if (Input.GetKeyDown(KeyCode.B))
+            //Burst();
     }
 
     public void Burst()

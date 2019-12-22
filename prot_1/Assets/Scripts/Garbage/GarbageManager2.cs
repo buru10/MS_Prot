@@ -76,6 +76,11 @@ public class GarbageManager2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            warp.gameObject.SetActive(true);
+        }
+
         //// 毎秒減らす
         //fTime -= Time.deltaTime;
 

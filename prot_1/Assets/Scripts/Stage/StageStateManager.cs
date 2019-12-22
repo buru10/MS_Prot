@@ -43,6 +43,7 @@ public class StageStateManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         switch (stageState)
         {
             case StageState.Ready:

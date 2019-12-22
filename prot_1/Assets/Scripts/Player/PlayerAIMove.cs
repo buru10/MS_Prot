@@ -76,10 +76,10 @@ public class PlayerAIMove : MonoBehaviour
             }
 
             //jump
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                moveDirection.y = jumpSpeed;
-            }
+            //if (Input.GetKeyDown(KeyCode.Space))
+            //{
+            //    moveDirection.y = jumpSpeed;
+            //}
 
             //重力を発生させる
             moveDirection.y -= gravity * Time.deltaTime;

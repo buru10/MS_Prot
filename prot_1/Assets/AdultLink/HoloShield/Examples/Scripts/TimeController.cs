@@ -21,15 +21,15 @@ public class TimeController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.Q)) {
-			timeScale -= timeScaleStep;
-			setTimescale();
-		}
+		//if (Input.GetKeyDown(KeyCode.Q)) {
+		//	timeScale -= timeScaleStep;
+		//	setTimescale();
+		//}
 
-		if (Input.GetKeyDown(KeyCode.E)) {
-			timeScale += timeScaleStep;
-			setTimescale();
-		}
+		//if (Input.GetKeyDown(KeyCode.E)) {
+		//	timeScale += timeScaleStep;
+		//	setTimescale();
+		//}
 	}
 
 	private void setTimescale() {

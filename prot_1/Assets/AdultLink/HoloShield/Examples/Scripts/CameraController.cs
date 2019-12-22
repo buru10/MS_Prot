@@ -32,57 +32,57 @@ public class CameraController : MonoBehaviour {
 	}
 	private void Update() {
 
-		//CAMERA STUFF
-		if (Input.GetKeyDown(KeyCode.Tab)) {
-			freeView = !freeView;
-			toggleLockedIcon();
-			if (!freeView) {
-				setPosition();
-				setCursorVisibility(false);
-			}
-		}
+		////CAMERA STUFF
+		//if (Input.GetKeyDown(KeyCode.Tab)) {
+		//	freeView = !freeView;
+		//	toggleLockedIcon();
+		//	if (!freeView) {
+		//		setPosition();
+		//		setCursorVisibility(false);
+		//	}
+		//}
 
-		//FREE VIEW
-		if (freeView){
-			if (lockCursor){
-				cam.transform.position += (cam.transform.right * Input.GetAxis("Horizontal") + cam.transform.forward * Input.GetAxis("Vertical")) * movementSpeed * Time.unscaledDeltaTime;
-				cam.transform.eulerAngles += new Vector3(-Input.GetAxis("Mouse Y"), Input.GetAxis("Mouse X"), 0f);
-				detectElement();
-			}
-		}
-		//"GALLERY" MODE
-		else {
-			if (Input.GetKeyDown(KeyCode.LeftArrow)) {
-				positionIndex -= 1;
-				if (positionIndex < 0){
-					positionIndex = cameraPositions.Length-1;
-				}
-				setPosition();
-			}
+		////FREE VIEW
+		//if (freeView){
+		//	if (lockCursor){
+		//		cam.transform.position += (cam.transform.right * Input.GetAxis("Horizontal") + cam.transform.forward * Input.GetAxis("Vertical")) * movementSpeed * Time.unscaledDeltaTime;
+		//		cam.transform.eulerAngles += new Vector3(-Input.GetAxis("Mouse Y"), Input.GetAxis("Mouse X"), 0f);
+		//		detectElement();
+		//	}
+		//}
+		////"GALLERY" MODE
+		//else {
+		//	if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+		//		positionIndex -= 1;
+		//		if (positionIndex < 0){
+		//			positionIndex = cameraPositions.Length-1;
+		//		}
+		//		setPosition();
+		//	}
 
-			if (Input.GetKeyDown(KeyCode.RightArrow)) {
-				positionIndex += 1;
-				if (positionIndex >= cameraPositions.Length){
-					positionIndex = 0;
-				}
-				setPosition();
-			}
+		//	if (Input.GetKeyDown(KeyCode.RightArrow)) {
+		//		positionIndex += 1;
+		//		if (positionIndex >= cameraPositions.Length){
+		//			positionIndex = 0;
+		//		}
+		//		setPosition();
+		//	}
 
 			
-			setPosition();
+		//	setPosition();
 
-			//SMOOTH MOVEMENT TO THE DESIRED POSITION
-			cam.transform.position = Vector3.SmoothDamp(cam.transform.position, targetPos, ref velocity, smoothTime*Time.unscaledDeltaTime);
-			cam.transform.rotation = Quaternion.RotateTowards(cam.transform.rotation, Quaternion.Euler(targetRot), Time.unscaledDeltaTime* rotationSpeed);
+		//	//SMOOTH MOVEMENT TO THE DESIRED POSITION
+		//	cam.transform.position = Vector3.SmoothDamp(cam.transform.position, targetPos, ref velocity, smoothTime*Time.unscaledDeltaTime);
+		//	cam.transform.rotation = Quaternion.RotateTowards(cam.transform.rotation, Quaternion.Euler(targetRot), Time.unscaledDeltaTime* rotationSpeed);
 
-		}
+		//}
 
-		if (Input.GetKey(KeyCode.Escape)) {
-			setCursorVisibility(true);
-		}
-		if (Input.GetKey(KeyCode.Mouse0)) {
-			setCursorVisibility(false);
-		}
+		//if (Input.GetKey(KeyCode.Escape)) {
+		//	setCursorVisibility(true);
+		//}
+		//if (Input.GetKey(KeyCode.Mouse0)) {
+		//	setCursorVisibility(false);
+		//}
 
 	}
 

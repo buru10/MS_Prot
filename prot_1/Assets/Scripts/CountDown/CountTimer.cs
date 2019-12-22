@@ -7,7 +7,7 @@ public class CountTimer : MonoBehaviour
 {
     [SerializeField]
     float RemainTimeMax;
-    public float remainTime;
+    public static float remainTime;
     [SerializeField]
     StageStateManager ssm;
 
@@ -15,7 +15,11 @@ public class CountTimer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        remainTime = RemainTimeMax;
+        //remainTime = RemainTimeMax;
+        string tenn = ":";
+        float miliSec = remainTime - (int)remainTime;
+        string text = remainTime.ToString("##0") + tenn + miliSec.ToString("f2").Substring(2, 2);
+        GetComponent<Text>().text = text;
     }
 
     // Update is called once per frame
@@ -32,12 +36,19 @@ public class CountTimer : MonoBehaviour
         if (remainTime < 0.0f)
             ssm.ChangeState(StageStateManager.StageState.ShutDown);
 
+
+        // 審査
+        if(Input.GetKeyDown(KeyCode.A))
+        {
+            remainTime = 600.0f;
+        }
+
     }
 
-    private void OnEnable()
-    {
-        remainTime = RemainTimeMax;
-    }
+    //private void OnEnable()
+    //{
+    //    remainTime = RemainTimeMax;
+    //}
 
     public void Reset()
     {
