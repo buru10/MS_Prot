@@ -45,7 +45,7 @@ public class AccessCrush : MonoBehaviour
         if (disSize >= Vector3.Distance(Apos, Bpos))
         {
             AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-            switch (Random.Range(0, 1))
+            switch (Random.Range(0, 2))
             {
                 case 0:
                     if (stateInfo.shortNameHash == Animator.StringToHash("Run") || stateInfo.shortNameHash == Animator.StringToHash("Idle"))

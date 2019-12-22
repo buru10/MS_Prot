@@ -32,7 +32,7 @@ public class CrushCollider : MonoBehaviour
                 if (child.tag == "Untagged")
                     continue;
 
-                child.GetComponent<Garbage>().bBurst = true;
+                //child.GetComponent<Garbage>().bBurst = true;
             }
 
             BurstVoxel burstVoxel = other.gameObject.GetComponent<BurstVoxel>();

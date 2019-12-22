@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class AIAnimation : MonoBehaviour
 {
+    [SerializeField]
     private Animator animator;
+    public StageStateManager ssm;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
-        animator.SetBool("In", true);
-        animator.SetBool("Out", false);
+        //animator.SetBool("In", true);
+        //animator.SetBool("Out", false);
     }
 
     // Update is called once per frame
@@ -23,20 +25,20 @@ public class AIAnimation : MonoBehaviour
     {
         animator.SetBool("In", true);
     }
+
     public void AIInEnd()
     {
-       // animator.SetBool("In", false);
-        animator.SetBool("Out", true);
+        ssm.ChangeState(StageStateManager.StageState.Ready);
     }
 
     public void AIOutStart()
     {
         animator.SetBool("Out", true);
     }
+
     public void AIOutEnd()
     {
-        animator.SetBool("In", true);
-        animator.SetBool("Out", false);
+        ssm.ChangeState(StageStateManager.StageState.Finish);
     }
 
 

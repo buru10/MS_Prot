@@ -41,11 +41,11 @@ public class Fade : MonoBehaviour
     void Update()
     {
         // デバッグ用
-        if(Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            state = State.FadeOut;
-            alpha = 0.0f;
-        }
+        //if(Input.GetKeyDown(KeyCode.Alpha0))
+        //{
+        //    state = State.FadeOut;
+        //    alpha = 0.0f;
+        //}
 
         switch(state)
         {

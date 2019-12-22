@@ -191,9 +191,7 @@ public class RisaikuruRecovery : MonoBehaviour
             // アニメーション切り替え
             Recovery();
 
-
             ModelDeleteChecker mdc = collision.transform.parent.GetComponent<ModelDeleteChecker>();
-            bool bSub;
 
             // タグ判定
             switch (collision.tag)
@@ -212,10 +210,12 @@ public class RisaikuruRecovery : MonoBehaviour
 
                     Destroy(collision);
 
-                    if(mdc.DeleteCheck())
-                    {
-                        garbageManager2.SubCount();
-                    }
+                    mdc.DeleteCheck();
+                    garbageManager2.CheckNorma();
+                    //if(mdc.DeleteCheck())
+                    //{
+                    //    garbageManager2.SubCount();
+                    //}
 
                     // エフェクト生成
                     recoveryCharge.Create(collision.tag);
@@ -239,10 +239,12 @@ public class RisaikuruRecovery : MonoBehaviour
                     
                     Destroy(collision);
 
-                    if (mdc.DeleteCheck())
-                    {
-                        garbageManager2.SubCount();
-                    }
+                    mdc.DeleteCheck();
+                    garbageManager2.CheckNorma();
+                    //if(mdc.DeleteCheck())
+                    //{
+                    //    garbageManager2.SubCount();
+                    //}
 
                     // エフェクト生成
                     recoveryCharge.Create(collision.tag);
@@ -265,10 +267,12 @@ public class RisaikuruRecovery : MonoBehaviour
                     
                     Destroy(collision);
 
-                    if (mdc.DeleteCheck())
-                    {
-                        garbageManager2.SubCount();
-                    }
+                    mdc.DeleteCheck();
+                    garbageManager2.CheckNorma();
+                    //if(mdc.DeleteCheck())
+                    //{
+                    //    garbageManager2.SubCount();
+                    //}
 
                     // エフェクト生成
                     recoveryCharge.Create(collision.tag);
@@ -291,10 +295,12 @@ public class RisaikuruRecovery : MonoBehaviour
                     
                     Destroy(collision);
 
-                    if (mdc.DeleteCheck())
-                    {
-                        garbageManager2.SubCount();
-                    }
+                    mdc.DeleteCheck();
+                    garbageManager2.CheckNorma();
+                    //if(mdc.DeleteCheck())
+                    //{
+                    //    garbageManager2.SubCount();
+                    //}
 
                     // エフェクト生成
                     recoveryCharge.Create(collision.tag);
@@ -317,10 +323,12 @@ public class RisaikuruRecovery : MonoBehaviour
 
                     Destroy(collision);
 
-                    if (mdc.DeleteCheck())
-                    {
-                        garbageManager2.SubCount();
-                    }
+                    mdc.DeleteCheck();
+                    garbageManager2.CheckNorma();
+                    //if(mdc.DeleteCheck())
+                    //{
+                    //    garbageManager2.SubCount();
+                    //}
 
                     // エフェクト生成
                     recoveryCharge.Create(collision.tag);
