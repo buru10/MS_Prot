@@ -13,12 +13,14 @@ public class StageStateManager : MonoBehaviour
     Text CountDownText;
     [SerializeField]
     Image CountDown;
+
     [SerializeField]
-    Text TimerText;
+    Canvas gamemain;
+
     [SerializeField]
     AIAnimation AIanim;
     [SerializeField]
-    Fade fade;
+    FadeRisa fade;
 
     public enum StageState
     {
@@ -89,11 +91,11 @@ public class StageStateManager : MonoBehaviour
             case StageState.Main:
                 CountDown.gameObject.SetActive(false);
                 PlayerInputManager.SetEnabled(true);
-                //TimerText.gameObject.SetActive(true);
+                gamemain.gameObject.SetActive(true);
                 break;
             case StageState.ShutDown:
                 PlayerInputManager.SetEnabled(false);
-                TimerText.gameObject.SetActive(false);
+                gamemain.gameObject.SetActive(false);
                 AIanim.AIOutStart();
                 break;
             case StageState.Finish:

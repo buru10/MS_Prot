@@ -799,6 +799,7 @@ GameObject:
   - component: {fileID: 8053966322998838181}
   - component: {fileID: 8053966322998838180}
   - component: {fileID: 8053966322998838183}
+  - component: {fileID: 3897062587329578481}
   m_Layer: 10
   m_Name: Risa
   m_TagString: Untagged
@@ -914,7 +915,7 @@ MonoBehaviour:
   PlayerMark: {x: 0, y: 0, z: 0}
   startMarker: {fileID: 8053966322998838182}
   endMarker: {fileID: 0}
-  garbageManager: {fileID: 0}
+  garbageManager2: {fileID: 0}
   CreateNumber: 1
   Leapspeed: 0.1
   Snipe: 0
@@ -1033,3 +1034,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3897062587329578481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8053966322998838177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c268f4f8b3945fb4c91f5c3b67261953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  risaSpawnerAnimation: {fileID: 0}
+  MoveDistance: 3
+  AnimTime: 2
