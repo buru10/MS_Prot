@@ -13,15 +13,17 @@ public class GarbageManager2 : MonoBehaviour
 
     [SerializeField]int nCount;
     int TotalNum; 
-    public float WarpSpawnNorma;
+    public int WarpSpawnNorma;
     public Warp warp;
 
-    float Percentage;
+    static public int Percentage = 0;
+    static int Stage1Percentage;
+    static int Stage2Percentage;
+
     //public bool bNothing;
     //public bool bDrop;
     //public float fTime;
     //float SaveTime;
-
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +45,7 @@ public class GarbageManager2 : MonoBehaviour
 
         //nCount = ObjectPool.transform.childCount;
         TotalNum = Garbagelist.Count;
-        WarpSpawnNorma = 0.6f;
+        WarpSpawnNorma = 60;
 
         //WarpSpawnNorma = (int)((float)nCount * 0.6);
         warp.gameObject.SetActive(false);
@@ -121,10 +123,15 @@ public class GarbageManager2 : MonoBehaviour
 
     public void CheckNorma()
     {
-        Percentage = (float)(TotalNum - Garbagelist.Count) / (float)TotalNum;
+        Percentage = (int)((float)(TotalNum - Garbagelist.Count) / (float)TotalNum * 100.0f);
         if (Percentage >= WarpSpawnNorma)
         {
             warp.gameObject.SetActive(true);
         }
+    }
+
+    public int GetPercentage()
+    {
+        return Percentage;
     }
 }
