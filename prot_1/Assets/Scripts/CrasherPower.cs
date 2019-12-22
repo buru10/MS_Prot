@@ -25,12 +25,12 @@ public class CrasherPower : MonoBehaviour
     {
     }
 
-    void On()
+    public void On()
     {
         animator.SetBool("TurnOn",true);
     }
 
-    void Off()
+    public void Off()
     {
         AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
 
