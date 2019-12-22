@@ -196,6 +196,8 @@ MonoBehaviour:
   plateshade:
   - {fileID: 21300000, guid: c1e36501a03525f40accc8851598f3b5, type: 3}
   - {fileID: 21300000, guid: 9bba76dc55f16af4aacb5ffcd9c2f785, type: 3}
+  movement: 0
+  movecount: 0
 --- !u!1 &28752932
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class PlayerFollowCamera : MonoBehaviour
     [SerializeField] private float vTurnSpeed = 2.0f;   // 垂直回転速度
     [SerializeField] private float hTurnSpeed = 2.0f;   // 水平回転速度
     [SerializeField] private float horizonalMax = 40.0f;   // 垂直回転角度制限
-    [SerializeField] private float horizonalMin = 0.0f;   // 垂直回転角度制限
+    [SerializeField] private float horizonalMin = -10.0f;   // 垂直回転角度制限
     [SerializeField] public Transform player;          // 注視対象プレイヤー
 
     [SerializeField] private float distance = 15.0f;    // 注視対象プレイヤーからカメラを離す距離
@@ -37,6 +37,23 @@ public class PlayerFollowCamera : MonoBehaviour
         {
             hRotation *= Quaternion.Euler(0, Input.GetAxis("R_Stick_H") * hTurnSpeed, 0);
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         // 垂直回転の更新
         if (Input.GetAxis("R_Stick_V") != 0.0f)
