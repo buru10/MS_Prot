@@ -22,6 +22,13 @@ public class AccessCrush : MonoBehaviour
         foreach (Transform child in GarbageObj.transform)
         {
             Garbage.Add(child.gameObject);
+            foreach (Transform mago in child.transform)
+            {
+                if(mago.tag == "BurstObject")
+                {
+                    Garbage.Add(mago.gameObject);
+                }
+            }
         }
 
         m_navAgent = GetComponent<NavMeshAgent>();
@@ -33,7 +40,8 @@ public class AccessCrush : MonoBehaviour
     void Update()
     {
         // 
-        if (Garbage[0] == null) Garbage.Remove(Garbage[0]);
+        if (Garbage[0] == null || Garbage[0].GetComponent<BoxCollider>().enabled == false)
+            Garbage.Remove(Garbage[0]);
 
         // オブジェクトの移動
         m_navAgent.SetDestination(Garbage[0].transform.position);
