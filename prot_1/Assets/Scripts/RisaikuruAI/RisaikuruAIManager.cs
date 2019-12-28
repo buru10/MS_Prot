@@ -41,7 +41,7 @@ public class RisaikuruAIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(CountRisa);
+       // Debug.Log(CountRisa);
     }
 
     public int GetCreateNumber()

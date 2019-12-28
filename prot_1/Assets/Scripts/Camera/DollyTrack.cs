@@ -12,8 +12,6 @@ public class DollyTrack : MonoBehaviour
 
     [SerializeField]
     private CinemachineBrain _Brain;
-    [SerializeField]
-    private PlayerFollowCamera _FollowCamera;
 
     private CinemachineTrackedDolly _dolly;
 

@@ -42,4 +42,9 @@ public class SceneChanger : MonoBehaviour
         fade.StartFade();
         bfade = true;
     }
+
+    public void ChangeNextSceneName(string name)
+    {
+        nextScene = name;
+    }
 }
