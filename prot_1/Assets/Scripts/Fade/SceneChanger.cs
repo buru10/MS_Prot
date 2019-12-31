@@ -38,6 +38,9 @@ public class SceneChanger : MonoBehaviour
 
     public void ChangeToNext()
     {
+        if (fade.state != FadeRisa.State.None)
+            return;
+
         ToChange = nextScene;
         fade.StartFade();
         bfade = true;

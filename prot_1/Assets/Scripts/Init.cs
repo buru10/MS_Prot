@@ -9,6 +9,7 @@ public class Init : MonoBehaviour
     {
         GarbageManager2.Percentage = 0;
         CountTimer.remainTime = 180.0f;
+        Score.Init();
     }
 
     // Update is called once per frame
