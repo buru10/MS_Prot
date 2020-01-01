@@ -19,8 +19,10 @@ public class StageStateManager : MonoBehaviour
 
     [SerializeField]
     AIAnimation AIanim;
-    [SerializeField]
-    FadeRisa fade;
+    //[SerializeField]
+    //FadeRisa fade;
+
+    [SerializeField] SceneChanger sceneChanger;
 
     public enum StageState
     {
@@ -82,6 +84,7 @@ public class StageStateManager : MonoBehaviour
         switch (stageState)
         {
             case StageState.Boot:
+                Score.bStage1 = !Score.bStage1;
                 AIanim.AIInStart();
                 PlayerInputManager.SetEnabled(false);
                 break;
@@ -95,12 +98,13 @@ public class StageStateManager : MonoBehaviour
                 gamemain.gameObject.SetActive(true);
                 break;
             case StageState.ShutDown:
+                Score.SaveRecycle(GarbageManager2.Percentage);
                 PlayerInputManager.SetEnabled(false);
                 gamemain.gameObject.SetActive(false);
                 AIanim.AIOutStart();
                 break;
             case StageState.Finish:
-                fade.StartFade();
+                sceneChanger.ChangeToNext();
                 break;
             default:
                 break;
