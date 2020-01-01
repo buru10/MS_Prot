@@ -19,7 +19,7 @@ public class FadeRisa : MonoBehaviour
     public float BorderposXOut;                 // 境界ポジションx
     public float BorderposXIn;                 // 境界ポジションx
 
-    State state = FadeRisa.State.FadeIn;
+    public State state = FadeRisa.State.FadeIn;
 
     private bool bEndFadeIn = false;
     bool bEndFadeOut = false;

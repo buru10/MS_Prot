@@ -89,6 +89,7 @@ public class PushButton : MonoBehaviour
         {
             //Instantiate(RisaikuruAI, Player.GetComponent<RisaSpawner>().risaspawnerSelect.transform.position, Quaternion.identity, RisaikuruAIObject.transform);
             Player.GetComponent<RisaSpawner>().Spawn();
+            Score.RisaNum++;
         }
         //meter.MeterCount = 0;
     }

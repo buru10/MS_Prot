@@ -15,10 +15,9 @@ public class GarbageManager2 : MonoBehaviour
     int TotalNum; 
     public int WarpSpawnNorma;
     public Warp warp;
+    public CrashSpawner crashSpawner;
 
-    static public int Percentage = 0;
-    static int Stage1Percentage;
-    static int Stage2Percentage;
+    public static int Percentage = 0;
 
     //public bool bNothing;
     //public bool bDrop;
@@ -28,34 +27,19 @@ public class GarbageManager2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        foreach(Transform garbage in ObjectPool.transform)
+        Percentage = 0;
+
+        foreach (Transform garbage in ObjectPool.transform)
         {
             SearchResource(garbage);
-            //foreach (Transform Resource in garbage.transform)
-            //{
-            //    if (Resource.tag == "BurstObject")
-            //        SearchResource(Resource);
-            //    if (Resource.tag == "wood"
-            //        || Resource.tag == "glass"
-            //        || Resource.tag == "plastic"
-            //        || Resource.tag == "metal")
-            //        Garbagelist.Add(Resource.gameObject);
-            //}
         }
-
-        //nCount = ObjectPool.transform.childCount;
+        
         TotalNum = Garbagelist.Count;
         WarpSpawnNorma = 60;
 
-        //WarpSpawnNorma = (int)((float)nCount * 0.6);
         warp.gameObject.SetActive(false);
-
-        //if (Garbagelist?.Count > 0) bNothing = true;　// リストの中身が無いとき
-        //else bNothing = false;
-
-        //SaveTime = fTime; // タイム保存
-
-        //bDrop = true;
+        crashSpawner.GetComponent<BoxCollider>().enabled = false;
+        
     }
 
     void SearchResource(Transform Resource)
@@ -79,6 +63,7 @@ public class GarbageManager2 : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             warp.gameObject.SetActive(true);
+            crashSpawner.GetComponent<BoxCollider>().enabled = true;
         }
 
         //// 毎秒減らす
@@ -123,6 +108,7 @@ public class GarbageManager2 : MonoBehaviour
         if(nCount <= WarpSpawnNorma)
         {
             warp.gameObject.SetActive(true);
+            crashSpawner.GetComponent<BoxCollider>().enabled = true;
         }
     }
 
@@ -132,6 +118,7 @@ public class GarbageManager2 : MonoBehaviour
         if (Percentage >= WarpSpawnNorma)
         {
             warp.gameObject.SetActive(true);
+            crashSpawner.GetComponent<BoxCollider>().enabled = true;
         }
     }
 
