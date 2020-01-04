@@ -21,6 +21,7 @@ public class FadeRisa : MonoBehaviour
 
     public State state = FadeRisa.State.FadeIn;
 
+    private bool bEndFadeIn = false;
     bool bEndFadeOut = false;
 
     RectTransform rect;
@@ -37,26 +38,20 @@ public class FadeRisa : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // デバッグ用
-        if(Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            state = State.FadeOut;
-            posX = -5000.0f;
-        }
-
         switch(state)
         {
             case State.FadeIn:
                 posX += speed;
-                if (posX >= BorderposXIn)
+                if (rect.localPosition.x >= BorderposXIn)
                 {
-                    posX = -5000.0f;
+                    posX = -BorderposXIn;
+                    bEndFadeIn = true;
                     state = State.None;
                 }
                 break;
             case State.FadeOut:
                 posX += speed;
-                if (posX >= BorderposXOut)
+                if (rect.localPosition.x >= BorderposXOut)
                 {
                     posX = BorderposXOut;
                     bEndFadeOut = true;
@@ -74,10 +69,14 @@ public class FadeRisa : MonoBehaviour
     {
         return bEndFadeOut;
     }
+    public bool getEndFlagIn()
+    {
+        return bEndFadeIn;
+    }
 
     public void StartFade()
     {
         state = State.FadeOut;
-        posX = -5000.0f;
+        posX = -BorderposXIn;
     }
 }
