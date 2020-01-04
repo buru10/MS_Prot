@@ -8,17 +8,21 @@ public class titlelogo : MonoBehaviour
     public GameObject plate_ShadeObj;
     public GameObject plateObj;
     public GameObject ringObj;
+    public GameObject highlightObj;
+    public Vector3 highlight_Start;
+    public Vector3 highlight_end;
+    float highlighttimer;
+
     public GameObject[] logo_Obj = new GameObject[7];
     public GameObject plate_CrackObj;
     public Sprite[] plate = new Sprite[2];
     public Sprite[] plateshade = new Sprite[2];
-    public GameObject CameraObj;
 
-    Vector3 logopos_init;
-    Vector3 logopos_up;
-    Vector3 logopos_down;
-    Vector3 logopos_left;
-    Vector3 logopos_right;
+    public GameObject CameraObj;
+    Vector3 Camerapos_init;
+    Vector3 Camerapos_upleft;
+    Vector3 Camerapos_upright;
+    float Cameratimer;
     public float movement;
 
     int num;
@@ -52,13 +56,11 @@ public class titlelogo : MonoBehaviour
         text_scale = new float[logo_Obj.Length];
         Vector3[] logo_scalinit = new Vector3[logo_Obj.Length];
 
-        logopos_init = GetComponent<RectTransform>().localPosition;
 
-        logopos_up = new Vector3(logopos_init.x, logopos_init.y + movement, logopos_init.z);
-        logopos_down = new Vector3(logopos_init.x, logopos_init.y - movement, logopos_init.z);
-        logopos_left = new Vector3(logopos_init.x - movement, logopos_init.y, logopos_init.z);
-        logopos_right = new Vector3(logopos_init.x + movement, logopos_init.y, logopos_init.z);
-
+        Camerapos_init = CameraObj.GetComponent<Transform>().localPosition;
+        Camerapos_upleft = new Vector3(Camerapos_init.x + movement, Camerapos_init.y + movement, Camerapos_init.z);
+        Camerapos_upright = new Vector3(Camerapos_init.x - movement, Camerapos_init.y - movement, Camerapos_init.z);
+        
 
 
         for (int i = 0; i < logo_Obj.Length; i++)
@@ -101,7 +103,7 @@ public class titlelogo : MonoBehaviour
                 //背景プレートが1秒で出現
                 plateObj.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, plateObj_alpha);
                 plate_ShadeObj.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, plateObj_alpha);
-                plateObj_alpha += Time.deltaTime;
+                plateObj_alpha += Time.deltaTime*2;
 
                 if (plateObj_alpha >= 1.0f)
                 {
@@ -121,7 +123,7 @@ public class titlelogo : MonoBehaviour
                 if (ring_scal >= logointerval)
                 {
                     logo_Obj[3].SetActive(true);
-                    logotimer[3] += Time.deltaTime;
+                    logotimer[3] += Time.deltaTime * 2;
                 }
 
                 logo_Obj[3].GetComponent<RectTransform>().localScale = Vector3.Lerp(logoscalmax[3], logoscalmin[3], logotimer[3]);
@@ -130,7 +132,7 @@ public class titlelogo : MonoBehaviour
                 if (logotimer[3] >= logointerval)
                 {
                     logo_Obj[1].SetActive(true);
-                    logotimer[1] += Time.deltaTime;
+                    logotimer[1] += Time.deltaTime * 2;
                 }
 
                 logo_Obj[1].GetComponent<RectTransform>().localScale = Vector3.Lerp(logoscalmax[1], logoscalmin[1], logotimer[1]);
@@ -139,7 +141,7 @@ public class titlelogo : MonoBehaviour
                 if (logotimer[1] >= logointerval)
                 {
                     logo_Obj[5].SetActive(true);
-                    logotimer[5] += Time.deltaTime;
+                    logotimer[5] += Time.deltaTime * 2;
                 }
 
                 logo_Obj[5].GetComponent<RectTransform>().localScale = Vector3.Lerp(logoscalmax[5], logoscalmin[5], logotimer[5]);
@@ -148,7 +150,7 @@ public class titlelogo : MonoBehaviour
                 if (logotimer[5] >= logointerval)
                 {
                     logo_Obj[0].SetActive(true);
-                    logotimer[0] += Time.deltaTime;
+                    logotimer[0] += Time.deltaTime * 2;
                 }
 
 
@@ -159,7 +161,7 @@ public class titlelogo : MonoBehaviour
                 if (logotimer[0] >= logointerval)
                 {
                     logo_Obj[4].SetActive(true);
-                    logotimer[4] += Time.deltaTime;
+                    logotimer[4] += Time.deltaTime * 2;
                 }
                 logo_Obj[4].GetComponent<RectTransform>().localScale = Vector3.Lerp(logoscalmax[4], logoscalmin[4], logotimer[4]);
 
@@ -167,7 +169,7 @@ public class titlelogo : MonoBehaviour
                 if (logotimer[4] >= logointerval)
                 {
                     logo_Obj[6].SetActive(true);
-                    logotimer[6] += Time.deltaTime;
+                    logotimer[6] += Time.deltaTime * 2;
                 }
 
                 logo_Obj[6].GetComponent<RectTransform>().localScale = Vector3.Lerp(logoscalmax[6], logoscalmin[6], logotimer[6]);
@@ -176,7 +178,7 @@ public class titlelogo : MonoBehaviour
                 if (logotimer[6] >= logointerval)
                 {
                     logo_Obj[2].SetActive(true);
-                    logotimer[2] += Time.deltaTime;
+                    logotimer[2] += Time.deltaTime * 2;
                 }
 
                 logo_Obj[2].GetComponent<RectTransform>().localScale = Vector3.Lerp(logoscalmax[2], logoscalmin[2], logotimer[2]);
@@ -198,25 +200,56 @@ public class titlelogo : MonoBehaviour
                 {
                     plateObj.GetComponent<Image>().sprite = plate[1];
                     plate_CrackObj.SetActive(false);
+                    num = 4;
                 }
                 break;
 
             case 3:
                 //Camera揺らす
+                
+                Cameratimer += Time.deltaTime;
+                if(Cameratimer>=0.0f&&Cameratimer<=0.3f)
+                {
+                    CameraObj.GetComponent<Transform>().localPosition = Camerapos_upleft;
+                }
+                if (Cameratimer >= 0.3f && Cameratimer <= 0.6f)
+                {
+                    CameraObj.GetComponent<Transform>().localPosition = Camerapos_upright;
+                }
+                if (Cameratimer >= 0.6f && Cameratimer <= 0.9f)
+                {
+                    CameraObj.GetComponent<Transform>().localPosition = Camerapos_init;
+                }
 
+                if (Cameratimer >= 0.6f)
+                {
+                    Cameratimer = 0.0f;
+                }
                 break;
 
             case 4:
                 //ハイライト動かす
-
+                highlightObj.GetComponent<RectTransform>().localPosition =Vector3.Lerp(highlight_Start, highlight_end, highlighttimer);
+                highlighttimer += Time.deltaTime;
+                if(highlighttimer>=1.0f)
+                {
+                    num = 5;
+                }
                 break;
 
             case 5:
-                
+
                 //リング回す
                 ringObj.transform.Rotate(new Vector3(0, 0, 2.0f));
+                //ハイライト動かす
+                highlightObj.GetComponent<RectTransform>().localPosition = Vector3.Lerp(highlight_Start, highlight_end, highlighttimer);
+                highlighttimer += Time.deltaTime;
+                if (highlighttimer >= 3.0f)
+                {
+                    highlighttimer = 0.0f;
+                }
 
-                break;
+                    break;
 
             case 6:
 
