@@ -17,8 +17,10 @@ public class UImove : MonoBehaviour
     private float direction; // 補完時間
     [SerializeField]
     private float delay;    // 遅らせる時間
+    private float Sumtime;    // 合計補完時間
 
     public Ease EaseType;
+    public bool bfadeentry; // フェードがいるかどうか
     public FadeRisa fadeRisa;
 
 
@@ -27,15 +29,34 @@ public class UImove : MonoBehaviour
     {
         rect = GetComponent<RectTransform>();
         rect.localPosition = StartPosition;
+
+        // 初期化
+        Sumtime = direction + delay;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // フェードイン終了時
-        if (fadeRisa.getEndFlagIn())
+        // フェード終了時に実行するかどうか
+        if (!bfadeentry)
         {
+            // フェードイン終了時
+            if (fadeRisa.getEndFlagIn())
+            {
+                // 補完
+                rect.DOLocalMove(EndPosition, direction).SetEase(EaseType).SetDelay(delay);
+
+                Sumtime -= Time.deltaTime;
+                if (Sumtime <= 0) GetComponent<UImove>().enabled = false;
+            }
+        }
+        else
+        {
+            // 補完
             rect.DOLocalMove(EndPosition, direction).SetEase(EaseType).SetDelay(delay);
+
+            Sumtime -= Time.deltaTime;
+            if (Sumtime <= 0) GetComponent<UImove>().enabled = false;
         }
     }
 }

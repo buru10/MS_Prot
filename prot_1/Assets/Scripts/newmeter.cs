@@ -73,6 +73,10 @@ public class newmeter : MonoBehaviour
             {
                 paramobj[i].SetActive(false);
             }
+
+            Player.GetComponent<RisaSpawner>().Spawn();
+            Score.RisaNum++;
+
         }
 
         else//

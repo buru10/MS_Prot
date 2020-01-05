@@ -11,7 +11,7 @@ public class Stagenamelogo : MonoBehaviour
     float movetimer;
 
     //Start演出終了フラグをもらう所
-    //public　bool end bstartend; 
+    public　bool bstartend; 
 
     int switchnum;
     // Start is called before the first frame update
@@ -29,7 +29,7 @@ public class Stagenamelogo : MonoBehaviour
                 //Stagenamelogo_Startpos(画面外上部)からStagenamelogo_Endpos(画面下部)に移動
                 this.GetComponent<RectTransform>().localPosition = Vector2.Lerp(Stagenamelogo_Startpos, Stagenamelogo_Endpos, movetimer);
                 movetimer += Time.deltaTime;
-                if (movetimer >= 1.0f/*&&bstartend==true*/&& Input.GetKey(KeyCode.LeftArrow))
+                if (movetimer >= 1.0f && bstartend)
                 {
                     movetimer = 0.0f;
                     switchnum = 1;
