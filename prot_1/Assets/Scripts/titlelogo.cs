@@ -18,7 +18,7 @@ public class titlelogo : MonoBehaviour
     public Sprite[] plate = new Sprite[2];
     public Sprite[] plateshade = new Sprite[2];
 
-    public GameObject CameraObj;
+    //public GameObject CameraObj;
     Vector3 Camerapos_init;
     Vector3 Camerapos_upleft;
     Vector3 Camerapos_upright;
@@ -42,10 +42,14 @@ public class titlelogo : MonoBehaviour
 
     float plateObj_alpha;
     float ring_scal;
+
+    float rotationCount;
+    public GameObject[] explosioneffect_Obj = new GameObject[3];
+
     // Start is called before the first frame update
     void Start()
     {
-        num = 0;
+        num = 6;
         logotimer = new float[logo_Obj.Length];
         logointerval = 0.3f;
         logoCount = 0;
@@ -57,9 +61,9 @@ public class titlelogo : MonoBehaviour
         Vector3[] logo_scalinit = new Vector3[logo_Obj.Length];
 
 
-        Camerapos_init = CameraObj.GetComponent<Transform>().localPosition;
-        Camerapos_upleft = new Vector3(Camerapos_init.x + movement, Camerapos_init.y + movement, Camerapos_init.z);
-        Camerapos_upright = new Vector3(Camerapos_init.x - movement, Camerapos_init.y - movement, Camerapos_init.z);
+       // Camerapos_init = CameraObj.GetComponent<Transform>().localPosition;
+        //Camerapos_upleft = new Vector3(Camerapos_init.x + movement, Camerapos_init.y + movement, Camerapos_init.z);
+        //Camerapos_upright = new Vector3(Camerapos_init.x - movement, Camerapos_init.y - movement, Camerapos_init.z);
         
 
 
@@ -89,9 +93,11 @@ public class titlelogo : MonoBehaviour
         
         //表示off
         ringObj.SetActive(false);
-        //plate_ShadeObj.SetActive(false);
-        //plateObj.SetActive(false);
+        for (int i = 0; i < explosioneffect_Obj.Length; i++)
+        {
+            explosioneffect_Obj[i].SetActive(false);
 
+        }
     }
 
     // Update is called once per frame
@@ -191,7 +197,7 @@ public class titlelogo : MonoBehaviour
                 break;
 
             case 2:
-                //ロゴ(割れ)段々小さくなって登場
+                /*//ロゴ(割れ)段々小さくなって登場
                 plate_CrackObj.SetActive(true);
                 plate_CrackObj.GetComponent<RectTransform>().localScale = Vector3.Lerp(plate_Crackscalmax, plate_Crackscalmin, plate_Cracktimer);
                 plate_Cracktimer += Time.deltaTime*3;
@@ -201,11 +207,26 @@ public class titlelogo : MonoBehaviour
                     plateObj.GetComponent<Image>().sprite = plate[1];
                     plate_CrackObj.SetActive(false);
                     num = 4;
+                }*/
+
+                //爆発Particleを出す
+                for (int i = 0; i < explosioneffect_Obj.Length; i++)
+                {
+                    explosioneffect_Obj[i].SetActive(true);
+
+                }
+                
+                plate_Cracktimer += Time.deltaTime;
+                if (plate_Cracktimer >= 1.0f)
+                {
+                    //プレート(分割)を割れ分割に変更後
+                    plateObj.GetComponent<Image>().sprite = plate[1];
+                    num = 4;
                 }
                 break;
 
             case 3:
-                //Camera揺らす
+                /*//Camera揺らす
                 
                 Cameratimer += Time.deltaTime;
                 if(Cameratimer>=0.0f&&Cameratimer<=0.3f)
@@ -224,7 +245,7 @@ public class titlelogo : MonoBehaviour
                 if (Cameratimer >= 0.6f)
                 {
                     Cameratimer = 0.0f;
-                }
+                }*/
                 break;
 
             case 4:
@@ -248,12 +269,18 @@ public class titlelogo : MonoBehaviour
                 {
                     highlighttimer = 0.0f;
                 }
-
+                //一定時間で全部フェードアウト→最初からに戻す
                     break;
 
             case 6:
+                Cameratimer += Time.deltaTime;
 
-                //一定時間で全部フェードアウト→最初からに戻す
+                if(Cameratimer>=1.0f)
+                {
+                    num = 0;
+                }
+
+
 
                 break;
 
