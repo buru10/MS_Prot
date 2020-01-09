@@ -28,7 +28,7 @@ TagManager:
   - Minimap
   - BurstObject
   - PostProcess
-  - 
+  - Meter
   - 
   - 
   - 
@@ -49,4 +49,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Resources
+    uniqueID: 1749952481
     locked: 0

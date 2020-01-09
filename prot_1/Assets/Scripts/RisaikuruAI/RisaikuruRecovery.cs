@@ -15,6 +15,7 @@ public class RisaikuruRecovery : MonoBehaviour
     //public GarbageManager garbageManager;
     public GarbageManager2 garbageManager2;
     private RecoveryCharge recoveryCharge;
+    private RecoveryChargeMeter recoveryChargeMeter;
     private RisaikuruAIManager risaikuruAIManager;
     public int CreateNumber;
 
@@ -66,6 +67,7 @@ public class RisaikuruRecovery : MonoBehaviour
         m_navAgent = GetComponent<NavMeshAgent>();
 
         recoveryCharge = GetComponent<RecoveryCharge>();
+        recoveryChargeMeter = GetComponent<RecoveryChargeMeter>();
 
         // 新たなゴミが増えていないかチェックし増えていたら起動
         CheckGarbage();
@@ -200,7 +202,7 @@ public class RisaikuruRecovery : MonoBehaviour
                 case "metal":
 
                     // プレイヤーに与える
-                    Player.SetResourcesPlus(collision.tag);
+                    //Player.SetResourcesPlus(collision.tag);
 
                     // 衝突リストから消去
                     colList.Remove(collision);
@@ -219,7 +221,8 @@ public class RisaikuruRecovery : MonoBehaviour
 
                     // エフェクト生成
                     recoveryCharge.Create(collision.tag);
-                    
+                    recoveryChargeMeter.Create(collision.tag);
+
                     // スナイプを外す
                     Snipe = false;
 
@@ -229,7 +232,7 @@ public class RisaikuruRecovery : MonoBehaviour
                 case "paper":
 
                     // プレイヤーに与える
-                    Player.SetResourcesPlus(collision.tag);
+                    //Player.SetResourcesPlus(collision.tag);
 
                     // 衝突リストから消去
                     colList.Remove(collision);
@@ -248,6 +251,7 @@ public class RisaikuruRecovery : MonoBehaviour
 
                     // エフェクト生成
                     recoveryCharge.Create(collision.tag);
+                    recoveryChargeMeter.Create(collision.tag);
 
                     // コライダーを消しスナイプも外す
                     Snipe = false;
@@ -257,7 +261,7 @@ public class RisaikuruRecovery : MonoBehaviour
                 case "plastic":
 
                     // プレイヤーに与える
-                    Player.SetResourcesPlus(collision.tag);
+                    // Player.SetResourcesPlus(collision.tag);
 
                     // 衝突リストから消去
                     colList.Remove(collision);
@@ -276,6 +280,7 @@ public class RisaikuruRecovery : MonoBehaviour
 
                     // エフェクト生成
                     recoveryCharge.Create(collision.tag);
+                    recoveryChargeMeter.Create(collision.tag);
 
                     // コライダーを消しスナイプも外す
                     Snipe = false;
@@ -285,7 +290,7 @@ public class RisaikuruRecovery : MonoBehaviour
                 case "glass":
 
                     // プレイヤーに与える
-                    Player.SetResourcesPlus(collision.tag);
+                    // Player.SetResourcesPlus(collision.tag);
 
                     // 衝突リストから消去
                     colList.Remove(collision);
@@ -304,6 +309,7 @@ public class RisaikuruRecovery : MonoBehaviour
 
                     // エフェクト生成
                     recoveryCharge.Create(collision.tag);
+                    recoveryChargeMeter.Create(collision.tag);
 
                     // コライダーを消しスナイプも外す
                     Snipe = false;
@@ -313,7 +319,7 @@ public class RisaikuruRecovery : MonoBehaviour
                 case "wood":
 
                     // プレイヤーに与える
-                    Player.SetResourcesPlus(collision.tag);
+                    //Player.SetResourcesPlus(collision.tag);
 
                     // 衝突リストから消去
                     colList.Remove(collision);
@@ -332,6 +338,7 @@ public class RisaikuruRecovery : MonoBehaviour
 
                     // エフェクト生成
                     recoveryCharge.Create(collision.tag);
+                    recoveryChargeMeter.Create(collision.tag);
 
                     // コライダーを消しスナイプも外す
                     Snipe = false;
