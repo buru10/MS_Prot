@@ -15,6 +15,9 @@ public class PlayerFollowCamera : MonoBehaviour
     [SerializeField] private Quaternion vRotation;      // カメラの垂直回転(見下ろし回転)
     [SerializeField] public Quaternion hRotation;      // カメラの水平回転
 
+    [SerializeField] private LayerMask obstacleLayer;   // 障害物とするレイヤー
+
+
     void Start()
     {
         // 回転の初期化
@@ -38,23 +41,6 @@ public class PlayerFollowCamera : MonoBehaviour
             hRotation *= Quaternion.Euler(0, Input.GetAxis("R_Stick_H") * hTurnSpeed, 0);
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         // 垂直回転の更新
         if (Input.GetAxis("R_Stick_V") != 0.0f)
         {
@@ -71,7 +57,6 @@ public class PlayerFollowCamera : MonoBehaviour
             vRotation = Quaternion.Euler(horizonalMax, 0, 0);
         }
 
-
         // カメラの回転(transform.rotation)の更新
         // 方法1 : 垂直回転してから水平回転する合成回転とします
         transform.rotation = hRotation * vRotation;
@@ -79,5 +64,13 @@ public class PlayerFollowCamera : MonoBehaviour
         // カメラの位置(transform.position)の更新
         // player位置から距離distanceだけ手前に引いた位置を設定します(位置補正版)
         transform.position = player.position + new Vector3(0, 3, 0) - transform.rotation * Vector3.forward * distance;
+
+        // めり込み防止
+        RaycastHit hit;
+        //　キャラクターとカメラの間に障害物があったら障害物の位置にカメラを移動させる
+        if (Physics.Linecast(player.position, transform.position, out hit, obstacleLayer))
+        {
+            transform.position = hit.point;
+        }
     }
 }
