@@ -13,9 +13,24 @@ public class newmeter : MonoBehaviour
     //[HideInInspector]
     public float[] MeterCount;//Playerから貰った値を入れる
     float BundleResources;//MeterCountをまとめる
-    float Oneparam;//（paramobj/Resourcesmax）1パラメータ上げるのに必要なリソース数
-    
+    public float Oneparam;//（paramobj/Resourcesmax）1パラメータ上げるのに必要なリソース数
+
     public bool blisaborn;
+
+    public int onestock;//配列の長さに使う
+
+    //public int onestock_metal;
+    //public int onestock_plastic;
+    //public int onestock_glass;
+    //public int onestock_wood;
+    public int old_metal;
+    public int old_plastic;
+    public int old_glass;
+    public int old_wood;
+    public int stockCount;
+    public int memoryColor;
+
+    public int debugnum;
 
     enum Resources
     {
@@ -38,6 +53,11 @@ public class newmeter : MonoBehaviour
         }
 
         Oneparam = Resourcesmax / paramobj.Length;
+        onestock = (int)Oneparam;
+        if (onestock == 0)
+        {
+            onestock = 1;
+        }
 
         blisaborn = false;
     }
@@ -53,7 +73,34 @@ public class newmeter : MonoBehaviour
 
         //BundleResourcesに全部まとめる
         BundleResources = MeterCount[(int)Resources.metal] + MeterCount[(int)Resources.plastic]
-            + MeterCount[(int)Resources.glass] + MeterCount[(int)Resources.wood];
+            + MeterCount[(int)Resources.glass] + MeterCount[(int)Resources.wood] + debugnum;
+
+        //meter背景演出用
+        if (old_metal != (int)MeterCount[(int)Resources.metal])
+        {
+            //onestock_metal += 1; 
+            memoryColor = 0;
+            old_metal = (int)MeterCount[(int)Resources.metal];
+        }
+        if(old_plastic != (int)MeterCount[(int)Resources.plastic])
+        {
+            //onestock_plastic += 1;]
+            memoryColor = 1;
+            old_plastic = (int)MeterCount[(int)Resources.plastic];
+        }
+        if(old_glass != (int)MeterCount[(int)Resources.glass])
+        {
+            //onestock_glass += 1;
+            memoryColor = 2;
+            old_glass = (int)MeterCount[(int)Resources.glass];
+
+        }
+        if (old_wood != (int)MeterCount[(int)Resources.wood])
+        {
+            //onestock_wood += 1;
+            memoryColor = 3;
+            old_wood = (int)MeterCount[(int)Resources.wood];
+        }
 
         //meterが貯まったら値リセット
         if (BundleResources >= Resourcesmax)
@@ -84,7 +131,17 @@ public class newmeter : MonoBehaviour
             for (int i = 0; i < (BundleResources / Oneparam); i++)
             {
                 paramobj[i].SetActive(true);
+                if (stockCount != i)
+                {
+                     stockCount = i;
+                    //onestock_metal = 0;
+                    //onestock_plastic = 0;
+                    //onestock_glass = 0;
+                    //onestock_wood = 0;
+                   
+                }
             }
+
         }
 
 
