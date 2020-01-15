@@ -18,6 +18,7 @@ public class PlayerAIMove : MonoBehaviour
 
     private Vector3 shovelMove;
     private bool bShovel = false;
+    [SerializeField] float ShovelRate = 1.5f;
 
     // Use this for initialization
     void Start()
@@ -144,13 +145,15 @@ public class PlayerAIMove : MonoBehaviour
 
     public void ShovelMoveStart()
     {
-        shovelMove = new Vector3(transform.forward.x * 1.2f, 0.0f, transform.forward.z * 1.2f);
+        shovelMove = new Vector3(transform.forward.x * ShovelRate, 0.0f, transform.forward.z * ShovelRate);
+        rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionY;
         bShovel = true;
     }
 
     public void ShovelMoveEnd()
     {
         shovelMove = Vector3.zero;
+        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionY;
         bShovel = false;
     }
 }

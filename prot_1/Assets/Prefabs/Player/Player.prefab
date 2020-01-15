@@ -127,8 +127,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 8.765328}
-  m_Center: {x: 2.954795e-15, y: -7.790394e-14, z: 3.882665}
+  m_Size: {x: 1, y: 1, z: 8.31244}
+  m_Center: {x: 0, y: 0, z: 4}
 --- !u!114 &1912877667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3004,7 +3004,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0, z: 0}
-  moveSpeed: 5
+  moveSpeed: 7
   applySpeed: 0.2
   refCamera: {fileID: 0}
   metal: 0
@@ -3046,9 +3046,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 0
-  speed: 15
+  speed: 20
   jumpSpeed: 0
   rotateSpeed: 1200
+  ShovelRate: 3
 --- !u!114 &2025395064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3271,6 +3272,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5306650783761215642, guid: e69c73c80f0176d4a949f87a3ab8df00,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5306650783761215642, guid: e69c73c80f0176d4a949f87a3ab8df00,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5306548875466742282, guid: e69c73c80f0176d4a949f87a3ab8df00,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.594048
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e69c73c80f0176d4a949f87a3ab8df00, type: 3}
