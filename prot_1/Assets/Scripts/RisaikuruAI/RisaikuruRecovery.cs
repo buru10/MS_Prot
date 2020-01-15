@@ -52,8 +52,6 @@ public class RisaikuruRecovery : MonoBehaviour
 
         // 制作番号
         risaikuruAIManager = GameObject.Find("RisaikuruAIManager").GetComponent<RisaikuruAIManager>();
-        CreateNumber = risaikuruAIManager.GetCreateNumber();
-        risaikuruAIManager.SetCreateNumberPlus();
         risaikuruAIManager.AddRisa();
 
         // 子供の情報を受け取る
