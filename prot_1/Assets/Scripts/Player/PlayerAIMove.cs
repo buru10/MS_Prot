@@ -16,6 +16,9 @@ public class PlayerAIMove : MonoBehaviour
     private Vector3 moveDirection = Vector3.zero;
     private Rigidbody rb;
 
+    private Vector3 shovelMove;
+    private bool bShovel = false;
+
     // Use this for initialization
     void Start()
     {
@@ -26,8 +29,19 @@ public class PlayerAIMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!PlayerInputManager.GetEnabled())
+        rb.velocity = Vector3.zero;
+
+        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+
+        if (!PlayerInputManager.GetEnabled() || stateInfo.shortNameHash == Animator.StringToHash("Shovel"))
             return;
+
+        //if (stateInfo.shortNameHash == Animator.StringToHash("Shovel001"))
+        if(bShovel)
+        {
+            Move(shovelMove);
+            return;
+        }
 
         //rayを使用した接地判定
         //if (CheckGrounded() == true)
@@ -125,5 +139,17 @@ public class PlayerAIMove : MonoBehaviour
     {
         rb.MovePosition(rb.position + direction * Time.deltaTime * speed);
         //characterController.Move(direction * Time.deltaTime * speed);   // プレイヤーの移動距離は時間×移動スピードの値
+    }
+
+    public void ShovelMoveStart()
+    {
+        shovelMove = new Vector3(transform.forward.x * 1.2f, 0.0f, transform.forward.z * 1.2f);
+        bShovel = true;
+    }
+
+    public void ShovelMoveEnd()
+    {
+        shovelMove = Vector3.zero;
+        bShovel = false;
     }
 }
