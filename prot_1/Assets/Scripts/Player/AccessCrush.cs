@@ -15,7 +15,7 @@ public class AccessCrush : MonoBehaviour
     private NavMeshAgent m_navAgent = null;
     private CrasherAttack crasherAttack;
     private Animator animator;
-    bool bTrigger;
+    private bool bTrigger;
 
     [SerializeField]
     SceneChanger sceneChanger;
@@ -46,8 +46,9 @@ public class AccessCrush : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (bTrigger) return;
         // ゴミの中身がなくなったら
-        if (Garbage.Count == 0 && !bTrigger)
+        if (Garbage.Count == 0)
         {
             sceneChanger.ChangeNextSceneName("Title");
             sceneChanger.ChangeToNext();
@@ -55,9 +56,8 @@ public class AccessCrush : MonoBehaviour
             return;
         }
 
-        // 
-        if (Garbage[0] == null || Garbage[0].GetComponent<BoxCollider>().enabled == false)
-            Garbage.Remove(Garbage[0]);
+        // ゴミリストの中身がなかったらリストから消す
+        ListGarbageDelete();
 
         // オブジェクトの移動
         m_navAgent.SetDestination(Garbage[0].transform.position);
@@ -110,5 +110,17 @@ public class AccessCrush : MonoBehaviour
 
     }
 
+
+    void ListGarbageDelete()
+    {
+        for(int i=0; i< Garbage.Count;i++)
+        {
+            if(Garbage[i] == null ||  Garbage[0].GetComponent<BoxCollider>().enabled == false)
+            {
+                Garbage.Remove(Garbage[i]);
+                i--;
+            }
+        }
+    }
 
 }

@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class CountDown : MonoBehaviour
 {
-    //private Text text;
     private Image image;
     //[SerializeField] Texture texture;
     [SerializeField] Sprite three;
@@ -14,20 +13,21 @@ public class CountDown : MonoBehaviour
     int Count;
     [SerializeField]
     StageStateManager ssm;
+    private bool bTrigger;
 
     // Start is called before the first frame update
     void Start()
     {
-        //text = GetComponent<Text>();
         image = GetComponent<Image>();
         image.sprite = three;
         Count = 3;
+        bTrigger = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //text.fontSize -= (int)(Time.deltaTime * 300);
+
     }
 
     private void OnEnable()
@@ -40,20 +40,23 @@ public class CountDown : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
 
-        //text.text = "2";
-        //image.wi = 300;
         image.sprite = two;
 
         yield return new WaitForSeconds(1.0f);
 
-        //text.text = "1";
-        //text.fontSize = 300;
         image.sprite = one;
 
         yield return new WaitForSeconds(1.0f);
 
+        bTrigger = true;
         ssm.ChangeState(StageStateManager.StageState.Main);
 
         yield return null;
+
+    }
+
+    public bool StartFlag()
+    {
+        return bTrigger;
     }
 }

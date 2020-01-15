@@ -11,7 +11,7 @@ public static class Score
 
     public static void Init()
     {
-        RisaNum = 0;
+        RisaNum = 1;
         RecycleStage1 = 0;
         RecycleStage2 = 0;
     }

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 241984380744124641}
   - component: {fileID: 241984380744124640}
   - component: {fileID: 241984380744124647}
-  - component: {fileID: 241984380744124642}
   m_Layer: 5
   m_Name: Recycletext
   m_TagString: Untagged
@@ -88,27 +87,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartPosition: {x: -1600, y: 0, z: 0}
   EndPosition: {x: 0, y: 0, z: 0}
+  StartPosition2: {x: 0, y: 0, z: 0}
+  EndPosition2: {x: 0, y: 0, z: 0}
   direction: 3
   delay: 3
+  direction2: 0
+  delay2: 0
   EaseType: 27
-  bfadeentry: 1
-  fadeRisa: {fileID: 0}
---- !u!114 &241984380744124642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 241984380744124645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4615bde11dbee5c45b415d011be14447, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StartPosition: {x: 0, y: 0, z: 0}
-  EndPosition: {x: 2000, y: 0, z: 0}
-  direction: 3
-  delay: 3.5
-  EaseType: 27
+  bOnefade: 0
   bfadeentry: 1
   fadeRisa: {fileID: 0}

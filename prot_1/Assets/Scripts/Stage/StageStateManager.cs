@@ -10,8 +10,6 @@ public class StageStateManager : MonoBehaviour
     [SerializeField]
     Canvas MiniMap;
     [SerializeField]
-    Text CountDownText;
-    [SerializeField]
     Image CountDown;
 
     [SerializeField]
@@ -89,7 +87,6 @@ public class StageStateManager : MonoBehaviour
                 PlayerInputManager.SetEnabled(false);
                 break;
             case StageState.Ready:
-                //CountDownText.gameObject.SetActive(true);
                 CountDown.gameObject.SetActive(true);
                 break;
             case StageState.Main:

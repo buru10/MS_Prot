@@ -37,11 +37,11 @@ public class CountTimer : MonoBehaviour
             ssm.ChangeState(StageStateManager.StageState.ShutDown);
 
 
-        // 審査
-        if(Input.GetKeyDown(KeyCode.A))
-        {
-            remainTime = 600.0f;
-        }
+        //// 審査
+        //if(Input.GetKeyDown(KeyCode.A))
+        //{
+        //    remainTime = 600.0f;
+        //}
 
     }
 

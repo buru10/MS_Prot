@@ -21,8 +21,10 @@ public class RisaAnimSpawn : MonoBehaviour
         end = transform.position + transform.forward.normalized * MoveDistance;
         GetComponent<NavMeshAgent>().enabled = false;
         GetComponent<RisaikuruRecovery>().enabled = false;
+
+        risaSpawnerAnimation = GameObject.Find("RisaSpawner").GetComponent<RisaSpawnerAnimation>();
     }
-    // Start is called before the first frame update
+    // Start is called before the first frame update 
     void Start()
     {
         

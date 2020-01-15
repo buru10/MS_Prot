@@ -16,7 +16,6 @@ public class RisaikuruRecovery : MonoBehaviour
     public GarbageManager2 garbageManager2;
     private RecoveryCharge recoveryCharge;
     private RecoveryChargeMeter recoveryChargeMeter;
-    private RisaikuruAIManager risaikuruAIManager;
     public int CreateNumber;
 
     // スピード
@@ -50,10 +49,6 @@ public class RisaikuruRecovery : MonoBehaviour
         //garbageManager = GameObject.Find("GarbageManager").GetComponent<GarbageManager>();
         garbageManager2 = GameObject.Find("GarbageManager2").GetComponent<GarbageManager2>();
 
-        // 制作番号
-        risaikuruAIManager = GameObject.Find("RisaikuruAIManager").GetComponent<RisaikuruAIManager>();
-        risaikuruAIManager.AddRisa();
-
         // 子供の情報を受け取る
         foreach (Transform child in Player.transform)
         {
@@ -69,6 +64,7 @@ public class RisaikuruRecovery : MonoBehaviour
 
         // 新たなゴミが増えていないかチェックし増えていたら起動
         CheckGarbage();
+
     }
 
     void Update()
@@ -175,15 +171,18 @@ public class RisaikuruRecovery : MonoBehaviour
 
     void RecoveryCheck()
     {
-        foreach (GameObject collision in colList)
+        if (colList.Count == 0) return;
+        //foreach (GameObject collision in colList)
+        //{
+        for (int i = colList.Count - 1; i >= 0; i--)
         {
-            if(collision == null)
-                // 衝突リストから消去
-                colList.Remove(collision);
-
             // スナイプオブジェクトが一致したら継続
-            if (snipeObject != collision || !Snipe)
+            if (snipeObject != colList[i] || !Snipe)
                 continue;
+
+            if (colList[i] == null)
+                // 衝突リストから消去
+                colList.RemoveAt(i);
 
             // 回収音
             audioSource.Play();
@@ -191,24 +190,28 @@ public class RisaikuruRecovery : MonoBehaviour
             // アニメーション切り替え
             Recovery();
 
-            ModelDeleteChecker mdc = collision.transform.parent.GetComponent<ModelDeleteChecker>();
+            ModelDeleteChecker mdc = colList[i].transform.parent.GetComponent<ModelDeleteChecker>();
 
             // タグ判定
-            switch (collision.tag)
+            switch (colList[i].tag)
             {
                 // 金属
                 case "metal":
 
                     // プレイヤーに与える
-                    //Player.SetResourcesPlus(collision.tag);
-
-                    // 衝突リストから消去
-                    colList.Remove(collision);
+                    Player.SetResourcesPlus(colList[i].tag);
+                    
+                    // エフェクト生成
+                    recoveryCharge.Create(colList[i].tag);
+                    //recoveryChargeMeter.Create(colList[i].tag);
 
                     // ゴミリストの中身を消す
-                    garbageManager2.Garbagelist.Remove(collision);
+                    garbageManager2.Garbagelist.Remove(colList[i]);
 
-                    Destroy(collision);
+                    // 衝突リストから消去
+                    colList.RemoveAt(i);
+
+                    //Destroy(colList[i]);
 
                     mdc.DeleteCheck();
                     garbageManager2.CheckNorma();
@@ -217,9 +220,6 @@ public class RisaikuruRecovery : MonoBehaviour
                     //    garbageManager2.SubCount();
                     //}
 
-                    // エフェクト生成
-                    recoveryCharge.Create(collision.tag);
-                    recoveryChargeMeter.Create(collision.tag);
 
                     // スナイプを外す
                     Snipe = false;
@@ -230,15 +230,19 @@ public class RisaikuruRecovery : MonoBehaviour
                 case "paper":
 
                     // プレイヤーに与える
-                    //Player.SetResourcesPlus(collision.tag);
+                    Player.SetResourcesPlus(colList[i].tag);
+                    
+                    // エフェクト生成
+                    recoveryCharge.Create(colList[i].tag);
+                    //recoveryChargeMeter.Create(colList[i].tag);
+                    
+                    // ゴミリストの中身を消す
+                    garbageManager2.Garbagelist.Remove(colList[i]);
 
                     // 衝突リストから消去
-                    colList.Remove(collision);
+                    colList.RemoveAt(i);
 
-                    // ゴミリストの中身を消す
-                    garbageManager2.Garbagelist.Remove(collision);
-                    
-                    Destroy(collision);
+                    //Destroy(colList[i]);
 
                     mdc.DeleteCheck();
                     garbageManager2.CheckNorma();
@@ -247,9 +251,6 @@ public class RisaikuruRecovery : MonoBehaviour
                     //    garbageManager2.SubCount();
                     //}
 
-                    // エフェクト生成
-                    recoveryCharge.Create(collision.tag);
-                    recoveryChargeMeter.Create(collision.tag);
 
                     // コライダーを消しスナイプも外す
                     Snipe = false;
@@ -259,15 +260,19 @@ public class RisaikuruRecovery : MonoBehaviour
                 case "plastic":
 
                     // プレイヤーに与える
-                    // Player.SetResourcesPlus(collision.tag);
-
-                    // 衝突リストから消去
-                    colList.Remove(collision);
+                    Player.SetResourcesPlus(colList[i].tag);
+                    
+                    // エフェクト生成
+                    recoveryCharge.Create(colList[i].tag);
+                    //recoveryChargeMeter.Create(colList[i].tag);
 
                     // ゴミリストの中身を消す
-                    garbageManager2.Garbagelist.Remove(collision);
-                    
-                    Destroy(collision);
+                    garbageManager2.Garbagelist.Remove(colList[i]);
+
+                    // 衝突リストから消去
+                    colList.RemoveAt(i);
+
+                    //Destroy(colList[i]);
 
                     mdc.DeleteCheck();
                     garbageManager2.CheckNorma();
@@ -275,10 +280,6 @@ public class RisaikuruRecovery : MonoBehaviour
                     //{
                     //    garbageManager2.SubCount();
                     //}
-
-                    // エフェクト生成
-                    recoveryCharge.Create(collision.tag);
-                    recoveryChargeMeter.Create(collision.tag);
 
                     // コライダーを消しスナイプも外す
                     Snipe = false;
@@ -288,15 +289,19 @@ public class RisaikuruRecovery : MonoBehaviour
                 case "glass":
 
                     // プレイヤーに与える
-                    // Player.SetResourcesPlus(collision.tag);
-
-                    // 衝突リストから消去
-                    colList.Remove(collision);
+                    Player.SetResourcesPlus(colList[i].tag);
+                    
+                    // エフェクト生成
+                    recoveryCharge.Create(colList[i].tag);
+                    //recoveryChargeMeter.Create(colList[i].tag);
 
                     // ゴミリストの中身を消す
-                    garbageManager2.Garbagelist.Remove(collision);
-                    
-                    Destroy(collision);
+                    garbageManager2.Garbagelist.Remove(colList[i]);
+
+                    // 衝突リストから消去
+                    colList.RemoveAt(i);
+
+                    //Destroy(colList[i]);
 
                     mdc.DeleteCheck();
                     garbageManager2.CheckNorma();
@@ -305,9 +310,6 @@ public class RisaikuruRecovery : MonoBehaviour
                     //    garbageManager2.SubCount();
                     //}
 
-                    // エフェクト生成
-                    recoveryCharge.Create(collision.tag);
-                    recoveryChargeMeter.Create(collision.tag);
 
                     // コライダーを消しスナイプも外す
                     Snipe = false;
@@ -317,15 +319,19 @@ public class RisaikuruRecovery : MonoBehaviour
                 case "wood":
 
                     // プレイヤーに与える
-                    //Player.SetResourcesPlus(collision.tag);
-
-                    // 衝突リストから消去
-                    colList.Remove(collision);
+                    Player.SetResourcesPlus(colList[i].tag);
+                    
+                    // エフェクト生成
+                    recoveryCharge.Create(colList[i].tag);
+                    //recoveryChargeMeter.Create(colList[i].tag);
 
                     // ゴミリストの中身を消す
-                    garbageManager2.Garbagelist.Remove(collision);
+                    garbageManager2.Garbagelist.Remove(colList[i]);
 
-                    Destroy(collision);
+                    // 衝突リストから消去
+                    colList.RemoveAt(i);
+
+                    //Destroy(colList[i]);
 
                     mdc.DeleteCheck();
                     garbageManager2.CheckNorma();
@@ -333,10 +339,6 @@ public class RisaikuruRecovery : MonoBehaviour
                     //{
                     //    garbageManager2.SubCount();
                     //}
-
-                    // エフェクト生成
-                    recoveryCharge.Create(collision.tag);
-                    recoveryChargeMeter.Create(collision.tag);
 
                     // コライダーを消しスナイプも外す
                     Snipe = false;
@@ -349,6 +351,7 @@ public class RisaikuruRecovery : MonoBehaviour
 
             snipeObject = null;
             return;
+            //}
         }
     }
 

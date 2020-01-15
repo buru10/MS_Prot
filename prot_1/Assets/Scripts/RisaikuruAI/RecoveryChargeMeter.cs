@@ -9,6 +9,8 @@ public class RecoveryChargeMeter : MonoBehaviour
     
     public void Create(string GarbageName)
     {
+        if (!ResourcesObj[0]) return;
+
         // 素材指定
         switch (GarbageName)
         {
