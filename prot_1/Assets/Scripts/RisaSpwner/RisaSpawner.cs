@@ -8,6 +8,7 @@ public class RisaSpawner : MonoBehaviour
     public GameObject risaspawnerObj;
     public List<GameObject> risaspawner = new List<GameObject>();
     public GameObject risaspawnerSelect;
+    public GameObject Spawning;
     public Camera WipeCamera;
     public GameObject Wipe;
 

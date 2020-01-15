@@ -174,7 +174,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0
+      - time: 0.018390805
         functionName: Spawn
         data: 
         objectReferenceParameter: {instanceID: 0}
@@ -209,7 +209,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 1
+      - time: 0.9264368
         functionName: WipeOff
         data: 
         objectReferenceParameter: {instanceID: 0}

@@ -366,7 +366,7 @@ GameObject:
   - component: {fileID: 7089089080931679900}
   - component: {fileID: 7089089081439924619}
   m_Layer: 0
-  m_Name: RisaSpawner_00
+  m_Name: RisaSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -404,7 +404,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 289a95afe11374e438bf46e42e7300aa, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -422,6 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e207ec623b4dc264594873f1594e51bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   RisaikuruAI: {fileID: 0}
   RisaikuruAIObject: {fileID: 0}
   Wipe: {fileID: 0}

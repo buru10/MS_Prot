@@ -11,7 +11,7 @@ public class RisaAnimSpawn : MonoBehaviour
     public float AnimTime = 2.0f;
     float nowTime = 0.0f;
     bool Done = false;
-    bool bAnim = false;
+    [SerializeField] bool bAnim = false;
 
     private void OnEnable()
     {
@@ -22,7 +22,7 @@ public class RisaAnimSpawn : MonoBehaviour
         GetComponent<NavMeshAgent>().enabled = false;
         GetComponent<RisaikuruRecovery>().enabled = false;
 
-        risaSpawnerAnimation = GameObject.Find("RisaSpawner").GetComponent<RisaSpawnerAnimation>();
+        //risaSpawnerAnimation = GameObject.Find("RisaSpawner").GetComponent<RisaSpawnerAnimation>();
     }
     // Start is called before the first frame update 
     void Start()

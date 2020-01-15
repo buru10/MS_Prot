@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RisaSpawnerAnimation : MonoBehaviour
 {
+    [SerializeField]
     private Animator animator;
     public GameObject RisaikuruAI;
     public GameObject RisaikuruAIObject;
@@ -33,6 +34,7 @@ public class RisaSpawnerAnimation : MonoBehaviour
     public void Close()
     {
         animator.SetBool("Close", true);
+        //StartCoroutine("Coroutine");
     }
 
     void WipeOff()
