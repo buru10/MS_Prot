@@ -34,8 +34,11 @@ public class CountTimer : MonoBehaviour
         GetComponent<Text>().text = text;
 
         if (remainTime < 0.0f)
+        {
+            text = remainTime.ToString("##0") + tenn + "00";
             ssm.ChangeState(StageStateManager.StageState.ShutDown);
-
+            ssm.bTimeUp = true;
+        }
 
         //// 審査
         //if(Input.GetKeyDown(KeyCode.A))

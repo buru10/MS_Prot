@@ -22,6 +22,8 @@ public class StageStateManager : MonoBehaviour
 
     [SerializeField] SceneChanger sceneChanger;
 
+    public bool bTimeUp = false;
+
     public enum StageState
     {
         Boot,
@@ -101,7 +103,10 @@ public class StageStateManager : MonoBehaviour
                 AIanim.AIOutStart();
                 break;
             case StageState.Finish:
-                sceneChanger.ChangeToNext();
+                if(bTimeUp)
+                    sceneChanger.ChangeToResult();
+                else
+                    sceneChanger.ChangeToNext();
                 break;
             default:
                 break;
