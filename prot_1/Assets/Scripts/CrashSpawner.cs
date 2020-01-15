@@ -5,6 +5,7 @@ using UnityEngine;
 public class CrashSpawner : MonoBehaviour
 {
     [SerializeField] StageStateManager ssm;
+    [SerializeField] GameObject warp;
 
     // Start is called before the first frame update
     void Start()
@@ -24,5 +25,11 @@ public class CrashSpawner : MonoBehaviour
         {
             ssm.ChangeState(StageStateManager.StageState.ShutDown);
         }
+    }
+
+    public void Boot()
+    {
+        warp.SetActive(true);
+        GetComponent<BoxCollider>().enabled = true;
     }
 }

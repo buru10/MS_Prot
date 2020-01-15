@@ -13,9 +13,10 @@ public class GarbageManager2 : MonoBehaviour
 
     [SerializeField]int nCount;
     int TotalNum; 
-    public int WarpSpawnNorma;
+    public int WarpSpawnNorma = 80;
     public Warp warp;
     public CrashSpawner crashSpawner;
+    public GameObject crashSpawnerObjects;
 
     public static int Percentage = 0;
 
@@ -35,11 +36,10 @@ public class GarbageManager2 : MonoBehaviour
         }
         
         TotalNum = Garbagelist.Count;
-        WarpSpawnNorma = 60;
+        //WarpSpawnNorma = 60;
 
         warp.gameObject.SetActive(false);
         crashSpawner.GetComponent<BoxCollider>().enabled = false;
-        
     }
 
     void SearchResource(Transform Resource)
@@ -101,6 +101,7 @@ public class GarbageManager2 : MonoBehaviour
         //}
     }
 
+    // 使ってない
     public void SubCount()
     {
         nCount--;
@@ -117,8 +118,13 @@ public class GarbageManager2 : MonoBehaviour
         Percentage = (int)((float)(TotalNum - Garbagelist.Count) / (float)TotalNum * 100.0f);
         if (Percentage >= WarpSpawnNorma)
         {
-            warp.gameObject.SetActive(true);
-            crashSpawner.GetComponent<BoxCollider>().enabled = true;
+            //warp.gameObject.SetActive(true);
+            //crashSpawner.GetComponent<BoxCollider>().enabled = true;
+
+            foreach(Transform child in crashSpawnerObjects.transform)
+            {
+                child.GetComponent<CrashSpawner>().Boot();
+            }
         }
     }
 
