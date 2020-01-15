@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class newmeter : MonoBehaviour
 {
@@ -32,6 +33,15 @@ public class newmeter : MonoBehaviour
 
     public int debugnum;
 
+    public GameObject resourceiconobj;
+    public GameObject resourceplusobj;
+    public Sprite[] resourceicon = new Sprite[4];
+    public bool bgeticon;
+    public float resourceicontimer;
+
+    public AudioClip meterCountsound;
+    AudioSource audioSource;
+
     enum Resources
     {
         metal = 0,
@@ -60,6 +70,9 @@ public class newmeter : MonoBehaviour
         }
 
         blisaborn = false;
+
+        //Componentを取得
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -81,18 +94,22 @@ public class newmeter : MonoBehaviour
             //onestock_metal += 1; 
             memoryColor = 0;
             old_metal = (int)MeterCount[(int)Resources.metal];
+
+            resourceiconobj.GetComponent<Image>().sprite= resourceicon[0];
         }
         if(old_plastic != (int)MeterCount[(int)Resources.plastic])
         {
             //onestock_plastic += 1;]
             memoryColor = 1;
             old_plastic = (int)MeterCount[(int)Resources.plastic];
+            resourceiconobj.GetComponent<Image>().sprite = resourceicon[1];
         }
         if(old_glass != (int)MeterCount[(int)Resources.glass])
         {
             //onestock_glass += 1;
             memoryColor = 2;
             old_glass = (int)MeterCount[(int)Resources.glass];
+            resourceiconobj.GetComponent<Image>().sprite = resourceicon[2];
 
         }
         if (old_wood != (int)MeterCount[(int)Resources.wood])
@@ -100,6 +117,7 @@ public class newmeter : MonoBehaviour
             //onestock_wood += 1;
             memoryColor = 3;
             old_wood = (int)MeterCount[(int)Resources.wood];
+            resourceiconobj.GetComponent<Image>().sprite = resourceicon[3];
         }
 
         //meterが貯まったら値リセット
@@ -119,6 +137,7 @@ public class newmeter : MonoBehaviour
             for (int i = 0; i < paramobj.Length; i++)
             {
                 paramobj[i].SetActive(false);
+                stockCount = 0;
             }
 
             Player.GetComponent<RisaSpawner>().Spawn();
@@ -131,17 +150,40 @@ public class newmeter : MonoBehaviour
             for (int i = 0; i < (BundleResources / Oneparam); i++)
             {
                 paramobj[i].SetActive(true);
-                if (stockCount != i)
+
+                if (stockCount < i)
                 {
-                     stockCount = i;
+                    stockCount = i;
+                    
+                    audioSource.PlayOneShot(meterCountsound);
+                    bgeticon = true;
                     //onestock_metal = 0;
                     //onestock_plastic = 0;
                     //onestock_glass = 0;
                     //onestock_wood = 0;
-                   
+
                 }
             }
 
+        }
+
+        if(bgeticon)
+        {
+            
+            resourceicontimer += Time.deltaTime;
+            if(resourceicontimer>=1.0f)
+            {
+                resourceiconobj.SetActive(false);
+                resourceplusobj.SetActive(false);
+                resourceicontimer = 0.0f;
+                bgeticon = false;
+            }
+            else
+            {
+                resourceiconobj.SetActive(true);
+                resourceplusobj.SetActive(true);
+            }
+            
         }
 
 
