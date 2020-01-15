@@ -8,13 +8,17 @@ public class BurstResource : MonoBehaviour
     //GameObject MinimapIcon;
     //[SerializeField]
     //GameObject Model;
+
     [SerializeField]
-    int min = -3;
-    [SerializeField]
-    int max = 3;
+    int ForceValue = 3;
+
 
     [SerializeField]
     bool canHit = true;
+
+    public bool bPushed = false;
+    Transform parentTransform;
+    Vector3 PosOffset;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +32,11 @@ public class BurstResource : MonoBehaviour
         // デバッグ確認
         //if (Input.GetKeyDown(KeyCode.B))
         //Burst();
+
+        if (!bPushed)
+            return;
+
+        GetComponent<Rigidbody>().position = parentTransform.position + PosOffset;
     }
 
     public void Burst()
@@ -66,7 +75,7 @@ public class BurstResource : MonoBehaviour
             r.isKinematic = false;
             r.useGravity = true;
 
-            var vect = new Vector3(random.Next(min, max), random.Next(0, max), random.Next(min, max));
+            var vect = new Vector3(random.Next(-ForceValue, ForceValue), random.Next(0, ForceValue), random.Next(-ForceValue, ForceValue));
 
             if (obj.tag == "BurstObject")
             {
@@ -111,5 +120,29 @@ public class BurstResource : MonoBehaviour
 
         canHit = true;
         yield return null;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Shovel")
+        {
+            parentTransform = other.transform;
+            PosOffset = transform.position - parentTransform.position;
+            bPushed = true;
+            GetComponent<Rigidbody>().isKinematic = false;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        bPushed = false;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Shovel")
+        {
+            bPushed = false;
+        }
     }
 }

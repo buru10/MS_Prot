@@ -12,6 +12,9 @@ public class CrasherAttack : MonoBehaviour
     public GameObject HammerCollider;
     public GameObject HammerParticle;
     public GameObject LaserObj;
+    public GameObject Laser360LObj;
+    public GameObject Laser360RObj;
+    public Shovel ShovelCollider;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +26,9 @@ public class CrasherAttack : MonoBehaviour
         DrillCollider.SetActive(false);
         HammerCollider.SetActive(false);
         LaserObj.SetActive(false);
+        Laser360LObj.SetActive(false);
+        Laser360RObj.SetActive(false);
+        ShovelCollider.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -39,7 +45,7 @@ public class CrasherAttack : MonoBehaviour
             Punch();
         }
 
-        if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Laser"))
+        else if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Laser"))
         {
             if (!animator.GetBool("Laser"))
                 audio.Play();
@@ -47,7 +53,7 @@ public class CrasherAttack : MonoBehaviour
             Laser();
         }
 
-        if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Hammer"))
+        else if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Hammer"))
         {
             if (!animator.GetBool("Hammer"))
                 audio.Play();
@@ -55,12 +61,33 @@ public class CrasherAttack : MonoBehaviour
             Hammer();
         }
 
-        if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Drill"))
+        else if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Drill"))
         {
             if (!animator.GetBool("Drill"))
                 audio.Play();
 
             Drill();
+        }
+
+        else if (Input.GetButtonDown("Laser360"))
+        {
+            if (!animator.GetBool("Laser360"))
+                audio.Play();
+
+            Laser360();
+        }
+
+        else if (Input.GetButtonDown("Shovel"))
+        {
+            if (!animator.GetBool("Shovel"))
+                audio.Play();
+
+            Shovel();
+        }
+
+        if (Input.GetButtonUp("Shovel"))
+        {
+            ShovelOff();
         }
     }
 
@@ -110,6 +137,28 @@ public class CrasherAttack : MonoBehaviour
         {
             animator.SetBool("Run", false);
             animator.SetBool("Drill", true);
+        }
+    }
+
+    void Laser360()
+    {
+        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+
+        if (stateInfo.shortNameHash == Animator.StringToHash("Run") || stateInfo.shortNameHash == Animator.StringToHash("Idle"))
+        {
+            animator.SetBool("Run", false);
+            animator.SetBool("Laser360", true);
+        }
+    }
+
+    void Shovel()
+    {
+        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+
+        if (stateInfo.shortNameHash == Animator.StringToHash("Run") || stateInfo.shortNameHash == Animator.StringToHash("Idle"))
+        {
+            animator.SetBool("Run", false);
+            animator.SetBool("Shovel", true);
         }
     }
 
@@ -163,4 +212,36 @@ public class CrasherAttack : MonoBehaviour
     {
         LaserObj.SetActive(false);
     }
+
+    void Laser360On()
+    {
+        Laser360LObj.SetActive(true);
+        Laser360RObj.SetActive(true);
+    }
+
+    void Laser360Off()
+    {
+        Laser360LObj.SetActive(false);
+        Laser360RObj.SetActive(false);
+    }
+
+    void ShovelOn()
+    {
+        ShovelCollider.gameObject.SetActive(true);
+        GetComponent<PlayerAIMove>().ShovelMoveStart();
+    }
+
+    void ShovelOff()
+    {
+        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+
+        //if (stateInfo.shortNameHash == Animator.StringToHash("Shovel") || stateInfo.shortNameHash == Animator.StringToHash("Shovel001"))
+        {
+            animator.SetBool("Shovel", false);
+            ShovelCollider.ShovelOff();
+            ShovelCollider.gameObject.SetActive(false);
+            GetComponent<PlayerAIMove>().ShovelMoveEnd();
+        }
+    }
+
 }

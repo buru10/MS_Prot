@@ -13,6 +13,7 @@ TagManager:
   - Minimap
   - wood
   - wall
+  - Shovel
   layers:
   - Default
   - TransparentFX
@@ -29,7 +30,7 @@ TagManager:
   - BurstObject
   - PostProcess
   - Meter
-  - 
+  - Map
   - 
   - 
   - 

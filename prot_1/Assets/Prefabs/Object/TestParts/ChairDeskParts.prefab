@@ -769,7 +769,7 @@ GameObject:
   - component: {fileID: 6795572008340001264}
   - component: {fileID: 4139075566525255159}
   - component: {fileID: 7105650194487473286}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: polySurface9
   m_TagString: BurstObject
   m_Icon: {fileID: 0}
@@ -870,6 +870,7 @@ MonoBehaviour:
   min: -3
   max: 10
   canHit: 0
+  bPushed: 0
 --- !u!114 &4139075566525255159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -985,7 +986,7 @@ GameObject:
   - component: {fileID: 5488611909062575548}
   - component: {fileID: 6998054933057450439}
   - component: {fileID: 8361005459644441522}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ChairDeskParts
   m_TagString: BurstObject
   m_Icon: {fileID: 0}
@@ -1024,6 +1025,7 @@ MonoBehaviour:
   min: -3
   max: 10
   canHit: 1
+  bPushed: 0
 --- !u!114 &5488611909062575548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1464,7 +1466,7 @@ GameObject:
   - component: {fileID: 721073370393191253}
   - component: {fileID: 1665216041739575682}
   - component: {fileID: 6200855439125418420}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: polySurface5
   m_TagString: BurstObject
   m_Icon: {fileID: 0}
@@ -1565,6 +1567,7 @@ MonoBehaviour:
   min: -3
   max: 3
   canHit: 0
+  bPushed: 0
 --- !u!114 &1665216041739575682
 MonoBehaviour:
   m_ObjectHideFlags: 0
