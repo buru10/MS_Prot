@@ -2497,13 +2497,14 @@ GameObject:
   m_Component:
   - component: {fileID: 488327459790017400}
   - component: {fileID: 5101114149204347763}
+  - component: {fileID: 4716350323360378545}
   m_Layer: 8
   m_Name: ShovelCollider
-  m_TagString: Untagged
+  m_TagString: Shovel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &488327459790017400
 Transform:
   m_ObjectHideFlags: 0
@@ -2526,11 +2527,23 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6569458273559731918}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 6.12, y: 2.33, z: 3.6}
   m_Center: {x: 0, y: 0.88, z: 3.94}
+--- !u!114 &4716350323360378545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6569458273559731918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 591435b37575fd64f8877951e2c7f28e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &7247758277175227863
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2861,7 +2874,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9075734818035023445}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -3011,15 +3024,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31bba3cb962d25043af74f89d13b0e28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PunchCollider: {fileID: 0}
-  PunchLeftCollider: {fileID: 0}
+  PunchCollider: {fileID: 2224767330322114397}
+  PunchLeftCollider: {fileID: 2709799150945511039}
   DrillCollider: {fileID: 9075734816763966152}
   HammerCollider: {fileID: 9075734816789714892}
   HammerParticle: {fileID: 111292, guid: bb73c78b9f008d648847a4bfa52a437c, type: 3}
   LaserObj: {fileID: 4703316122019984299}
-  Laser360LObj: {fileID: 0}
-  Laser360RObj: {fileID: 0}
-  ShovelCollider: {fileID: 0}
+  Laser360LObj: {fileID: 6701694316717065633}
+  Laser360RObj: {fileID: 9123714558223737375}
+  ShovelCollider: {fileID: 4716350323360378545}
 --- !u!114 &9075734818035023438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3362,15 +3375,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e69c73c80f0176d4a949f87a3ab8df00, type: 3}
---- !u!4 &6707711708370988757 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5306650783761215642, guid: e69c73c80f0176d4a949f87a3ab8df00,
-    type: 3}
-  m_PrefabInstance: {fileID: 1491701408692231759}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6701694316717065633 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5310489422928550894, guid: e69c73c80f0176d4a949f87a3ab8df00,
+    type: 3}
+  m_PrefabInstance: {fileID: 1491701408692231759}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6707711708370988757 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5306650783761215642, guid: e69c73c80f0176d4a949f87a3ab8df00,
     type: 3}
   m_PrefabInstance: {fileID: 1491701408692231759}
   m_PrefabAsset: {fileID: 0}
@@ -3542,15 +3555,15 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7945983221593345848}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &7945983221602843224 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 9500000, guid: 067a4caa6df2a01458599387d73eb734,
-    type: 3}
-  m_PrefabInstance: {fileID: 7945983221593345848}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7945983221593740728 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 067a4caa6df2a01458599387d73eb734,
+    type: 3}
+  m_PrefabInstance: {fileID: 7945983221593345848}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7945983221602843224 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: 067a4caa6df2a01458599387d73eb734,
     type: 3}
   m_PrefabInstance: {fileID: 7945983221593345848}
   m_PrefabAsset: {fileID: 0}

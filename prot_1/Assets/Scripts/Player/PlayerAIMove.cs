@@ -30,6 +30,7 @@ public class PlayerAIMove : MonoBehaviour
     void Update()
     {
         rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
 
         AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
 
