@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    Vector3 scalemin;
-    Vector3 scalemax;
+    public Vector3 scalemin;
+    public Vector3 scalemax;
     float timer;
     float rotationSpeed;
    
     // Start is called before the first frame update
     void Start()
     {
-        scalemin = new Vector3(4.0f, 4.0f, 4.0f);
-        scalemax = new Vector3(7.0f, 7.0f, 7.0f);
+        //scalemin = new Vector3(4.0f, 4.0f, 4.0f);
+        //scalemax = new Vector3(7.0f, 7.0f, 7.0f);
         rotationSpeed = 5.0f;
     }
 
