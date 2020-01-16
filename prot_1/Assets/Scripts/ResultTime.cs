@@ -11,6 +11,10 @@ public class ResultTime : MonoBehaviour
         string tenn = ":";
         float miliSec = CountTimer.remainTime - (int)CountTimer.remainTime;
         string text = CountTimer.remainTime.ToString("##0") + tenn + miliSec.ToString("f2").Substring(2, 2);
+        if (CountTimer.remainTime < 0.0f)
+        {
+            text = CountTimer.remainTime.ToString("##0") + tenn + "00";
+        }
         GetComponent<Text>().text = text;
     }
 
