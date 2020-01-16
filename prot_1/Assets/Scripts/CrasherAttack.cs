@@ -84,6 +84,10 @@ public class CrasherAttack : MonoBehaviour
 
             Shovel();
         }
+        if (!Input.GetButton("Shovel"))
+        {
+            ShovelOff();
+        }
 
         if (Input.GetButtonUp("Shovel"))
         {
