@@ -37,6 +37,9 @@ public class newmeter : MonoBehaviour
     public GameObject resourceplusobj;
     public Sprite[] resourceicon = new Sprite[4];
     public bool bgeticon;
+    public bool bmetermax;
+    float bmetermaxtimer;
+    int bmetermaxCount;
     public float resourceicontimer;
 
     public AudioClip meterCountsound;
@@ -73,6 +76,7 @@ public class newmeter : MonoBehaviour
 
         //Componentを取得
         audioSource = GetComponent<AudioSource>();
+        bmetermax = false;
     }
 
     // Update is called once per frame
@@ -95,16 +99,16 @@ public class newmeter : MonoBehaviour
             memoryColor = 0;
             old_metal = (int)MeterCount[(int)Resources.metal];
 
-            resourceiconobj.GetComponent<Image>().sprite= resourceicon[0];
+            resourceiconobj.GetComponent<Image>().sprite = resourceicon[0];
         }
-        if(old_plastic != (int)MeterCount[(int)Resources.plastic])
+        if (old_plastic != (int)MeterCount[(int)Resources.plastic])
         {
             //onestock_plastic += 1;]
             memoryColor = 1;
             old_plastic = (int)MeterCount[(int)Resources.plastic];
             resourceiconobj.GetComponent<Image>().sprite = resourceicon[1];
         }
-        if(old_glass != (int)MeterCount[(int)Resources.glass])
+        if (old_glass != (int)MeterCount[(int)Resources.glass])
         {
             //onestock_glass += 1;
             memoryColor = 2;
@@ -134,12 +138,10 @@ public class newmeter : MonoBehaviour
             Player.SetResources("plastic", 0);
             Player.SetResources("glass", 0);
 
-            for (int i = 0; i < paramobj.Length; i++)
-            {
-                paramobj[i].SetActive(false);
-                stockCount = 0;
-            }
+            stockCount = 0;
+            bmetermax = true;
 
+            bmetermaxCount = paramobj.Length - 1;
             Player.GetComponent<RisaSpawner>().Spawn();
             Score.RisaNum++;
 
@@ -154,7 +156,6 @@ public class newmeter : MonoBehaviour
                 if (stockCount < i)
                 {
                     stockCount = i;
-                    
                     audioSource.PlayOneShot(meterCountsound);
                     bgeticon = true;
                     //onestock_metal = 0;
@@ -166,12 +167,11 @@ public class newmeter : MonoBehaviour
             }
 
         }
-
-        if(bgeticon)
+        if (bgeticon)
         {
-            
+
             resourceicontimer += Time.deltaTime;
-            if(resourceicontimer>=1.0f)
+            if (resourceicontimer >= 1.0f)
             {
                 resourceiconobj.SetActive(false);
                 resourceplusobj.SetActive(false);
@@ -183,8 +183,39 @@ public class newmeter : MonoBehaviour
                 resourceiconobj.SetActive(true);
                 resourceplusobj.SetActive(true);
             }
-            
+
         }
+        //メーターがmaxになった時段々減っていく処理
+
+        if (bmetermax)
+        {
+
+            if (bmetermaxCount >= 0)
+            {
+
+                for (int j = paramobj.Length; j > bmetermaxCount; j--)
+                {
+                    paramobj[bmetermaxCount].transform.GetChild(0).GetComponent<UICornersGradient>().enabled = false;
+                    paramobj[bmetermaxCount].SetActive(false);
+                }
+            }
+            else
+            {
+                bmetermax = false;
+            }
+
+            bmetermaxtimer += Time.deltaTime;
+
+            if (bmetermaxtimer >= 0.15f)
+            {
+                bmetermaxCount -= 1;
+                bmetermaxtimer = 0;
+            }
+
+
+        }
+
+
 
 
     }

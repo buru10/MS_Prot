@@ -21,10 +21,14 @@ public class countdownmove : MonoBehaviour
     float LStimer;
     float SMtimer;
     float goalpha;
+    float timer;
 
     public GameObject goalphaobj;
     float GoalalphaMLtimer;
 
+    AudioSource audioSource;
+    public AudioClip se_321sound;
+    public AudioClip se_gosound;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +37,9 @@ public class countdownmove : MonoBehaviour
         alpha = 1.0f;
         goobj.SetActive(false);
         goalphaobj.SetActive(false);
+
+        //Componentを取得
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -40,6 +47,11 @@ public class countdownmove : MonoBehaviour
     {
         if (countdownobj.gameObject.activeSelf)
         {
+            if (Counttimer == 0.0f)
+            {
+                audioSource.PlayOneShot(se_321sound);
+            }
+            timer += Time.deltaTime;
             Counttimer += Time.deltaTime;
             if (Counttimer < 0.8f)
             {
@@ -55,11 +67,17 @@ public class countdownmove : MonoBehaviour
                 Counttimer = 0.0f;
                 alpha = 1.0f;
             }
+
         }
 
-        if (countdownobj.gameObject.activeSelf==false)
+        if (countdownobj.gameObject.activeSelf == false && timer >= 2.9f)
         {
             goobj.SetActive(true);
+
+            if(LStimer==0.0f)
+            {
+                audioSource.PlayOneShot(se_gosound);
+            }
             LStimer += (Time.deltaTime * 3);
             if (LStimer <= 1.0f)
             {
@@ -73,20 +91,20 @@ public class countdownmove : MonoBehaviour
 
         }
 
-        if(SMtimer>=1.0f)
+        if (SMtimer >= 1.0f)
         {
             goalphaobj.SetActive(true);
-            GoalalphaMLtimer += (Time.deltaTime*4);
+            GoalalphaMLtimer += (Time.deltaTime * 4);
             goalphaobj.GetComponent<RectTransform>().localScale = Vector3.Lerp(goMpos, goLpos, GoalalphaMLtimer);
-            if(GoalalphaMLtimer>=0.7f)
+            if (GoalalphaMLtimer >= 0.7f)
             {
                 goalpha -= Time.deltaTime * 4;
                 goalphaobj.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, goalpha);
             }
-            goobj.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 1- (GoalalphaMLtimer/2));
+            goobj.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 1 - (GoalalphaMLtimer / 2));
 
 
-            
+
         }
     }
 }
