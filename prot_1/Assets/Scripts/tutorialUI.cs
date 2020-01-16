@@ -19,6 +19,8 @@ public class tutorialUI : MonoBehaviour
     public GameObject[] tutorialtext_5 = new GameObject[2];
     public GameObject[] tutorialtext_6 = new GameObject[2];
 
+    public TutorialUINext tutorialtext;
+
     int num;
     float textCounttimer;
     int textnum;
@@ -73,6 +75,9 @@ public class tutorialUI : MonoBehaviour
                     tutorialtext_0[textnum].SetActive(false);
                     textnum += 1;
                     textCounttimer = 0.0f;
+
+                    tutorialtext.gameObject.SetActive(true);
+
                 }
 
                 if (b1_operation)
@@ -84,6 +89,8 @@ public class tutorialUI : MonoBehaviour
                     textCounttimer = 0.0f;
                     textnum = 0;
                     num = 1;
+
+                    tutorialtext.gameObject.SetActive(false);
 
                 }
                 break;

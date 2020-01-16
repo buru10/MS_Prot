@@ -203,7 +203,6 @@ public class RisaikuruRecovery : MonoBehaviour
                     
                     // エフェクト生成
                     recoveryCharge.Create(colList[i].tag);
-                    //recoveryChargeMeter.Create(colList[i].tag);
 
                     // ゴミリストの中身を消す
                     garbageManager2.Garbagelist.Remove(colList[i]);
@@ -234,7 +233,6 @@ public class RisaikuruRecovery : MonoBehaviour
                     
                     // エフェクト生成
                     recoveryCharge.Create(colList[i].tag);
-                    //recoveryChargeMeter.Create(colList[i].tag);
                     
                     // ゴミリストの中身を消す
                     garbageManager2.Garbagelist.Remove(colList[i]);
@@ -264,7 +262,6 @@ public class RisaikuruRecovery : MonoBehaviour
                     
                     // エフェクト生成
                     recoveryCharge.Create(colList[i].tag);
-                    //recoveryChargeMeter.Create(colList[i].tag);
 
                     // ゴミリストの中身を消す
                     garbageManager2.Garbagelist.Remove(colList[i]);
@@ -293,7 +290,6 @@ public class RisaikuruRecovery : MonoBehaviour
                     
                     // エフェクト生成
                     recoveryCharge.Create(colList[i].tag);
-                    //recoveryChargeMeter.Create(colList[i].tag);
 
                     // ゴミリストの中身を消す
                     garbageManager2.Garbagelist.Remove(colList[i]);
@@ -323,7 +319,6 @@ public class RisaikuruRecovery : MonoBehaviour
                     
                     // エフェクト生成
                     recoveryCharge.Create(colList[i].tag);
-                    //recoveryChargeMeter.Create(colList[i].tag);
 
                     // ゴミリストの中身を消す
                     garbageManager2.Garbagelist.Remove(colList[i]);
