@@ -45,6 +45,7 @@ public class countdownmove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (countdownobj.gameObject.activeSelf)
         {
             if (Counttimer == 0.0f)
@@ -102,9 +103,7 @@ public class countdownmove : MonoBehaviour
                 goalphaobj.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, goalpha);
             }
             goobj.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 1 - (GoalalphaMLtimer / 2));
-
-
-
+            
         }
     }
 }
