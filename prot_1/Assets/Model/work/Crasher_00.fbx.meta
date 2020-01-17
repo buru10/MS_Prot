@@ -148,7 +148,57 @@ ModelImporter:
     13700016: Crasher_Shovel_Obj
     13700018: Crasher_TurnOff_Obj
     13700020: Crasher_TurnOn_Obj
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crasher_Aura_Mat
+    second: {fileID: 2100000, guid: efb3f6a0793f09c4db4344841bb895ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crasher_BackPack_Mat
+    second: {fileID: 2100000, guid: e2108ffd14f95ce4aa491128d808383c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crasher_Body_Mat
+    second: {fileID: 2100000, guid: 7f4dbf68104b347439307803bdbf6cff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crasher_Eye_Mat
+    second: {fileID: 2100000, guid: 1dc304bddd1e9534ea25d3ec77f3df07, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crasher_Frame_Mat
+    second: {fileID: 2100000, guid: f6b55228b09ca434e86a49d5d0b7c7ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crasher_Hammer_Mat
+    second: {fileID: 2100000, guid: 9a8bc767fcc1cc948940498210b1522f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crasher_HandFrame_Mat
+    second: {fileID: 2100000, guid: cd8c52621ccc98141899abe2dd826661, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crasher_Shovel_Mat
+    second: {fileID: 2100000, guid: c0f505676e8d4354cba3df1af3d378a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crasher_TurnOff_Mat
+    second: {fileID: 2100000, guid: a763f31a0f2a18f4bae65366f7c68f03, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crasher_TurnOn_Mat
+    second: {fileID: 2100000, guid: 90191fdef4b0abf4db45efcb7349d41b, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -228,13 +278,6 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0
-        functionName: Particle
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
       - time: 0.5118504
         functionName: HammerColliderOn
         data: 
@@ -557,7 +600,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.753916
+      - time: 0.801775
         functionName: ShovelOn
         data: 
         objectReferenceParameter: {instanceID: 0}

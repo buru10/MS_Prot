@@ -16,7 +16,7 @@ EditorBuildSettings:
     guid: 80fdf578cc8bafc4aae0c10aaf1920c3
   - enabled: 1
     path: Assets/Scenes/newmapTown.unity
-    guid: eb99a28cc62b65f4bbab1643f1d89ce7
+    guid: 1254061344aea2640bd4ee8c1ab302b4
   - enabled: 1
     path: Assets/Scenes/Result.unity
     guid: c6ad668e720fef845ac43ae046814712
