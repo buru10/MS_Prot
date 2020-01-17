@@ -25,6 +25,8 @@ public class UImove : MonoBehaviour
     private float direction2; // 補完時間2
     [SerializeField]
     private float delay2;    // 遅らせる時間2
+    [SerializeField]
+    private bool btime = false;
 
     private float Sumtime;    // 合計補完時間
     private float Sumtime2;    // 合計補完時間2
@@ -99,7 +101,15 @@ public class UImove : MonoBehaviour
                     rect.DOLocalMove(EndPosition2, direction2).SetEase(EaseType).SetDelay(delay2);
 
                     Sumtime2 -= Time.deltaTime;
-                    if (Sumtime2 > 0) bTrigger2 = true;
+                    if (Sumtime2 > 0)
+                    {
+                        bTrigger2 = true;
+                        if(btime)
+                        {
+                            CountTimer.remainTime += 60;
+                            btime = false;
+                        }
+                    }
                 }
             }
         }
