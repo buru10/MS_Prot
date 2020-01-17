@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CrasherAttack : MonoBehaviour
 {
-    private AudioSource audio;
+    public AudioSource[] audio;
     private Animator animator;
     public GameObject PunchCollider;
     public GameObject PunchLeftCollider;
@@ -19,7 +19,8 @@ public class CrasherAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audio = GetComponent<AudioSource>();
+        //audio = GetComponent<AudioSource>();
+
         animator = GetComponent<Animator>();
         PunchCollider.SetActive(false);
         PunchLeftCollider.SetActive(false);
@@ -40,7 +41,7 @@ public class CrasherAttack : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Attack"))
         {
             if (!animator.GetBool("Punch"))
-                audio.Play();
+                audio[0].Play();
 
             Punch();
         }
@@ -48,7 +49,7 @@ public class CrasherAttack : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Laser"))
         {
             if (!animator.GetBool("Laser"))
-                audio.Play();
+                audio[1].Play();
 
             Laser();
         }
@@ -56,7 +57,7 @@ public class CrasherAttack : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Hammer"))
         {
             if (!animator.GetBool("Hammer"))
-                audio.Play();
+                audio[0].Play();
 
             Hammer();
         }
@@ -64,7 +65,7 @@ public class CrasherAttack : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Drill"))
         {
             if (!animator.GetBool("Drill"))
-                audio.Play();
+                audio[2].Play();
 
             Drill();
         }
@@ -72,7 +73,7 @@ public class CrasherAttack : MonoBehaviour
         else if (Input.GetButtonDown("Laser360"))
         {
             if (!animator.GetBool("Laser360"))
-                audio.Play();
+                audio[1].Play();
 
             Laser360();
         }
@@ -80,7 +81,7 @@ public class CrasherAttack : MonoBehaviour
         else if (Input.GetButtonDown("Shovel"))
         {
             if (!animator.GetBool("Shovel"))
-                audio.Play();
+                audio[0].Play();
 
             Shovel();
         }
