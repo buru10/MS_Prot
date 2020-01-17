@@ -208,9 +208,8 @@ public class RisaikuruRecovery : MonoBehaviour
                     garbageManager2.Garbagelist.Remove(colList[i]);
 
                     // 衝突リストから消去
+                    Destroy(colList[i]);
                     colList.RemoveAt(i);
-
-                    //Destroy(colList[i]);
 
                     mdc.DeleteCheck();
                     garbageManager2.CheckNorma();
@@ -238,9 +237,8 @@ public class RisaikuruRecovery : MonoBehaviour
                     garbageManager2.Garbagelist.Remove(colList[i]);
 
                     // 衝突リストから消去
+                    Destroy(colList[i]);
                     colList.RemoveAt(i);
-
-                    //Destroy(colList[i]);
 
                     mdc.DeleteCheck();
                     garbageManager2.CheckNorma();
@@ -267,9 +265,8 @@ public class RisaikuruRecovery : MonoBehaviour
                     garbageManager2.Garbagelist.Remove(colList[i]);
 
                     // 衝突リストから消去
+                    Destroy(colList[i]);
                     colList.RemoveAt(i);
-
-                    //Destroy(colList[i]);
 
                     mdc.DeleteCheck();
                     garbageManager2.CheckNorma();
@@ -295,9 +292,8 @@ public class RisaikuruRecovery : MonoBehaviour
                     garbageManager2.Garbagelist.Remove(colList[i]);
 
                     // 衝突リストから消去
+                    Destroy(colList[i]);
                     colList.RemoveAt(i);
-
-                    //Destroy(colList[i]);
 
                     mdc.DeleteCheck();
                     garbageManager2.CheckNorma();
@@ -324,9 +320,9 @@ public class RisaikuruRecovery : MonoBehaviour
                     garbageManager2.Garbagelist.Remove(colList[i]);
 
                     // 衝突リストから消去
+                    Destroy(colList[i]);
                     colList.RemoveAt(i);
 
-                    //Destroy(colList[i]);
 
                     mdc.DeleteCheck();
                     garbageManager2.CheckNorma();
