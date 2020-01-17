@@ -17,6 +17,9 @@ public class StageStateManager : MonoBehaviour
 
     [SerializeField]
     AIAnimation AIanim;
+
+    [SerializeField]
+    Animator player;
     //[SerializeField]
     //FadeRisa fade;
 
@@ -54,6 +57,9 @@ public class StageStateManager : MonoBehaviour
             case StageState.Main:
                 UpdateMain();
                 break;
+            case StageState.ShutDown:
+                UpdateShutDown();
+                break;
             case StageState.Finish:
                 UpdateFinish();
                 break;
@@ -72,9 +78,14 @@ public class StageStateManager : MonoBehaviour
 
     }
 
+    void UpdateShutDown()
+    {
+        PlayerInputManager.SetEnabled(false);
+    }
+
     void UpdateFinish()
     {
-
+        PlayerInputManager.SetEnabled(false);
     }
 
     public void ChangeState(StageState set)
@@ -101,6 +112,9 @@ public class StageStateManager : MonoBehaviour
                 PlayerInputManager.SetEnabled(false);
                 gamemain.gameObject.SetActive(false);
                 AIanim.AIOutStart();
+                player.SetBool("TurnOff", true);
+                player.SetBool("Run", false);
+                player.SetBool("Shovel", false);
                 break;
             case StageState.Finish:
                 if(bTimeUp)
