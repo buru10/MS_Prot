@@ -40,48 +40,48 @@ public class CrasherAttack : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Attack"))
         {
-            if (!animator.GetBool("Punch"))
-                audio[0].Play();
+            //if (!animator.GetBool("Punch"))
+            //    audio[0].Play();
 
             Punch();
         }
 
         else if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Laser"))
         {
-            if (!animator.GetBool("Laser"))
-                audio[1].Play();
+            //if (!animator.GetBool("Laser"))
+            //    audio[1].Play();
 
             Laser();
         }
 
         else if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Hammer"))
         {
-            if (!animator.GetBool("Hammer"))
-                audio[0].Play();
+            //if (!animator.GetBool("Hammer"))
+            //    audio[0].Play();
 
             Hammer();
         }
 
         else if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Drill"))
         {
-            if (!animator.GetBool("Drill"))
-                audio[2].Play();
+            //if (!animator.GetBool("Drill"))
+            //    audio[2].Play();
 
             Drill();
         }
 
         else if (Input.GetButtonDown("Laser360"))
         {
-            if (!animator.GetBool("Laser360"))
-                audio[1].Play();
+            //if (!animator.GetBool("Laser360"))
+            //    audio[1].Play();
 
             Laser360();
         }
 
         else if (Input.GetButtonDown("Shovel"))
         {
-            if (!animator.GetBool("Shovel"))
-                audio[0].Play();
+            //if (!animator.GetBool("Shovel"))
+            //    audio[0].Play();
 
             Shovel();
         }
@@ -131,6 +131,7 @@ public class CrasherAttack : MonoBehaviour
         {
             animator.SetBool("Run", false);
             animator.SetBool("Hammer", true);
+            audio[0].Play();
         }
     }
 
@@ -164,12 +165,14 @@ public class CrasherAttack : MonoBehaviour
         {
             animator.SetBool("Run", false);
             animator.SetBool("Shovel", true);
+            audio[0].Play();
         }
     }
 
     void PunchColliderOn()
     {
         PunchCollider.SetActive(true);
+        audio[0].Play();
     }
 
     void PunchColliderOff()
@@ -180,6 +183,7 @@ public class CrasherAttack : MonoBehaviour
     void PunchLeftColliderOn()
     {
         PunchLeftCollider.SetActive(true);
+        audio[0].Play();
     }
 
     void PunchLeftColliderOff()
@@ -190,6 +194,7 @@ public class CrasherAttack : MonoBehaviour
     void DrillColliderOn()
     {
         DrillCollider.SetActive(true);
+        audio[2].Play();
     }
 
     void DrillColliderOff()
@@ -211,6 +216,7 @@ public class CrasherAttack : MonoBehaviour
     void LaserOn()
     {
         LaserObj.SetActive(true);
+        audio[1].Play();
     }
 
     void LaserOff()
@@ -222,6 +228,7 @@ public class CrasherAttack : MonoBehaviour
     {
         Laser360LObj.SetActive(true);
         Laser360RObj.SetActive(true);
+        audio[1].Play();
     }
 
     void Laser360Off()

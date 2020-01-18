@@ -14,6 +14,7 @@ public static class Score
         RisaNum = 1;
         RecycleStage1 = 0;
         RecycleStage2 = 0;
+        bStage1 = false;
     }
 
     public static void SaveRecycle(int value)
